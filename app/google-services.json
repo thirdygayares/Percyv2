@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "320518962137",
+    "project_id": "precy-9a741",
+    "storage_bucket": "precy-9a741.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320518962137:android:6db74af63ee80586f937c8",
+        "android_client_info": {
+          "package_name": "com.firetera.percyv2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320518962137-9jmm94vtl9u1v8gmu4v125mo2tc4gr28.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM3TxU0oYLxRlG76DtoWTSzF87gZreov0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320518962137-9jmm94vtl9u1v8gmu4v125mo2tc4gr28.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

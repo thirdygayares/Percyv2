@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Login">
+
+    <TextView
+        android:id="@+id/singin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/promptmedium"
+        android:gravity="center"
+        android:text="Sign in"
+        android:textColor="@color/black"
+        android:textSize="35dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/singin"
+        android:singleLine="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#20ffffff"
+        android:drawablePadding="20dp"
+        android:hint="Username"
+        android:padding="25dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/pw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="0dp"
+        android:background="#20ffffff"
+        android:drawablePadding="20dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="25dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
+
+    <Button
+        android:id="@+id/btnid"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pw"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="0dp"
+        android:backgroundTint="@color/black"
+        android:text="Log in" />
+
+    <Button
+        android:id="@+id/notregisteredbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnid"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="0dp"
+        android:backgroundTint="#60ffffff"
+        android:text="not registered yet"
+        android:textColor="#000" />
+
+    <TextView
+        android:id="@+id/signinwith"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@+id/notregisteredbtn"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="or sign in with"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:id="@+id/fbbtn"
+        android:layout_below="@+id/signinwith"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#30ffffff"
+        android:text="Facebook"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:id="@+id/twitterbtn"
+        android:layout_below="@+id/fbbtn"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#30ffffff"
+        android:text="Twitter"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:id="@+id/instagrambtn"
+        android:layout_below="@+id/twitterbtn"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#30ffffff"
+        android:text="Instagram"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+
+
+
+
+
+</RelativeLayout>

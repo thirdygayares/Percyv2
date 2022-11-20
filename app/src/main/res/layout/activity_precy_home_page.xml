@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/primary"
+    android:layout_height="match_parent"
+    tools:context=".PrecyHomePage">
+
+    <ImageView
+        android:id="@+id/PrecyLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/precylogo"></ImageView>
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/PrecyLogo"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="-60dp"
+        android:fontFamily="@font/promptbold"
+        android:text="Welcome"
+        android:textColor="@color/black"
+        android:textSize="45dp"
+
+        ></TextView>
+
+    <TextView
+        android:id="@+id/ClientName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcome"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="serif"
+        android:text="Client's Name"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_marginBottom="30dp"></TextView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ClientName"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="-20dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="30dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-15dp">
+
+            <TextView
+                android:id="@+id/ReservationMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif"
+                android:text="Reservation Menu"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/schedulebutton"
+                android:layout_width="170dp"
+                android:layout_height="130dp"
+                android:layout_below="@+id/ReservationMenu"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="30dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/schedule">
+
+                    <ImageView
+                        android:id="@+id/calendar"
+                        android:layout_width="70dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_baseline_calendar_month_24"
+
+                        ></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/calendar"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/promptmedium"
+                        android:text="Schedule"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"></TextView>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/foodbutton"
+                android:layout_width="170dp"
+                android:layout_height="130dp"
+                android:layout_below="@+id/ReservationMenu"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/schedulebutton"
+                app:cardCornerRadius="30dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/food">
+
+                    <ImageView
+                        android:id="@+id/food"
+                        android:layout_width="70dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/foodlogo"
+
+                        ></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/food"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/promptmedium"
+                        android:text="Food"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"></TextView>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/eventthemebutton"
+                android:layout_width="170dp"
+                android:layout_height="150dp"
+                android:layout_below="@+id/schedulebutton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                app:cardCornerRadius="30dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/eventtheme">
+
+                    <ImageView
+                        android:id="@+id/eventheme"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/eventthemelogo"
+
+                        ></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/eventheme"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/promptmedium"
+                        android:text="Event Theme"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"></TextView>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</RelativeLayout>
