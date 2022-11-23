@@ -20,7 +20,7 @@
         android:layout_below="@+id/PrecyLogo"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="-60dp"
-        android:fontFamily="@font/promptbold"
+        android:fontFamily="@font/senbold"
         android:text="Welcome"
         android:textColor="@color/black"
         android:textSize="45dp"
@@ -33,11 +33,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/welcome"
         android:layout_marginLeft="20dp"
-        android:fontFamily="serif"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/scopeoneregular"
         android:text="Client's Name"
         android:textColor="@color/black"
-        android:textSize="20dp"
-        android:layout_marginBottom="30dp"></TextView>
+        android:textSize="25dp"></TextView>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:fontFamily="sans-serif"
                 android:text="Reservation Menu"
                 android:textColor="@color/black"
@@ -96,7 +96,7 @@
                         android:layout_below="@+id/calendar"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="10dp"
-                        android:fontFamily="@font/promptmedium"
+                        android:fontFamily="@font/droidsansbold"
                         android:text="Schedule"
                         android:textColor="@color/black"
                         android:textSize="20dp"></TextView>
@@ -135,7 +135,7 @@
                         android:layout_below="@+id/food"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="10dp"
-                        android:fontFamily="@font/promptmedium"
+                        android:fontFamily="@font/droidsansbold"
                         android:text="Food"
                         android:textColor="@color/black"
                         android:textSize="20dp"></TextView>
@@ -177,7 +177,7 @@
                         android:layout_below="@+id/eventheme"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="10dp"
-                        android:fontFamily="@font/promptmedium"
+                        android:fontFamily="@font/droidsansbold"
                         android:text="Event Theme"
                         android:textColor="@color/black"
                         android:textSize="20dp"></TextView>

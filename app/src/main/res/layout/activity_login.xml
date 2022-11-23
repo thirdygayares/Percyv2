@@ -27,7 +27,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/singin"
-        android:singleLine="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -36,9 +35,9 @@
         android:drawablePadding="20dp"
         android:hint="Username"
         android:padding="25dp"
+        android:singleLine="true"
         android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        />
+        android:textColorHint="@color/black" />
 
     <EditText
         android:id="@+id/pw"
