@@ -8,23 +8,20 @@
     android:background="@drawable/signinbg">
 
 
-
-    <ImageView
-        android:layout_width="348dp"
-        android:layout_height="192dp"
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/logoprecy"></ImageView>
+        android:layout_height="wrap_content"
+        >
 
 <!-- dito master -->
     <androidx.cardview.widget.CardView
+        android:id="@+id/card"
         android:layout_width="350dp"
         android:layout_height="550dp"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="30dp">
-
-
 
         <TextView
             android:id="@+id/signin"
@@ -114,7 +111,19 @@
 
     </androidx.cardview.widget.CardView>
 
+    </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        >
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="348dp"
+            android:layout_height="192dp"
+            android:background="@drawable/logoprecy"></ImageView>
+    </RelativeLayout>
 
 
 
