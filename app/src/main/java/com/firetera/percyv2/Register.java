@@ -113,54 +113,8 @@ public class Register extends AppCompatActivity {
                     regphonenumber.setError("Phone number is required");
                 }
 
-                firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
-                            FirebaseUser fuser = firebaseAuth.getCurrentUser();
-                            fuser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void unused) {
-                                    Toast.makeText(getApplicationContext(),"Register Succesful", Toast.LENGTH_SHORT);
+                //firebase
 
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.d(TAG, "Onfailure: Email not sent" + e.getMessage());
-
-                                }
-                            });
-
-                            Toast.makeText(getApplicationContext(),"User Created", Toast.LENGTH_SHORT).show();
-                            userID = firebaseAuth.getCurrentUser().getUid();
-                            DocumentReference documentReference = firestore.collection("user").document(userID);
-                            Map<String, Object> user = new HashMap<>();
-                            user.put("fName", fullname);
-                            user.put("email", email);
-                            user.put("phone", phonenumber);
-                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void unused) {
-                                    Log.d(TAG, "Onsuccess: User profile is created for" + userID);
-
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.d(TAG, "onFailure:" + e.toString());
-
-                                }
-                            });
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-
-                        }
-                        else {
-                            Toast.makeText(Register.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-
-                        }
-                    }
-                });
             }
         });
 
