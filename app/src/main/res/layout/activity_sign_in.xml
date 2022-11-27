@@ -15,101 +15,127 @@
         >
 
 <!-- dito master -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card"
-        android:layout_width="350dp"
-        android:layout_height="550dp"
-        android:layout_marginTop="150dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="30dp">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="350dp"
+            android:layout_height="550dp"
+            android:layout_marginTop="110dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="30dp">
 
-        <TextView
-            android:id="@+id/signin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="25dp"
-            android:fontFamily="@font/catamaranbold"
-            android:text="Sign in"
-            android:textColor="@color/black"
-            android:textSize="45dp"></TextView>
-
-        <EditText
-            android:id="@id/username"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="22dp"
-            android:layout_marginTop="150dp"
-            android:backgroundTint="@color/black"
-            android:backgroundTintMode="screen"
-            android:drawableLeft="@drawable/ic_baseline_person_24"
-            android:drawablePadding="20dp"
-            android:fontFamily="@font/catamaranbold"
-            android:hint="Username"
-            android:paddingBottom="20dp"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="547dp">
 
 
-            ></EditText>
+                <TextView
+                    android:id="@+id/signin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/catamaranbold"
+                    android:text="Sign in"
+                    android:textColor="@color/black"
+                    android:textSize="45dp"></TextView>
 
-        <EditText
-            android:id="@id/password"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="22dp"
-            android:layout_marginTop="230dp"
-            android:backgroundTint="@color/black"
-            android:backgroundTintMode="screen"
-            android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
-            android:drawablePadding="20dp"
-            android:fontFamily="@font/catamaranbold"
-            android:hint="Password"
-            android:paddingBottom="20dp"
-
-            ></EditText>
-
-        <Button
-            android:id="@+id/signinbtn"
-            android:layout_width="275dp"
-            android:layout_height="65dp"
-            android:layout_marginLeft="38dp"
-            android:layout_marginTop="330dp"
-            android:background="@drawable/round_btn"
-            android:fontFamily="@font/catamaranbold"
-            android:text="Sign in"
-            android:textSize="20dp"
-            android:textStyle="bold"
-
-            ></Button>
-
-        <TextView
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="130dp"
-            android:layout_marginTop="410dp"
-            android:fontFamily="@font/catamaranbold"
-            android:text="or sign in with"
-            android:textSize="15dp"
-
-            ></TextView>
-
-        <Button
-            android:id="@+id/googlesigninbtn"
-            android:layout_width="275dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="37dp"
-            android:layout_marginTop="450dp"
-            android:background="@drawable/roundbtn_white"
-            android:drawableLeft="@drawable/googleicon"
-            android:fontFamily="@font/catamaranbold"
-            android:paddingLeft="10dp"
-            android:paddingRight="20dp"
-            android:text="Google"
-            android:textSize="20dp"
-
-            ></Button>
+                <EditText
+                    android:id="@id/username"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/signin"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/black"
+                    android:backgroundTintMode="screen"
+                    android:drawableLeft="@drawable/ic_baseline_person_24"
+                    android:drawablePadding="20dp"
+                    android:fontFamily="@font/catamaranbold"
+                    android:hint="Username"
+                    android:paddingBottom="20dp"
 
 
-    </androidx.cardview.widget.CardView>
+                    ></EditText>
+
+
+                <EditText
+                    android:id="@id/password"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/username"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/black"
+                    android:backgroundTintMode="screen"
+                    android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
+                    android:drawablePadding="20dp"
+                    android:fontFamily="@font/catamaranbold"
+                    android:hint="Password"
+                    android:paddingBottom="20dp"
+
+                    ></EditText>
+
+                <CheckBox
+                    android:id="@+id/showpw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/password"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="5dp"
+                    android:buttonTint="@color/semibrown"
+                    android:fontFamily="@font/catamaranregular"
+                    android:text="Show Password"
+
+                    ></CheckBox>
+
+                <Button
+                    android:id="@+id/signinbtn"
+                    android:layout_width="275dp"
+                    android:layout_height="65dp"
+                    android:layout_below="@+id/showpw"
+                    android:layout_marginLeft="38dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/round_btn"
+                    android:fontFamily="@font/catamaranbold"
+                    android:text="Sign in"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+
+                    ></Button>
+
+                <TextView
+                    android:id="@+id/signinwith"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/signinbtn"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/catamaranbold"
+                    android:text="or sign in with"
+                    android:textSize="15dp"
+
+                    ></TextView>
+
+                <Button
+                    android:id="@+id/googlesigninbtn"
+                    android:layout_width="275dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/signinwith"
+                    android:layout_marginLeft="37dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/roundbtn_white"
+                    android:drawableLeft="@drawable/googleicon"
+                    android:fontFamily="@font/catamaranbold"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="20dp"
+                    android:text="Google"
+                    android:textSize="20dp"
+
+                    ></Button>
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
 
@@ -118,10 +144,12 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         >
+
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="348dp"
-            android:layout_height="192dp"
+            android:layout_width="200dp"
+            android:layout_height="170dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/logoprecy"></ImageView>
     </RelativeLayout>
 

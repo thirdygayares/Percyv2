@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -42,6 +43,7 @@ public class Register extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_register);
+        EditText conpassword = (EditText) findViewById(R.id.confirmpassword);
         EditText regusername = (EditText) findViewById(R.id.username);
         EditText regfullname = (EditText) findViewById(R.id.fullname);
         EditText regpassword = (EditText) findViewById(R.id.password);
@@ -58,10 +60,13 @@ public class Register extends AppCompatActivity {
             finish();
         }
 
+        regpassword.setTransformationMethod(new PasswordTransformationMethod());
+        conpassword.setTransformationMethod(new PasswordTransformationMethod());
+
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Register.this, Login.class);
+                Intent intent = new Intent(Register.this, SignIn.class);
                 startActivity(intent);
 
             }
@@ -70,6 +75,7 @@ public class Register extends AppCompatActivity {
         regbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String confirmpassword = conpassword.getText().toString().trim();
                 final String email =regemail.getText().toString().trim();
                 String password = regpassword.getText().toString().trim();
                 final String fullname = regfullname.getText().toString();
@@ -85,6 +91,12 @@ public class Register extends AppCompatActivity {
                     return;
 
                 }
+
+                if (TextUtils.isEmpty(confirmpassword)) {
+                    conpassword.setError("Password is Required");
+                    return;
+                }
+
 
                 if(password.length() < 6){
                     regpassword.setError("Password must not exceed to 6 characters");

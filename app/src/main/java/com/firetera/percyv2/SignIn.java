@@ -3,8 +3,11 @@ package com.firetera.percyv2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
@@ -23,6 +26,7 @@ public class SignIn extends AppCompatActivity {
 
         Button signinbtn = (Button) findViewById(R.id.signinbtn);
         Button googlesigninbtn = (Button) findViewById(R.id.googlesigninbtn);
+        CheckBox showpassword = (CheckBox) findViewById(R.id.showpw);
 
         signinbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +39,19 @@ public class SignIn extends AppCompatActivity {
                 }
                 else {
                     Toast.makeText(SignIn.this, "LOG IN FAILED", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        password.setTransformationMethod(new PasswordTransformationMethod());
+        showpassword.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    password.setTransformationMethod(null);
+                }
+                else {
+                    password.setTransformationMethod(new PasswordTransformationMethod());
                 }
             }
         });

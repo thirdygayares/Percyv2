@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/signinbg"
+    tools:context=".SignInOrSignUp">
+
+    <ImageView
+        android:id="@+id/SIOSUPrecylogo"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="40dp"
+        android:src="@drawable/logoprecy"></ImageView>
+
+
+    <Button
+        android:id="@+id/SIOSUsigninbtn"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/SIOSUPrecylogo"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/round_btn"
+        android:fontFamily="@font/catamaranbold"
+        android:text="Sign In"></Button>
+
+    <Button
+        android:id="@+id/SIOSUsignupbtn"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/SIOSUPrecylogo"
+        android:layout_marginLeft="225dp"
+        android:background="@drawable/roundbtn_white"
+        android:fontFamily="@font/catamaranbold"
+        android:text="Sign Up"></Button>
+
+
+
+</RelativeLayout>
