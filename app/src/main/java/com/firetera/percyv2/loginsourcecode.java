@@ -13,10 +13,13 @@ import android.widget.TextView;
 
 import com.firetera.login_registration_mysql.MainActivity;
 import com.firetera.login_registration_mysql.R;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -111,6 +114,51 @@ public class loginsourcecode extends AppCompatActivity {
     }
 
 
+    //login
 
+    public class Home extends AppCompatActivity {
+
+        FirebaseFirestore firestore;
+        FirebaseAuth firebaseAuth;
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_homr);
+
+            Button Logout = findViewById(R.id.logout);
+            TextView name = findViewById(R.id.name);
+
+            firestore = FirebaseFirestore.getInstance();
+            firebaseAuth = FirebaseAuth.getInstance();
+
+            firestore.collection("PrecyUsers").document(firebaseAuth.getUid())
+                    .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            if(task.isSuccessful()){
+                                DocumentSnapshot documentSnapshot = task.getResult();
+                                if(documentSnapshot.exists()){
+                                    name.setText( documentSnapshot.getString("Fullname"));
+                                }else{
+                                    Log.d("TAG", "no such document");
+                                }
+
+                            }
+                        }
+                    });
+
+
+            Logout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    firebaseAuth.signOut();
+                    Intent intent = new Intent(Home.this, Login.class);
+                    startActivity(intent);
+                }
+            });
+
+        }
+    }
 
 }
