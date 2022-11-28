@@ -9,12 +9,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-
-        //nagpush ako
-        // uminom ako
-        //gegege
-
+        setContentView(R.layout.activity_main2);
     }
 }

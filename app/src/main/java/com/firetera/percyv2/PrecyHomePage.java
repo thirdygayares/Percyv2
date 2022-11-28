@@ -1,22 +1,73 @@
 package com.firetera.percyv2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.TextView;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PrecyHomePage extends AppCompatActivity {
    CardView foodbutton, schedulebutton, eventthemebutton;
+    TextView username, password, clientname;
+    Button signinbtn,googlesigninbtn, logoutbtn;
+    CheckBox showpassword;
+
+    FirebaseFirestore firestore;
+    FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_precy_home_page);
-        initxml();
-        foodphasemethod();
-        schedulephasemethod();
-        eventthemephase();
+
+
+
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
+        signinbtn = findViewById(R.id.signinbtn);
+        showpassword = findViewById(R.id.showpw);
+        clientname = findViewById(R.id.clientname);
+        logoutbtn = findViewById(R.id.logoutbtn);
+
+        firestore = FirebaseFirestore.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
+
+
+        firestore.collection("Users"). document(firebaseAuth.getUid())
+                        .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()){
+                            DocumentSnapshot documentSnapshot = task.getResult();
+                            if(documentSnapshot.exists()){
+                                clientname.setText( documentSnapshot.getString("Fullname"));
+                            } else{
+                                Log.d("TAG", "no such document");
+                            }
+                        }
+                    }
+                });
+
+        logoutbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseAuth.signOut();
+                Intent intent = new Intent(PrecyHomePage.this, SignIn.class);
+                startActivity(intent);
+
+            }
+        });
 
 
     }
@@ -55,10 +106,8 @@ public class PrecyHomePage extends AppCompatActivity {
 
 
 
-    private void initxml() {
-        foodbutton = (CardView)findViewById(R.id.foodbutton);
-        schedulebutton =(CardView) findViewById(R.id.schedulebutton);
-        eventthemebutton = (CardView) findViewById(R.id.eventthemebutton);
 
-    }
+
+
+
 }

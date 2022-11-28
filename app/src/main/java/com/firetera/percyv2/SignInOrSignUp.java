@@ -7,7 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class SignInOrSignUp extends AppCompatActivity {
+
+    FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +20,8 @@ public class SignInOrSignUp extends AppCompatActivity {
 
         Button signupbtn = (Button)findViewById(R.id.SIOSUsignupbtn);
         Button signinbtn = (Button)findViewById(R.id.SIOSUsigninbtn);
+        firebaseAuth = FirebaseAuth.getInstance();
+
 
         signinbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,5 +39,10 @@ public class SignInOrSignUp extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
+
+
+
+
 }

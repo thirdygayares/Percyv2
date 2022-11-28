@@ -3,16 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/bgcolor"
     android:layout_height="match_parent"
-    tools:context=".PrecyHomePage">
+    android:background="@color/bgcolor"
+    tools:context=".HomePage">
 
-    <Button
-        android:id="@+id/logoutbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="log out"
-        ></Button>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -49,32 +44,17 @@
             android:layout_marginTop="6dp"
             android:background="@color/white"
             app:cardCornerRadius="20dp"
-            app:cardElevation="10dp"
-            android:layout_centerHorizontal="true">
+            app:cardElevation="10dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
 
                 <ImageView
                     android:id="@+id/cateringinfoimage"
                     android:layout_width="352dp"
                     android:layout_height="222dp"
                     android:src="@drawable/cateringinfoimage"></ImageView>
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:layout_width="71dp"
-                        android:layout_height="62dp"
-                        android:src="@drawable/logoprecy"
-                        android:elevation="20dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="10dp"></ImageView>
-
-                </RelativeLayout>
 
                 <TextView
                     android:id="@+id/cateringinfo"
@@ -119,8 +99,7 @@
             android:layout_marginLeft="31dp"
             android:layout_marginTop="17dp"
             app:cardCornerRadius="10dp"
-            app:cardElevation="10dp"
-            android:layout_centerHorizontal="true">
+            app:cardElevation="10dp">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -172,8 +151,7 @@
             android:layout_marginLeft="31dp"
             android:layout_marginTop="17dp"
             app:cardCornerRadius="10dp"
-            app:cardElevation="10dp"
-            android:layout_centerHorizontal="true">
+            app:cardElevation="10dp">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -224,8 +202,7 @@
             android:layout_marginLeft="31dp"
             android:layout_marginTop="17dp"
             app:cardCornerRadius="10dp"
-            app:cardElevation="10dp"
-            android:layout_centerHorizontal="true">
+            app:cardElevation="10dp">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -270,8 +247,5 @@
         </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
-
-
-
 
 </RelativeLayout>
