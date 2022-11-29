@@ -39,16 +39,16 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_home_fragment, container, false);
+         View view = inflater.inflate(R.layout.activity_home_fragment, container, false);
 
         //XML
-        username.findViewById(R.id.username);
-        password.findViewById(R.id.password);
-        signinbtn.findViewById(R.id.signinbtn);
-        showpassword.findViewById(R.id.showpw);
-        clientname.findViewById(R.id.clientname);
-        logoutbtn.findViewById(R.id.logoutbtn);
-        cateringinfo_arrow.findViewById(R.id.cateringinfoarrow);
+        username = view.findViewById(R.id.username);
+        password = view.findViewById(R.id.password);
+        signinbtn = view.findViewById(R.id.signinbtn);
+        showpassword = view.findViewById(R.id.showpw);
+        clientname = view.findViewById(R.id.clientname);
+        logoutbtn = view.findViewById(R.id.logoutbtn);
+        cateringinfo_arrow = view.findViewById(R.id.cateringinfoarrow);
 
 
         //FIREBASE
@@ -75,13 +75,13 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 firebaseAuth.signOut();
-                Intent intent = new Intent(HomeFragment.this, SignIn.class);
+                Intent intent = new Intent(getContext(), SignIn.class);
                 startActivity(intent);
 
             }
         });
 
-
+        return view;
     }
 
     private void cateringinfo(){
@@ -89,7 +89,7 @@ public class HomeFragment extends Fragment {
         cateringinfo_arrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeFragment.this, CateringInfo.class));
+                startActivity(new Intent(getContext(), CateringInfo.class));
             }
         });
     }
@@ -98,7 +98,7 @@ public class HomeFragment extends Fragment {
         eventthemebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeFragment.this, EventThemeOption.class);
+                Intent intent = new Intent(getContext(), EventThemeOption.class);
                 startActivity(intent);
             }
         });
@@ -108,7 +108,7 @@ public class HomeFragment extends Fragment {
         schedulebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeFragment.this, ScheduleOption.class);
+                Intent intent = new Intent(getContext(), ScheduleOption.class);
                 startActivity(intent);
             }
         });
@@ -119,14 +119,14 @@ public class HomeFragment extends Fragment {
         foodbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeFragment.this, Foodoption.class);
+                Intent intent = new Intent(getContext(), Foodoption.class);
                 startActivity(intent);
             }
         });
     }
 
     }
-}
+
 
 
 
