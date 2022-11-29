@@ -2,6 +2,7 @@ package com.firetera.percyv2;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -23,31 +24,34 @@ public class MainActivity2 extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+        bottomNavigationView.setOnItemSelectedListener(navListener);
 
-        bottomNavigationView.setOnItemReselectedListener(new NavigationBarView.OnItemReselectedListener() {
-            @Override
-            public void onNavigationItemReselected(@NonNull MenuItem item) {
-                switch(item.getItemId()){
-                    case R.id.nav_home:
+        Fragment selectedFragment = new HomeFragment();
 
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
-                        return;
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, selectedFragment).commit();
 
-                    case R.id.navbottom_yourreservation:
 
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, yourReservationFragment).commit();
-                        return;
-
-                    case R.id.navbottom_details:
-
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, detailsFragment).commit();
-                        return;
-
-                }
-
-            }
-        });
 
     }
+
+    private NavigationBarView.OnItemSelectedListener navListener =
+            item -> {
+                Fragment selectedFragment = null;
+                switch (item.getItemId()){
+                    case R.id.navbottom_home:
+                        selectedFragment = new HomeFragment();
+                        break;
+                    case R.id.navbottom_yourreservation:
+
+                        selectedFragment = new YourReservationFragment();
+                        break;
+                    case R.id.navbottom_details:
+//                        home.GroupID.clear();
+                        selectedFragment = new DetailsFragment();
+                        break;
+
+                }
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, selectedFragment).commit();
+                return true;
+            };
 }

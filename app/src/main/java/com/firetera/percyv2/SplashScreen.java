@@ -22,7 +22,6 @@ public class SplashScreen extends AppCompatActivity {
             public void run() {
 
                 startActivity(new Intent(getApplicationContext(), SignInOrSignUp.class));
-
             }
         }, 15000);
 
