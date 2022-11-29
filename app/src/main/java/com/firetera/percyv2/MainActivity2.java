@@ -14,8 +14,8 @@ public class MainActivity2 extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     HomeFragment homeFragment = new HomeFragment();
-    YourReservationFragment yourReservationFragment = new YourReservationFragment();
-    DetailsFragment detailsFragment = new DetailsFragment();
+    ReservationFragment yourReservationFragment = new ReservationFragment();
+    DetailFragment detailsFragment = new DetailFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,21 +33,21 @@ public class MainActivity2 extends AppCompatActivity {
 
 
     }
-//calling
+    //calling
     private NavigationBarView.OnItemSelectedListener navListener =
             item -> {
                 Fragment selectedFragment = null;
                 switch (item.getItemId()){
-                    case R.id.navbottom_home:
+                    case R.id.navhome:
                         selectedFragment = new HomeFragment();
                         break;
-                    case R.id.navbottom_yourreservation:
+                    case R.id.navyourreservation:
 
-                        selectedFragment = new YourReservationFragment();
+                        selectedFragment = new ReservationFragment();
                         break;
-                    case R.id.navbottom_details:
+                    case R.id.navdetails:
 //                        home.GroupID.clear();
-                        selectedFragment = new DetailsFragment();
+                        selectedFragment = new DetailFragment();
                         break;
 
                 }
@@ -55,3 +55,6 @@ public class MainActivity2 extends AppCompatActivity {
                 return true;
             };
 }
+
+
+

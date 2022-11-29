@@ -9,12 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class YourReservationFragment extends Fragment {
+public class ReservationFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_your_reservation, container, false);
+        return inflater.inflate(R.layout.activity_reservation_fragment, container, false);
     }
 }

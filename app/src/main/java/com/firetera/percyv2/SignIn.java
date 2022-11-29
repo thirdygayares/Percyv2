@@ -73,8 +73,8 @@ public class SignIn extends AppCompatActivity {
                 signinbtn.setVisibility(View.GONE);
                 signin_progressbar.setVisibility(View.VISIBLE);
 
-                    final String youremail = email.getText().toString();
-                    final String yourpassword = password.getText().toString();
+                final String youremail = email.getText().toString();
+                final String yourpassword = password.getText().toString();
 
 
                 if (youremail.isEmpty() || yourpassword.isEmpty()){
@@ -139,7 +139,7 @@ public class SignIn extends AppCompatActivity {
 
 
 
-    //calling master
+        //calling master
 
 
 

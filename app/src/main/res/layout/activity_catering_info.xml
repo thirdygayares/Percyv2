@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgcolor"
+    tools:context=".CateringInfo">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/home_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:background="@color/white"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/calibribold"
+                android:text="Catering Info "
+                android:textColor="@color/black"
+                android:textSize="26dp"></TextView>
+
+            <ImageView
+                android:id="@+id/cateringinfo_backarrow"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_baseline_arrow_back_24"></ImageView>
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="376dp"
+        android:layout_height="550dp"
+        android:layout_centerHorizontal="true"
+        app:cardElevation="10dp"
+        android:layout_marginTop="100dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Precy's Catering"
+                android:fontFamily="@font/merriweatherregular"
+                android:textColor="@color/black"
+                android:textSize="21dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/cateringtext_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/precyimage"
+                android:text="Precy’s Catering is a small company of Fulgencio Company. bla bala ba;a na  nasahs asja hsja hsjahsjh asjh  asashjashajshah sgahsgahsgah sgahsg ahg sahgsa hgshagshagsh agshagshagsh asasasasasa sas "
+                android:textAlignment="inherit"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-45dp"
+                android:textColor="@color/black"></TextView>
+
+            <ImageView
+                android:id="@+id/precyimage"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/cateringinfoimage1"></ImageView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/schedulecardview"
+                android:layout_width="352dp"
+                android:layout_height="65dp"
+                android:layout_below="@id/cateringtext_info"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="31dp"
+                android:layout_marginTop="30dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/scheduleofevent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="73dp"
+                        android:layout_marginTop="9dp"
+                        android:fontFamily="@font/titilliumwebsemibold"
+                        android:text="Our Location"
+                        android:textColor="@color/black"
+                        android:textSize="22dp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/scheduleofevent"
+                        android:layout_marginLeft="73dp"
+                        android:fontFamily="@font/titilliumwebregular"
+                        android:text="Quick info on our location"
+                        android:textSize="12dp"></TextView>
+
+                    <ImageView
+                        android:layout_width="47dp"
+                        android:layout_height="43dp"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginTop="11dp"
+                        android:src="@drawable/locationicon"></ImageView>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="300dp"
+                        android:layout_marginTop="12dp"
+                        android:src="@drawable/arrowicon"></ImageView>
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

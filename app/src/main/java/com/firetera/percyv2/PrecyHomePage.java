@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,8 +24,11 @@ public class PrecyHomePage extends AppCompatActivity {
     TextView username, password, clientname;
     Button signinbtn,googlesigninbtn, logoutbtn;
     CheckBox showpassword;
+    ImageView cateringinfo_arrow;
     FirebaseFirestore firestore;
     FirebaseAuth firebaseAuth;
+
+
 
 
     @Override
@@ -39,6 +43,7 @@ public class PrecyHomePage extends AppCompatActivity {
         showpassword = findViewById(R.id.showpw);
         clientname = findViewById(R.id.clientname);
         logoutbtn = findViewById(R.id.logoutbtn);
+        cateringinfo_arrow = findViewById(R.id.cateringinfoarrow);
 
         //FIREBASE
         firestore = FirebaseFirestore.getInstance();
@@ -71,6 +76,16 @@ public class PrecyHomePage extends AppCompatActivity {
         });
 
 
+    }
+
+    private void cateringinfo(){
+
+        cateringinfo_arrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PrecyHomePage.this, CateringInfo.class));
+            }
+        });
     }
 
     private void eventthemephase() {
