@@ -33,7 +33,7 @@ public class MainActivity2 extends AppCompatActivity {
 
 
     }
-
+//calling
     private NavigationBarView.OnItemSelectedListener navListener =
             item -> {
                 Fragment selectedFragment = null;
