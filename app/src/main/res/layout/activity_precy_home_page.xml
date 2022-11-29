@@ -1,277 +1,367 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@color/bgcolor"
     android:layout_height="match_parent"
+    android:paddingBottom="0dp"
     tools:context=".PrecyHomePage">
 
-    <Button
-        android:id="@+id/logoutbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="log out"
-        ></Button>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/Homewelcome"
+        <Button
+            android:id="@+id/logoutbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="36dp"
-            android:layout_marginTop="75dp"
-            android:fontFamily="@font/secularoneregular"
-            android:text="Welcome, "
-            android:textColor="@color/black"
-            android:textSize="30dp"></TextView>
-
-        <TextView
-            android:id="@+id/clientname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Homewelcome"
-            android:layout_marginLeft="36dp"
-            android:fontFamily="@font/scopeoneregular"
-            android:text="Client's name"
-            android:textColor="@color/gray"
-            android:textSize="20dp"></TextView>
+            android:text="log out"
+            ></Button>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardviewcatering"
-            android:layout_width="352dp"
-            android:layout_height="288dp"
-            android:layout_below="@id/clientname"
-            android:layout_marginLeft="31dp"
-            android:layout_marginTop="6dp"
-            android:background="@color/white"
-            app:cardCornerRadius="20dp"
+            android:layout_width="373dp"
+            android:layout_height="67dp"
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="10dp"
             app:cardElevation="10dp"
-            android:layout_centerHorizontal="true">
+            android:layout_marginTop="650dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
+                android:layout_height="match_parent"
+                >
 
                 <ImageView
-                    android:id="@+id/cateringinfoimage"
-                    android:layout_width="352dp"
-                    android:layout_height="222dp"
-                    android:src="@drawable/cateringinfoimage"></ImageView>
+                    android:id="@+id/navhome"
+                    android:layout_width="60dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/homeicon"
+                    android:layout_alignRight="@+id/navdetails"
+                    android:layout_marginRight="82dp"
+                    android:layout_marginTop="15dp"></ImageView>
+
+                <ImageView
+                    android:id="@+id/navfood"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/navfoodicon"
+                    android:layout_alignLeft="@+id/navsched"
+
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="10dp"></ImageView>
+
+                <ImageView
+                    android:id="@+id/navsched"
+                    android:layout_width="50dp"
+                    android:layout_height="85dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="6dp"
+                    android:src="@drawable/navschedicon"></ImageView>
+
+                <ImageView
+                    android:id="@+id/navdetails"
+                    android:layout_width="50dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/navdetailsicon"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="35dp"
+                    android:layout_marginTop="6dp"></ImageView>
+
+
+
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/home_cardview"
+                android:layout_width="match_parent"
+                android:layout_height="76dp"
+                android:background="@color/white"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/calibribold"
+                        android:text="Home "
+                        android:textColor="@color/black"
+                        android:textSize="26dp"></TextView>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/Homewelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/home_cardview"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/secularoneregular"
+                android:text="Welcome, "
+                android:textColor="@color/black"
+                android:textSize="30dp"></TextView>
+
+            <TextView
+                android:id="@+id/clientname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Homewelcome"
+                android:layout_marginLeft="36dp"
+                android:fontFamily="@font/scopeoneregular"
+                android:text="Client's name"
+                android:textColor="@color/gray"
+                android:textSize="20dp"></TextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardviewcatering"
+                android:layout_width="352dp"
+                android:layout_height="288dp"
+                android:layout_below="@id/clientname"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="31dp"
+                android:layout_marginTop="6dp"
+                android:background="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/cateringinfoimage"
+                        android:layout_width="352dp"
+                        android:layout_height="222dp"
+                        android:src="@drawable/cateringinfoimage"></ImageView>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="71dp"
+                            android:layout_height="62dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:elevation="20dp"
+                            android:src="@drawable/logoprecy"></ImageView>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/cateringinfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cateringinfoimage"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/titilliumwebsemibold"
+                        android:text="Catering info"
+                        android:textColor="@color/black"
+                        android:textSize="22dp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/cateringinfo"
+                        android:layout_marginLeft="18dp"
+                        android:fontFamily="@font/titilliumwebregular"
+                        android:text="Services and Contact info"
+                        android:textSize="12dp"></TextView>
+
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/cateringinfoimage"
+                        android:layout_marginLeft="300dp"
+                        android:layout_marginTop="12dp"
+                        android:src="@drawable/arrowicon"></ImageView>
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/schedulecardview"
+                android:layout_width="352dp"
+                android:layout_height="62dp"
+                android:layout_below="@id/cardviewcatering"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="31dp"
+                android:layout_marginTop="17dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
+                    <TextView
+                        android:id="@+id/scheduleofevent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="73dp"
+                        android:layout_marginTop="9dp"
+                        android:fontFamily="@font/titilliumwebsemibold"
+                        android:text="Schedule of Events"
+                        android:textColor="@color/black"
+                        android:textSize="22dp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/scheduleofevent"
+                        android:layout_marginLeft="73dp"
+                        android:fontFamily="@font/titilliumwebregular"
+                        android:text="Check the available shedule"
+                        android:textSize="12dp"></TextView>
+
                     <ImageView
-                        android:layout_width="71dp"
-                        android:layout_height="62dp"
-                        android:src="@drawable/logoprecy"
-                        android:elevation="20dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="10dp"></ImageView>
+                        android:layout_width="47dp"
+                        android:layout_height="43dp"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginTop="11dp"
+                        android:src="@drawable/scheduleofeventicon"></ImageView>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="300dp"
+                        android:layout_marginTop="12dp"
+                        android:src="@drawable/arrowicon"></ImageView>
+
 
                 </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:id="@+id/cateringinfo"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/menuorfoodcardview"
+                android:layout_width="352dp"
+                android:layout_height="62dp"
+                android:layout_below="@id/schedulecardview"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="31dp"
+                android:layout_marginTop="17dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/cateringinfoimage"
-                    android:layout_marginLeft="18dp"
-                    android:layout_marginTop="6dp"
-                    android:fontFamily="@font/titilliumwebsemibold"
-                    android:text="Catering info"
-                    android:textColor="@color/black"
-                    android:textSize="22dp"></TextView>
+                    android:layout_height="wrap_content">
 
-                <TextView
+                    <TextView
+                        android:id="@+id/menuorfood"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="73dp"
+                        android:layout_marginTop="9dp"
+                        android:fontFamily="@font/titilliumwebsemibold"
+                        android:text="Menu / Food"
+                        android:textColor="@color/black"
+                        android:textSize="22dp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/menuorfood"
+                        android:layout_marginLeft="73dp"
+                        android:fontFamily="@font/titilliumwebregular"
+                        android:text="Check top sale and available food"
+                        android:textSize="12dp"></TextView>
+
+                    <ImageView
+                        android:layout_width="47dp"
+                        android:layout_height="43dp"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginTop="11dp"
+                        android:src="@drawable/menuorfoodicon"></ImageView>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="300dp"
+                        android:layout_marginTop="12dp"
+                        android:src="@drawable/arrowicon"></ImageView>
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="352dp"
+                android:layout_height="62dp"
+                android:layout_below="@id/menuorfoodcardview"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="31dp"
+                android:layout_marginTop="17dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/cateringinfo"
-                    android:layout_marginLeft="18dp"
-                    android:fontFamily="@font/titilliumwebregular"
-                    android:text="Services and Contact info"
-                    android:textSize="12dp"></TextView>
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/schedreservation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="73dp"
+                        android:layout_marginTop="9dp"
+                        android:fontFamily="@font/titilliumwebsemibold"
+                        android:text="Schedule a Reservation"
+                        android:textColor="@color/black"
+                        android:textSize="22dp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/schedreservation"
+                        android:layout_marginLeft="73dp"
+                        android:fontFamily="@font/titilliumwebregular"
+                        android:text="Reservation"
+                        android:textSize="12dp"></TextView>
+
+                    <ImageView
+                        android:layout_width="47dp"
+                        android:layout_height="43dp"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginTop="11dp"
+                        android:src="@drawable/schedreservationicon"></ImageView>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="300dp"
+                        android:layout_marginTop="12dp"
+                        android:src="@drawable/arrowicon"></ImageView>
 
 
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_below="@id/cateringinfoimage"
-                    android:layout_marginLeft="300dp"
-                    android:layout_marginTop="12dp"
-                    android:src="@drawable/arrowicon"></ImageView>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
-
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/schedulecardview"
-            android:layout_width="352dp"
-            android:layout_height="62dp"
-            android:layout_below="@id/cardviewcatering"
-            android:layout_marginLeft="31dp"
-            android:layout_marginTop="17dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp"
-            android:layout_centerHorizontal="true">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/scheduleofevent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="73dp"
-                    android:layout_marginTop="9dp"
-                    android:fontFamily="@font/titilliumwebsemibold"
-                    android:text="Schedule of Events"
-                    android:textColor="@color/black"
-                    android:textSize="22dp"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/scheduleofevent"
-                    android:layout_marginLeft="73dp"
-                    android:fontFamily="@font/titilliumwebregular"
-                    android:text="Check the available shedule"
-                    android:textSize="12dp"></TextView>
-
-                <ImageView
-                    android:layout_width="47dp"
-                    android:layout_height="43dp"
-                    android:layout_marginLeft="13dp"
-                    android:layout_marginTop="11dp"
-                    android:src="@drawable/scheduleofeventicon"></ImageView>
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="300dp"
-                    android:layout_marginTop="12dp"
-                    android:src="@drawable/arrowicon"></ImageView>
-
-
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/menuorfoodcardview"
-            android:layout_width="352dp"
-            android:layout_height="62dp"
-            android:layout_below="@id/schedulecardview"
-            android:layout_marginLeft="31dp"
-            android:layout_marginTop="17dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp"
-            android:layout_centerHorizontal="true">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/menuorfood"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="73dp"
-                    android:layout_marginTop="9dp"
-                    android:fontFamily="@font/titilliumwebsemibold"
-                    android:text="Menu / Food"
-                    android:textColor="@color/black"
-                    android:textSize="22dp"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/menuorfood"
-                    android:layout_marginLeft="73dp"
-                    android:fontFamily="@font/titilliumwebregular"
-                    android:text="Check top sale and available food"
-                    android:textSize="12dp"></TextView>
-
-                <ImageView
-                    android:layout_width="47dp"
-                    android:layout_height="43dp"
-                    android:layout_marginLeft="13dp"
-                    android:layout_marginTop="11dp"
-                    android:src="@drawable/menuorfoodicon"></ImageView>
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="300dp"
-                    android:layout_marginTop="12dp"
-                    android:src="@drawable/arrowicon"></ImageView>
-
-
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="352dp"
-            android:layout_height="62dp"
-            android:layout_below="@id/menuorfoodcardview"
-            android:layout_marginLeft="31dp"
-            android:layout_marginTop="17dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp"
-            android:layout_centerHorizontal="true">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/schedreservation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="73dp"
-                    android:layout_marginTop="9dp"
-                    android:fontFamily="@font/titilliumwebsemibold"
-                    android:text="Schedule a Reservation"
-                    android:textColor="@color/black"
-                    android:textSize="22dp"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/schedreservation"
-                    android:layout_marginLeft="73dp"
-                    android:fontFamily="@font/titilliumwebregular"
-                    android:text="Reservation"
-                    android:textSize="12dp"></TextView>
-
-                <ImageView
-                    android:layout_width="47dp"
-                    android:layout_height="43dp"
-                    android:layout_marginLeft="13dp"
-                    android:layout_marginTop="11dp"
-                    android:src="@drawable/schedreservationicon"></ImageView>
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="300dp"
-                    android:layout_marginTop="12dp"
-                    android:src="@drawable/arrowicon"></ImageView>
-
-
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
+        </RelativeLayout>
     </RelativeLayout>
 
 
 
 
-</RelativeLayout>
+</ScrollView>

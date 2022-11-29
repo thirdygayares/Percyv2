@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
@@ -30,7 +32,10 @@ public class SignIn extends AppCompatActivity {
     EditText email, password;
     Button signinbtn, googlesigninbtn;
     CheckBox showpassword;
+    ProgressBar signin_progressbar;
     FirebaseAuth firebaseAuth;
+    Handler setDelay;
+    Runnable startDelay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +47,14 @@ public class SignIn extends AppCompatActivity {
         signinbtn = findViewById(R.id.signinbtn);
         googlesigninbtn = findViewById(R.id.googlesigninbtn);
         noaccountyet = findViewById(R.id.noaccountyetTxtvw);
+        signin_progressbar = findViewById(R.id.sign_progressbar);
         showpassword = findViewById(R.id.showpw);
         firebaseAuth = FirebaseAuth.getInstance();
+
+        setDelay = new Handler();
+
+
+        signin_progressbar.setVisibility(View.GONE);
 
 
         noaccountyet.setOnClickListener(new View.OnClickListener() {
@@ -59,16 +70,41 @@ public class SignIn extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                signinbtn.setVisibility(View.GONE);
+                signin_progressbar.setVisibility(View.VISIBLE);
+
+                    final String youremail = email.getText().toString();
+                    final String yourpassword = password.getText().toString();
+
+
+                if (youremail.isEmpty() || yourpassword.isEmpty()){
+
+                    Toast.makeText(SignIn.this, "Enter your email and password", Toast.LENGTH_SHORT);
+
+                }
+
+
+
+
+
                 firebaseAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(SignIn.this, "SUCCESFULLY SIGNED IN", Toast.LENGTH_SHORT).show();
+                                    signinbtn.setVisibility(View.GONE);
+                                    signin_progressbar.setVisibility(View.VISIBLE);
                                     Intent intent = new Intent(SignIn.this, PrecyHomePage.class);
                                     startActivity(intent);
+
+
+
+
                                 } else {
                                     Toast.makeText(SignIn.this, "SIGN IN FAILED", Toast.LENGTH_SHORT).show();
+                                    signinbtn.setVisibility(View.VISIBLE);
+                                    signin_progressbar.setVisibility(View.GONE);
                                 }
                             }
                         });
@@ -125,16 +161,16 @@ public class SignIn extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        if(firebaseAuth.getCurrentUser() != null){
-            finish();
-            Intent intent = new Intent(SignIn.this, PrecyHomePage.class);
-            startActivity(intent);
-        }
-    }
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//
+//        if(firebaseAuth.getCurrentUser() != null){
+//            finish();
+//            Intent intent = new Intent(SignIn.this, PrecyHomePage.class);
+//            startActivity(intent);
+//        }
+//    }
 }
 
 

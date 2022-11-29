@@ -53,6 +53,7 @@
                     android:fontFamily="@font/catamaranbold"
                     android:hint="Username"
                     android:paddingBottom="20dp"
+                    android:singleLine="true"
 
 
                     ></EditText>
@@ -72,6 +73,7 @@
                     android:fontFamily="@font/catamaranbold"
                     android:hint="Password"
                     android:paddingBottom="20dp"
+                    android:singleLine="true"
 
                     ></EditText>
 
@@ -103,13 +105,26 @@
 
                     ></Button>
 
+                <ProgressBar
+                    android:id="@+id/sign_progressbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/showpw"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginLeft="150dp"
+                    android:layout_centerHorizontal="true"
+                    android:indeterminateTint="@color/semibrown"
+
+
+
+                    ></ProgressBar>
+
                 <TextView
                     android:id="@+id/signinwith"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/signinbtn"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="7dp"
+                    android:layout_marginTop="400dp"
                     android:fontFamily="@font/catamaranbold"
                     android:text="or sign in with"
                     android:textSize="15dp"
@@ -132,15 +147,16 @@
                     android:textSize="20dp"
 
                     ></Button>
+
                 <TextView
                     android:id="@+id/noaccountyetTxtvw"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No account yet? Register here"
                     android:layout_below="@+id/googlesigninbtn"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="5dp"
-                    android:fontFamily="@font/catamaranbold"></TextView>
+                    android:fontFamily="@font/catamaranbold"
+                    android:text="No account yet? Register here"></TextView>
             </RelativeLayout>
 
 

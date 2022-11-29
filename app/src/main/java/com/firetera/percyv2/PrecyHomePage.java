@@ -19,20 +19,20 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PrecyHomePage extends AppCompatActivity {
-   CardView foodbutton, schedulebutton, eventthemebutton;
+    CardView foodbutton, schedulebutton, eventthemebutton;
     TextView username, password, clientname;
     Button signinbtn,googlesigninbtn, logoutbtn;
     CheckBox showpassword;
-
     FirebaseFirestore firestore;
     FirebaseAuth firebaseAuth;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_precy_home_page);
 
-
-
+        //XML
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         signinbtn = findViewById(R.id.signinbtn);
@@ -40,6 +40,7 @@ public class PrecyHomePage extends AppCompatActivity {
         clientname = findViewById(R.id.clientname);
         logoutbtn = findViewById(R.id.logoutbtn);
 
+        //FIREBASE
         firestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 

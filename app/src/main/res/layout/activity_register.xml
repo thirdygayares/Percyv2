@@ -174,13 +174,23 @@
                     android:text="Register"
                     android:textSize="20dp" />
 
+                <ProgressBar
+                    android:id="@+id/regprogress_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminateTint="@color/semibrown"
+                    android:layout_below="@+id/phonenumber"
+                    android:layout_marginTop="17dp"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"></ProgressBar>
+
                 <TextView
                     android:id="@+id/haveaccount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/registerbtn"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/phonenumber"
+                    android:layout_marginTop="70dp"
                     android:text="Already have account? Log in here"
                     android:textColor="@color/black" />
 
