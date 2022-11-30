@@ -16,10 +16,6 @@
         <activity
             android:name=".SplashScreen"
             android:exported="false" />
-        <activity
-            android:name=".HomeFragment"
-            android:exported="false"
-            tools:ignore="Instantiatable" />
 
         <activity
             android:name=".SignIn"
@@ -62,7 +58,9 @@
             android:exported="false" />
         <activity
             android:name=".Foodoption"
-            android:exported="false" />
+            android:exported="true"
+            />
+
     </application>
 
 </manifest>

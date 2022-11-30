@@ -59,10 +59,6 @@ public class Register extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
 
-        if (firebaseAuth.getCurrentUser()!= null){
-            startActivity(new Intent(getApplicationContext(), HomeFragment.class));
-            finish();
-        }
 
         regpassword.setTransformationMethod(new PasswordTransformationMethod());
         regconfirmpassword.setTransformationMethod(new PasswordTransformationMethod());
@@ -162,7 +158,7 @@ public class Register extends AppCompatActivity {
 
         if (firebaseAuth.getCurrentUser() != null){
             finish();
-            Intent intent = new Intent(Register.this, HomeFragment.class);
+            Intent intent = new Intent(Register.this, MainActivity2.class);
             startActivity(intent);
         }
     }
