@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgcolor"
+    tools:context=".MenuOrFood">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/menuorfood_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="76dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/menuorfood_backarrow"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="10dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+                app:iconGravity="start"
+                app:iconTint="@color/white"></Button>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/calibribold"
+                android:text="Menu / Food "
+                android:textColor="@color/black"
+                android:textSize="26dp"></TextView>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="370dp"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/menuorfood_cardview"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="10dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <TextView
+                    android:id="@+id/topsalefood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Top Sale Food"
+                    android:layout_marginTop="29dp"
+                    android:layout_marginLeft="27dp"
+                    android:fontFamily="@font/scopeoneregular"
+                    android:textColor="@color/black"
+                    android:textSize="23dp"></TextView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/chickencordon_cardview"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_below="@id/topsalefood"
+                    android:background="@color/white"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="350dp"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/chickencordonbleu"></ImageView>
+
+                        <TextView
+                            android:id="@+id/chickencordon_txtview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="90dp"
+                            android:fontFamily="@font/cabinregular"
+                            android:text="Chicken Cordon Bleu"
+                            android:textColor="@color/white"
+                            android:textSize="23dp"></TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/scopeoneregular"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:text="Main Course"
+                            android:layout_below="@+id/chickencordon_txtview"
+                            android:layout_marginLeft="30dp"></TextView>
+
+
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/chickenlollipop_cardview"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_below="@id/chickencordon_cardview"
+                    android:layout_marginTop="-28dp"
+                    android:backgroundTint="?android:attr/selectableItemBackground"
+
+                    android:background="?android:attr/selectableItemBackground">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="350dp"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/chickenlollipop"></ImageView>
+
+                        <TextView
+                            android:id="@+id/chickelollipop_txtview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="90dp"
+                            android:fontFamily="@font/cabinregular"
+                            android:text="Chicken Cordon Bleu"
+                            android:textColor="@color/white"
+                            android:textSize="23dp"></TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/scopeoneregular"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:text="Main Course"
+                            android:layout_below="@+id/chickelollipop_txtview"
+                            android:layout_marginLeft="30dp"></TextView>
+
+
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                
+
+                        
+
+
+            </RelativeLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

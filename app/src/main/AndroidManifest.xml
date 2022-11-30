@@ -14,16 +14,22 @@
         android:theme="@style/Theme.Percyv2"
         tools:targetApi="31">
         <activity
-            android:name=".DetailFragment"
+            android:name=".SplashScreen"
             android:exported="false" />
+        <activity
+            android:name=".DetailFragment"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".HomeFragment"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".ReservationFragment"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".SignIn"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,25 +38,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PrecyHomePage"
-            android:exported="false" />
-        <activity
             android:name=".SuccessfullyRegistered"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".MainActivity2"
             android:exported="false" />
         <activity
-            android:name=".SignIn"
+            android:name=".SignInOrSignUp"
             android:exported="false" />
         <activity
             android:name=".Register"
             android:exported="false" />
         <activity
-            android:name=".SignInOrSignUp"
+            android:name=".MenuOrFood"
             android:exported="false" />
         <activity
             android:name=".Login"
@@ -60,6 +63,9 @@
             android:exported="false" />
         <activity
             android:name=".ScheduleOption"
+            android:exported="false" />
+        <activity
+            android:name=".CateringInfo"
             android:exported="false" />
         <activity
             android:name=".Foodoption"

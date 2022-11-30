@@ -60,7 +60,7 @@ public class Register extends AppCompatActivity {
         firebaseFirestore = FirebaseFirestore.getInstance();
 
         if (firebaseAuth.getCurrentUser()!= null){
-            startActivity(new Intent(getApplicationContext(), PrecyHomePage.class));
+            startActivity(new Intent(getApplicationContext(), HomeFragment.class));
             finish();
         }
 
@@ -162,7 +162,7 @@ public class Register extends AppCompatActivity {
 
         if (firebaseAuth.getCurrentUser() != null){
             finish();
-            Intent intent = new Intent(Register.this, PrecyHomePage.class);
+            Intent intent = new Intent(Register.this, HomeFragment.class);
             startActivity(intent);
         }
     }

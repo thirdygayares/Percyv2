@@ -11,4 +11,5 @@
     <color name="semibrown">#BC6600</color>
     <color name="bgcolor">#F7F0F0</color>
     <color name="gray">#6A6A6A</color>
+    <color name="transparent">#000000</color>
 </resources>

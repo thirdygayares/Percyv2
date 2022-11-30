@@ -10,6 +10,6 @@
         android:icon="@drawable/yourreservationicon"></item>
 
     <item android:id="@+id/navdetails"
-        android:title="Details"
+        android:title="Menu"
         android:icon="@drawable/ic_baseline_menu_24"></item>
 </menu>

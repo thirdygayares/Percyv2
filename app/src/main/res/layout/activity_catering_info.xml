@@ -28,13 +28,19 @@
                 android:textColor="@color/black"
                 android:textSize="26dp"></TextView>
 
-            <ImageView
+
+            <Button
                 android:id="@+id/cateringinfo_backarrow"
                 android:layout_width="40dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/ic_baseline_arrow_back_24"></ImageView>
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+                app:iconGravity="start"
+                app:iconTint="@color/white"></Button>
+
 
 
         </RelativeLayout>
@@ -67,10 +73,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/precyimage"
-                android:text="Precy’s Catering is a small company of Fulgencio Company. bla bala ba;a na  nasahs asja hsja hsjahsjh asjh  asashjashajshah sgahsgahsgah sgahsg ahg sahgsa hgshagshagsh agshagshagsh asasasasasa sas "
-                android:textAlignment="inherit"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="-45dp"
+                android:text="@string/PrecyCatering_Description"
+                android:textAlignment="inherit"
                 android:textColor="@color/black"></TextView>
 
             <ImageView

@@ -28,9 +28,8 @@ public class HomeFragment extends Fragment {
 
     CardView foodbutton, schedulebutton, eventthemebutton;
     TextView username, password, clientname;
-    Button signinbtn, googlesigninbtn, logoutbtn;
+    Button signinbtn, googlesigninbtn, logoutbtn, cateringinfobtn;
     CheckBox showpassword;
-    ImageView cateringinfo_arrow;
     FirebaseFirestore firestore;
     FirebaseAuth firebaseAuth;
 
@@ -48,12 +47,21 @@ public class HomeFragment extends Fragment {
         showpassword = view.findViewById(R.id.showpw);
         clientname = view.findViewById(R.id.clientname);
         logoutbtn = view.findViewById(R.id.logoutbtn);
-        cateringinfo_arrow = view.findViewById(R.id.cateringinfoarrow);
+        cateringinfobtn = view.findViewById(R.id.cateringinfobtn);
+
 
 
         //FIREBASE
         firestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
+
+
+        cateringinfobtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), CateringInfo.class));
+            }
+        });
 
 
         firestore.collection("Users"). document(firebaseAuth.getUid())
@@ -71,62 +79,56 @@ public class HomeFragment extends Fragment {
                     }
                 });
 
-        logoutbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                firebaseAuth.signOut();
-                Intent intent = new Intent(getContext(), SignIn.class);
-                startActivity(intent);
 
-            }
-        });
 
         return view;
     }
 
-    private void cateringinfo(){
-
-        cateringinfo_arrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), CateringInfo.class));
-            }
-        });
-    }
-
-    private void eventthemephase() {
-        eventthemebutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), EventThemeOption.class);
-                startActivity(intent);
-            }
-        });
-    }
-
-    private void schedulephasemethod() {
-        schedulebutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), ScheduleOption.class);
-                startActivity(intent);
-            }
-        });
-    }
-
-
-    private void foodphasemethod() {
-        foodbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), Foodoption.class);
-                startActivity(intent);
-            }
-        });
-    }
 
     }
 
 
 
 
+
+
+
+
+
+
+
+
+//    private void cateringinfo(){
+//
+//
+//    }
+//
+//    private void eventthemephase() {
+//        eventthemebutton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getContext(), EventThemeOption.class);
+//                startActivity(intent);
+//            }
+//        });
+//    }
+//
+//    private void schedulephasemethod() {
+//        schedulebutton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getContext(), ScheduleOption.class);
+//                startActivity(intent);
+//            }
+//        });
+//    }
+//
+//
+//    private void foodphasemethod() {
+//        foodbutton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getContext(), Foodoption.class);
+//                startActivity(intent);
+//            }
+//        });

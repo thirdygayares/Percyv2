@@ -95,11 +95,7 @@ public class SignIn extends AppCompatActivity {
                                     Toast.makeText(SignIn.this, "SUCCESFULLY SIGNED IN", Toast.LENGTH_SHORT).show();
                                     signinbtn.setVisibility(View.GONE);
                                     signin_progressbar.setVisibility(View.VISIBLE);
-                                    Intent intent = new Intent(SignIn.this, PrecyHomePage.class);
-                                    startActivity(intent);
-
-
-
+                                    startActivity(new Intent(getApplicationContext(), HomeFragment.class));
 
                                 } else {
                                     Toast.makeText(SignIn.this, "SIGN IN FAILED", Toast.LENGTH_SHORT).show();
@@ -115,7 +111,7 @@ public class SignIn extends AppCompatActivity {
                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
                             public void onSuccess(AuthResult authResult) {
-                                Intent intent = new Intent(SignIn.this, PrecyHomePage.class);
+                                Intent intent = new Intent(SignIn.this, HomeFragment.class);
                                 startActivity(intent);
 
                             }

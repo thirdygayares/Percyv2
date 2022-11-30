@@ -13,66 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/logoutbtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="log out"
-            android:layout_alignParentRight="true"
-            ></Button>
-
-        <!--        <androidx.cardview.widget.CardView-->
-        <!--            android:layout_width="373dp"-->
-        <!--            android:layout_height="67dp"-->
-        <!--            android:layout_centerHorizontal="true"-->
-        <!--            app:cardCornerRadius="10dp"-->
-        <!--            app:cardElevation="10dp"-->
-        <!--            android:layout_marginTop="650dp">-->
-
-        <!--            <RelativeLayout-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="match_parent">-->
-
-        <!--                <ImageView-->
-        <!--                    android:id="@+id/navhome"-->
-        <!--                    android:layout_width="60dp"-->
-        <!--                    android:layout_height="45dp"-->
-        <!--                    android:layout_alignRight="@+id/navdetails"-->
-        <!--                    android:layout_marginTop="15dp"-->
-        <!--                    android:layout_marginRight="82dp"-->
-        <!--                    android:src="@drawable/homeicon"></ImageView>-->
-
-        <!--                <ImageView-->
-        <!--                    android:id="@+id/navfood"-->
-        <!--                    android:layout_width="100dp"-->
-        <!--                    android:layout_height="100dp"-->
-        <!--                    android:layout_alignLeft="@+id/navsched"-->
-        <!--                    android:layout_marginLeft="50dp"-->
-
-        <!--                    android:layout_marginTop="10dp"-->
-        <!--                    android:src="@drawable/navfoodicon"></ImageView>-->
-
-        <!--                <ImageView-->
-        <!--                    android:id="@+id/navsched"-->
-        <!--                    android:layout_width="50dp"-->
-        <!--                    android:layout_height="85dp"-->
-        <!--                    android:layout_alignParentLeft="true"-->
-        <!--                    android:layout_marginLeft="35dp"-->
-        <!--                    android:layout_marginTop="6dp"-->
-        <!--                    android:src="@drawable/navschedicon"></ImageView>-->
-
-        <!--                <ImageView-->
-        <!--                    android:id="@+id/navdetails"-->
-        <!--                    android:layout_width="50dp"-->
-        <!--                    android:layout_height="80dp"-->
-        <!--                    android:layout_alignParentRight="true"-->
-        <!--                    android:layout_marginTop="6dp"-->
-        <!--                    android:layout_marginRight="35dp"-->
-        <!--                    android:src="@drawable/navdetailsicon"></ImageView>-->
-
-
-        <!--            </RelativeLayout>-->
-        <!--        </androidx.cardview.widget.CardView>-->
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -92,8 +32,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
+                        android:layout_centerInParent="true"
                         android:fontFamily="@font/calibribold"
                         android:text="Home "
                         android:textColor="@color/black"
@@ -184,14 +123,17 @@
                         android:textSize="12dp"></TextView>
 
 
-                    <ImageView
-                        android:id="@+id/cateringinfoarrow"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                    <Button
+                        android:id="@+id/cateringinfobtn"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
                         android:layout_below="@id/cateringinfoimage"
-                        android:layout_marginLeft="300dp"
+                        android:layout_alignParentRight="true"
                         android:layout_marginTop="12dp"
-                        android:src="@drawable/arrowicon"></ImageView>
+                        android:layout_marginRight="5dp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:drawableLeft="@drawable/ic_baseline_arrow_circle_right_24"
+                        android:drawableTint="@color/gray"></Button>
 
 
                 </RelativeLayout>
@@ -240,12 +182,16 @@
                         android:layout_marginTop="11dp"
                         android:src="@drawable/scheduleofeventicon"></ImageView>
 
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="300dp"
-                        android:layout_marginTop="12dp"
-                        android:src="@drawable/arrowicon"></ImageView>
+                    <Button
+                        android:id="@+id/schedofevent_btn"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="5dp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:drawableLeft="@drawable/ic_baseline_arrow_circle_right_24"
+                        android:drawableTint="@color/gray"></Button>
 
 
                 </RelativeLayout>
@@ -293,12 +239,16 @@
                         android:layout_marginTop="11dp"
                         android:src="@drawable/menuorfoodicon"></ImageView>
 
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="300dp"
-                        android:layout_marginTop="12dp"
-                        android:src="@drawable/arrowicon"></ImageView>
+                    <Button
+                        android:id="@+id/menuorfood_btn"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="5dp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:drawableLeft="@drawable/ic_baseline_arrow_circle_right_24"
+                        android:drawableTint="@color/gray"></Button>
 
 
                 </RelativeLayout>
@@ -325,7 +275,7 @@
                         android:layout_marginLeft="73dp"
                         android:layout_marginTop="9dp"
                         android:fontFamily="@font/titilliumwebsemibold"
-                        android:text="Schedule a Reservation"
+                        android:text="Schedule a reservation"
                         android:textColor="@color/black"
                         android:textSize="22dp"></TextView>
 
@@ -345,12 +295,16 @@
                         android:layout_marginTop="11dp"
                         android:src="@drawable/schedreservationicon"></ImageView>
 
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="300dp"
-                        android:layout_marginTop="12dp"
-                        android:src="@drawable/arrowicon"></ImageView>
+                    <Button
+                        android:id="@+id/schedurreservation_btn"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="5dp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:drawableLeft="@drawable/ic_baseline_arrow_circle_right_24"
+                        android:drawableTint="@color/gray"></Button>
 
 
                 </RelativeLayout>
@@ -363,3 +317,59 @@
 
 
 </RelativeLayout>
+
+
+
+
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:layout_width="373dp"-->
+    <!--            android:layout_height="67dp"-->
+    <!--            android:layout_centerHorizontal="true"-->
+    <!--            app:cardCornerRadius="10dp"-->
+    <!--            app:cardElevation="10dp"-->
+    <!--            android:layout_marginTop="650dp">-->
+
+    <!--            <RelativeLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="match_parent">-->
+
+    <!--                <ImageView-->
+    <!--                    android:id="@+id/navhome"-->
+    <!--                    android:layout_width="60dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_alignRight="@+id/navdetails"-->
+    <!--                    android:layout_marginTop="15dp"-->
+    <!--                    android:layout_marginRight="82dp"-->
+    <!--                    android:src="@drawable/homeicon"></ImageView>-->
+
+    <!--                <ImageView-->
+    <!--                    android:id="@+id/navfood"-->
+    <!--                    android:layout_width="100dp"-->
+    <!--                    android:layout_height="100dp"-->
+    <!--                    android:layout_alignLeft="@+id/navsched"-->
+    <!--                    android:layout_marginLeft="50dp"-->
+
+    <!--                    android:layout_marginTop="10dp"-->
+    <!--                    android:src="@drawable/navfoodicon"></ImageView>-->
+
+    <!--                <ImageView-->
+    <!--                    android:id="@+id/navsched"-->
+    <!--                    android:layout_width="50dp"-->
+    <!--                    android:layout_height="85dp"-->
+    <!--                    android:layout_alignParentLeft="true"-->
+    <!--                    android:layout_marginLeft="35dp"-->
+    <!--                    android:layout_marginTop="6dp"-->
+    <!--                    android:src="@drawable/navschedicon"></ImageView>-->
+
+    <!--                <ImageView-->
+    <!--                    android:id="@+id/navdetails"-->
+    <!--                    android:layout_width="50dp"-->
+    <!--                    android:layout_height="80dp"-->
+    <!--                    android:layout_alignParentRight="true"-->
+    <!--                    android:layout_marginTop="6dp"-->
+    <!--                    android:layout_marginRight="35dp"-->
+    <!--                    android:src="@drawable/navdetailsicon"></ImageView>-->
+
+
+    <!--            </RelativeLayout>-->
+    <!--        </androidx.cardview.widget.CardView>-->

@@ -11,6 +11,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class SignInOrSignUp extends AppCompatActivity {
 
+    Button signupbtn;
+    Button signinbtn;
     FirebaseAuth firebaseAuth;
 
     @Override
@@ -18,16 +20,15 @@ public class SignInOrSignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in_or_sign_up);
 
-        Button signupbtn = (Button)findViewById(R.id.SIOSUsignupbtn);
-        Button signinbtn = (Button)findViewById(R.id.SIOSUsigninbtn);
+        signupbtn = findViewById(R.id.SIOSUsignupbtn);
+        signinbtn = findViewById(R.id.SIOSUsigninbtn);
         firebaseAuth = FirebaseAuth.getInstance();
 
 
         signinbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignInOrSignUp.this, SignIn.class);
-                startActivity(intent);
+                startActivity(new Intent(getApplicationContext(), SignIn.class));
 
             }
         });
@@ -35,8 +36,7 @@ public class SignInOrSignUp extends AppCompatActivity {
         signupbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignInOrSignUp.this, Register.class);
-                startActivity(intent);
+                startActivity(new Intent(getApplicationContext(), Register.class));
             }
         });
 
