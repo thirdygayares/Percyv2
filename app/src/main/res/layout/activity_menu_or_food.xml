@@ -139,7 +139,7 @@
                             android:layout_marginLeft="30dp"
                             android:layout_marginTop="90dp"
                             android:fontFamily="@font/cabinregular"
-                            android:text="Chicken Cordon Bleu"
+                            android:text="Chicken Lollipop"
                             android:textColor="@color/white"
                             android:textSize="23dp"></TextView>
 

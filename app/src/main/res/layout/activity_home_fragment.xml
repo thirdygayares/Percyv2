@@ -132,6 +132,7 @@
                         android:layout_marginTop="12dp"
                         android:layout_marginRight="5dp"
                         android:background="?android:attr/selectableItemBackground"
+                        android:contentDescription="@string/PrecyCatering_Description"
                         android:drawableLeft="@drawable/ic_baseline_arrow_circle_right_24"
                         android:drawableTint="@color/gray"></Button>
 
@@ -190,6 +191,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginRight="5dp"
                         android:background="?android:attr/selectableItemBackground"
+                        android:contentDescription="@string/PrecyCatering_Description"
                         android:drawableLeft="@drawable/ic_baseline_arrow_circle_right_24"
                         android:drawableTint="@color/gray"></Button>
 
@@ -247,6 +249,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginRight="5dp"
                         android:background="?android:attr/selectableItemBackground"
+                        android:contentDescription="@string/PrecyCatering_Description"
                         android:drawableLeft="@drawable/ic_baseline_arrow_circle_right_24"
                         android:drawableTint="@color/gray"></Button>
 
@@ -303,6 +306,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginRight="5dp"
                         android:background="?android:attr/selectableItemBackground"
+                        android:contentDescription="@string/PrecyCatering_Description"
                         android:drawableLeft="@drawable/ic_baseline_arrow_circle_right_24"
                         android:drawableTint="@color/gray"></Button>
 

@@ -17,17 +17,10 @@
             android:name=".SplashScreen"
             android:exported="false" />
         <activity
-            android:name=".DetailFragment"
-            android:exported="false"
-            tools:ignore="Instantiatable" />
-        <activity
             android:name=".HomeFragment"
             android:exported="false"
             tools:ignore="Instantiatable" />
-        <activity
-            android:name=".ReservationFragment"
-            android:exported="false"
-            tools:ignore="Instantiatable" />
+
         <activity
             android:name=".SignIn"
             android:exported="true">
