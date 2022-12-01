@@ -118,7 +118,6 @@
                     android:layout_height="180dp"
                     android:layout_below="@id/chickencordon_cardview"
                     android:layout_marginTop="-28dp"
-                    android:backgroundTint="?android:attr/selectableItemBackground"
 
                     android:background="?android:attr/selectableItemBackground">
 

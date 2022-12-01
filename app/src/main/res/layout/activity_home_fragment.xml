@@ -125,15 +125,16 @@
 
                     <Button
                         android:id="@+id/cateringinfobtn"
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="360dp"
+                        android:layout_height="120dp"
                         android:layout_below="@id/cateringinfoimage"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginRight="5dp"
+                        android:layout_centerHorizontal="true"
+
+
+
                         android:background="?android:attr/selectableItemBackground"
                         android:contentDescription="@string/PrecyCatering_Description"
-                        android:drawableLeft="@drawable/ic_baseline_arrow_circle_right_24"
+                        android:drawableRight="@drawable/ic_baseline_arrow_circle_right_24"
                         android:drawableTint="@color/gray"></Button>
 
 
@@ -185,14 +186,11 @@
 
                     <Button
                         android:id="@+id/schedofevent_btn"
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="5dp"
+                        android:layout_width="400dp"
+                        android:layout_height="70dp"
+                        android:layout_centerHorizontal="true"
                         android:background="?android:attr/selectableItemBackground"
-                        android:contentDescription="@string/PrecyCatering_Description"
-                        android:drawableLeft="@drawable/ic_baseline_arrow_circle_right_24"
+                        android:drawableRight="@drawable/ic_baseline_arrow_circle_right_24"
                         android:drawableTint="@color/gray"></Button>
 
 
@@ -243,14 +241,11 @@
 
                     <Button
                         android:id="@+id/menuorfood_btn"
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="5dp"
+                        android:layout_width="400dp"
+                        android:layout_height="70dp"
+                        android:layout_centerHorizontal="true"
                         android:background="?android:attr/selectableItemBackground"
-                        android:contentDescription="@string/PrecyCatering_Description"
-                        android:drawableLeft="@drawable/ic_baseline_arrow_circle_right_24"
+                        android:drawableRight="@drawable/ic_baseline_arrow_circle_right_24"
                         android:drawableTint="@color/gray"></Button>
 
 
@@ -300,14 +295,11 @@
 
                     <Button
                         android:id="@+id/schedurreservation_btn"
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="5dp"
+                        android:layout_width="400dp"
+                        android:layout_height="70dp"
+                        android:layout_centerHorizontal="true"
                         android:background="?android:attr/selectableItemBackground"
-                        android:contentDescription="@string/PrecyCatering_Description"
-                        android:drawableLeft="@drawable/ic_baseline_arrow_circle_right_24"
+                        android:drawableRight="@drawable/ic_baseline_arrow_circle_right_24"
                         android:drawableTint="@color/gray"></Button>
 
 

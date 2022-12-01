@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bgcolor"
     tools:context=".DetailFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -10,19 +12,361 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/logoutbtn"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/menu_cardview"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:background="@color/white"
+            app:cardElevation="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/calibribold"
+                    android:text="Menu"
+                    android:textColor="@color/black"
+                    android:textSize="26dp"></TextView>
+
+            </RelativeLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <ImageView
+            android:id="@+id/profileicon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/menu_cardview"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/profileicon"></ImageView>
+
+        <TextView
+            android:id="@+id/menu_fullname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="log out"
-            android:layout_centerVertical="true"
+            android:layout_below="@+id/profileicon"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Full Name"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"></TextView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/reservationNfood_cardview"
+            android:layout_width="370dp"
+            android:layout_height="160dp"
+            android:layout_below="@+id/menu_fullname"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/viewreservation_cardview"
+                    android:layout_width="352dp"
+                    android:layout_height="62dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="18dp"
+                    app:cardCornerRadius="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/robotomedium"
+                            android:text="View Reservation"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"></TextView>
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="70dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dp"
+                            android:src="@drawable/scheduleofeventicon"></ImageView>
+
+                        <Button
+                            android:id="@+id/viewreservation_btn"
+                            android:layout_width="352dp"
+                            android:layout_height="62dp"
+                            android:background="?android:attr/selectableItemBackground"></Button>
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="15dp"
+                            android:src="@drawable/ic_proceed_arrow"></ImageView>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="352dp"
+                    android:layout_height="62dp"
+                    android:layout_below="@+id/viewreservation_cardview"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    app:cardCornerRadius="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/robotomedium"
+                            android:text="View Food"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"></TextView>
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="70dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dp"
+                            android:src="@drawable/menuorfoodicon"></ImageView>
+
+                        <Button
+                            android:id="@+id/foodmenu_btn"
+                            android:layout_width="352dp"
+                            android:layout_height="62dp"
+                            android:background="?android:attr/selectableItemBackground"></Button>
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="15dp"
+                            android:src="@drawable/ic_proceed_arrow"></ImageView>
 
 
-        ></Button>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/contactus_cardview"
+            android:layout_width="370dp"
+            android:layout_height="185dp"
+            android:layout_below="@+id/reservationNfood_cardview"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/contactus_txtview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/calibribold"
+                    android:text="Contact Us "
+                    android:textSize="25dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="20dp"></TextView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/contactnumber_cardview"
+                    android:layout_width="352dp"
+                    android:layout_height="62dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/contactus_txtview"
+                    android:layout_marginTop="5dp"
+                    app:cardCornerRadius="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/robotomedium"
+                            android:text="Contact Number"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"></TextView>
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="70dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dp"
+                            android:src="@drawable/contactnumbericon"></ImageView>
+
+                        <Button
+                            android:id="@+id/contactnumber_btn"
+                            android:layout_width="352dp"
+                            android:layout_height="62dp"
+                            android:background="?android:attr/selectableItemBackground"></Button>
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="15dp"
+                            android:src="@drawable/ic_proceed_arrow"></ImageView>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/location_cardview"
+                    android:layout_width="352dp"
+                    android:layout_height="62dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/contactnumber_cardview"
+                    android:layout_marginTop="5dp"
+                    app:cardCornerRadius="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/robotomedium"
+                            android:text="Our Location"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"></TextView>
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="70dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dp"
+                            android:src="@drawable/locationicon"></ImageView>
+
+                        <Button
+                            android:id="@+id/location_btn"
+                            android:layout_width="352dp"
+                            android:layout_height="62dp"
+                            android:background="?android:attr/selectableItemBackground"></Button>
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="15dp"
+                            android:src="@drawable/ic_proceed_arrow"></ImageView>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/logout_cardview"
+            android:layout_width="370dp"
+            android:layout_height="90dp"
+            android:layout_below="@+id/contactus_cardview"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/signout_cardview"
+                    android:layout_width="352dp"
+                    android:layout_height="62dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/robotomedium"
+                            android:text="Log Out"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"></TextView>
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="70dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dp"
+                            android:src="@drawable/logouticon"></ImageView>
+
+                        <Button
+                            android:id="@+id/logoutbtn"
+                            android:layout_width="352dp"
+                            android:layout_height="62dp"
+                            android:background="?android:attr/selectableItemBackground"></Button>
+
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
 
     </RelativeLayout>
 
 
 
 </FrameLayout>
+
+
