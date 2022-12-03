@@ -73,17 +73,20 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/precyimage"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="-45dp"
+                android:layout_marginTop="0dp"
                 android:text="@string/PrecyCatering_Description"
                 android:textAlignment="inherit"
                 android:textColor="@color/black"></TextView>
 
-            <ImageView
+            <com.denzcoskun.imageslider.ImageSlider
                 android:id="@+id/precyimage"
                 android:layout_width="340dp"
-                android:layout_height="wrap_content"
+                android:layout_height="200dp"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/cateringinfoimage1"></ImageView>
+                android:layout_marginTop="60dp"
+                app:iss_auto_cycle="true"
+                app:iss_corner_radius="10"
+                app:iss_period="1000"></com.denzcoskun.imageslider.ImageSlider>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/schedulecardview"

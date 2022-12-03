@@ -27,8 +27,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class HomeFragment extends Fragment {
 
     CardView foodbutton, schedulebutton, eventthemebutton;
-    TextView username, password, clientname;
-    Button signinbtn, googlesigninbtn, logoutbtn, cateringinfobtn;
+    TextView username, password, clientName;
+    Button signinbtn, googlesigninbtn, logoutbtn, cateringinfobtn, menuorfood_btn;
     CheckBox showpassword;
     FirebaseFirestore firestore;
     FirebaseAuth firebaseAuth;
@@ -45,9 +45,10 @@ public class HomeFragment extends Fragment {
         password = view.findViewById(R.id.password);
         signinbtn = view.findViewById(R.id.signinbtn);
         showpassword = view.findViewById(R.id.showpw);
-        clientname = view.findViewById(R.id.clientname);
+        clientName = view.findViewById(R.id.clientName);
         logoutbtn = view.findViewById(R.id.logoutbtn);
         cateringinfobtn = view.findViewById(R.id.cateringinfobtn);
+        menuorfood_btn = view.findViewById(R.id.menuorfood_btn);
 
 
 
@@ -55,11 +56,17 @@ public class HomeFragment extends Fragment {
         firestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 
-
         cateringinfobtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(), CateringInfo.class));
+            }
+        });
+
+        menuorfood_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), MenuOrFood.class));
             }
         });
 
@@ -71,7 +78,7 @@ public class HomeFragment extends Fragment {
                         if (task.isSuccessful()){
                             DocumentSnapshot documentSnapshot = task.getResult();
                             if(documentSnapshot.exists()){
-                                clientname.setText( documentSnapshot.getString("Fullname"));
+                                clientName.setText( documentSnapshot.getString("Fullname"));
                             } else{
                                 Log.d("TAG", "no such document");
                             }

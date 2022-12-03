@@ -26,7 +26,7 @@ public class DetailFragment extends Fragment {
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firestore;
     Button logoutbtn, food_btn, contactnum_btn, location_btn;
-    TextView menu_fullname;
+    TextView menu_fullname, client_email;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,6 +41,7 @@ public class DetailFragment extends Fragment {
         contactnum_btn =view.findViewById(R.id.contactnumber_btn);
         location_btn = view.findViewById(R.id.location_btn);
         menu_fullname = view.findViewById(R.id.menu_fullname);
+        client_email = view.findViewById(R.id.client_email);
 
 
 
@@ -52,6 +53,21 @@ public class DetailFragment extends Fragment {
                             DocumentSnapshot documentSnapshot = task.getResult();
                             if(documentSnapshot.exists()){
                                 menu_fullname.setText( documentSnapshot.getString("Fullname"));
+                            } else{
+                                Log.d("TAG", "no such document");
+                            }
+                        }
+                    }
+                });
+
+        firestore.collection("Users"). document(firebaseAuth.getUid())
+                .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()){
+                            DocumentSnapshot documentSnapshot = task.getResult();
+                            if(documentSnapshot.exists()){
+                                client_email.setText( documentSnapshot.getString("Email"));
                             } else{
                                 Log.d("TAG", "no such document");
                             }

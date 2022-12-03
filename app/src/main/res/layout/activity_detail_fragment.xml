@@ -60,12 +60,23 @@
             android:textSize="25dp"
             android:textStyle="bold"></TextView>
 
+        <TextView
+            android:id="@+id/client_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/menu_fullname"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/scopeoneregular"
+            android:text="Client's email"
+            android:textColor="@color/gray"
+            android:textSize="15dp"></TextView>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/reservationNfood_cardview"
             android:layout_width="370dp"
             android:layout_height="160dp"
-            android:layout_below="@+id/menu_fullname"
-            android:layout_marginTop="20dp"
+            android:layout_below="@+id/client_email"
+            android:layout_marginTop="10dp"
             android:layout_centerHorizontal="true"
             app:cardCornerRadius="20dp"
             app:cardElevation="10dp">

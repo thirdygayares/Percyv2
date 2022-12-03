@@ -54,7 +54,7 @@
                 android:textSize="30dp"></TextView>
 
             <TextView
-                android:id="@+id/clientname"
+                android:id="@+id/clientName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/Homewelcome"
@@ -68,7 +68,7 @@
                 android:id="@+id/cardviewcatering"
                 android:layout_width="352dp"
                 android:layout_height="288dp"
-                android:layout_below="@id/clientname"
+                android:layout_below="@id/clientName"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="31dp"
                 android:layout_marginTop="6dp"
