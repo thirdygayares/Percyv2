@@ -7,6 +7,20 @@
     android:background="@color/bgcolor"
     tools:context=".DetailFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
         android:layout_width="match_parent"
@@ -28,10 +42,9 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:fontFamily="@font/calibribold"
-                    android:text="Menu"
+                    android:text="@string/menu"
                     android:textColor="@color/black"
-                    android:textSize="26dp"></TextView>
-
+                    android:textSize="26sp"/>
             </RelativeLayout>
 
 
@@ -43,10 +56,11 @@
             android:id="@+id/profileicon"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:contentDescription="@string/string_autofill"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/menu_cardview"
             android:layout_marginTop="10dp"
-            android:src="@drawable/profileicon"></ImageView>
+            android:src="@drawable/profileicon"/>
 
         <TextView
             android:id="@+id/menu_fullname"
@@ -58,7 +72,7 @@
             android:text="Full Name"
             android:textColor="@color/black"
             android:textSize="25dp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/client_email"
@@ -376,7 +390,9 @@
 
     </RelativeLayout>
 
+        </LinearLayout>
 
+    </ScrollView>
 
 </FrameLayout>
 
