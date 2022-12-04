@@ -17,7 +17,8 @@
 
     <string name="food_name">Chicken Cordon Bleu</string>
     <string name="course_name">Main Course</string>
-
+    <string name="menu">Menu</string>
+    <string name="string_autofill">string/autofill</string>
 
 
     <string-array name="food_name_list">
