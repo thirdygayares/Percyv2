@@ -40,7 +40,22 @@ public class SignInOrSignUp extends AppCompatActivity {
             }
         });
 
+
+
     }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+
+        if (firebaseAuth.getCurrentUser() !=null){
+            finish();
+            startActivity(new Intent(SignInOrSignUp.this , MainActivity2.class));
+        }
+
+
+    }
+
 
 
 

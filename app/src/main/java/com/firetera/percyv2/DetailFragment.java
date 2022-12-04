@@ -1,6 +1,7 @@
 package com.firetera.percyv2;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -101,7 +102,7 @@ public class DetailFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(getContext(), OurLocation.class));
+                goLink("https://goo.gl/maps/Kp33W8MQFaHNC2Pw8");
             }
         });
 
@@ -124,6 +125,14 @@ public class DetailFragment extends Fragment {
 
 
     return view;
+    }
+
+
+    private void goLink(String s){
+        Uri uri = Uri.parse(s);
+        startActivity(new Intent(Intent.ACTION_VIEW, uri));
+
+
     }
 
 }

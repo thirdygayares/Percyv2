@@ -40,129 +40,182 @@
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="370dp"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/menuorfood_cardview"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        app:cardCornerRadius="10dp">
+        android:layout_marginTop="80dp">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            android:layout_width="352dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:background="@color/white">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                >
+                android:background="@color/white">
 
                 <TextView
                     android:id="@+id/topsalefood"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Top Sale Food"
-                    android:layout_marginTop="29dp"
                     android:layout_marginLeft="27dp"
+                    android:layout_marginTop="25dp"
                     android:fontFamily="@font/scopeoneregular"
+                    android:text="Top Sale Food"
                     android:textColor="@color/black"
                     android:textSize="23dp"></TextView>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/chickencordon_cardview"
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:layout_below="@id/topsalefood"
-                    android:background="@color/white"
-                    >
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="60dp"
+                    android:background="@color/white">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:layout_width="350dp"
-                            android:layout_height="match_parent"
-                            android:layout_centerHorizontal="true"
-                            android:src="@drawable/chickencordonbleu"></ImageView>
-
-                        <TextView
-                            android:id="@+id/chickencordon_txtview"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginTop="90dp"
-                            android:fontFamily="@font/cabinregular"
-                            android:text="Chicken Cordon Bleu"
-                            android:textColor="@color/white"
-                            android:textSize="23dp"></TextView>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/scopeoneregular"
-                            android:textColor="@color/white"
-                            android:textSize="15dp"
-                            android:text="Main Course"
-                            android:layout_below="@+id/chickencordon_txtview"
-                            android:layout_marginLeft="30dp"></TextView>
-
-
-
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/chickenlollipop_cardview"
-                    android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:layout_below="@id/chickencordon_cardview"
-                    android:layout_marginTop="-28dp"
-
-                    android:background="?android:attr/selectableItemBackground">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:layout_width="350dp"
-                            android:layout_height="match_parent"
-                            android:layout_centerHorizontal="true"
-                            android:src="@drawable/chickenlollipop"></ImageView>
-
-                        <TextView
-                            android:id="@+id/chickelollipop_txtview"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginTop="90dp"
-                            android:fontFamily="@font/cabinregular"
-                            android:text="Chicken Lollipop"
-                            android:textColor="@color/white"
-                            android:textSize="23dp"></TextView>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/scopeoneregular"
-                            android:textColor="@color/white"
-                            android:textSize="15dp"
-                            android:text="Main Course"
-                            android:layout_below="@+id/chickelollipop_txtview"
-                            android:layout_marginLeft="30dp"></TextView>
-
-
-
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-                
-
-                        
-
-
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/myRecyclerView"
+                        android:layout_width="409dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:backgroundTint="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </RelativeLayout>
-        </ScrollView>
-    </androidx.cardview.widget.CardView>
+
+
+
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+
+
+
 
 </RelativeLayout>
+
+
+
+
+
+<!--<androidx.cardview.widget.CardView-->
+<!--android:layout_width="370dp"-->
+<!--android:layout_height="match_parent"-->
+<!--android:layout_below="@+id/menuorfood_cardview"-->
+<!--android:layout_marginTop="20dp"-->
+<!--android:layout_centerHorizontal="true"-->
+<!--app:cardCornerRadius="10dp">-->
+
+<!--<ScrollView-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent">-->
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        >-->
+
+
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/chickencordon_cardview"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="180dp"-->
+<!--            android:layout_below="@id/topsalefood"-->
+<!--            android:background="@color/white"-->
+<!--            >-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent">-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="350dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:src="@drawable/chickencordonbleu"></ImageView>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/chickencordon_txtview"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="30dp"-->
+<!--                    android:layout_marginTop="90dp"-->
+<!--                    android:fontFamily="@font/cabinregular"-->
+<!--                    android:text="Chicken Cordon Bleu"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="23dp"></TextView>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/chickencordon_txtview"-->
+<!--                    android:layout_marginLeft="30dp"-->
+<!--                    android:fontFamily="@font/scopeoneregular"-->
+<!--                    android:text="Main Course"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="15dp"></TextView>-->
+
+
+
+<!--            </RelativeLayout>-->
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/chickenlollipop_cardview"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="180dp"-->
+<!--            android:layout_below="@id/chickencordon_cardview"-->
+<!--            android:layout_marginTop="-28dp"-->
+
+<!--            android:background="?android:attr/selectableItemBackground">-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent">-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="350dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:src="@drawable/chickenlollipop"></ImageView>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/chickelollipop_txtview"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="30dp"-->
+<!--                    android:layout_marginTop="90dp"-->
+<!--                    android:fontFamily="@font/cabinregular"-->
+<!--                    android:text="Chicken Lollipop"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="23dp"></TextView>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/scopeoneregular"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="15dp"-->
+<!--                    android:text="Main Course"-->
+<!--                    android:layout_below="@+id/chickelollipop_txtview"-->
+<!--                    android:layout_marginLeft="30dp"></TextView>-->
+
+
+
+<!--            </RelativeLayout>-->
+<!--        </androidx.cardview.widget.CardView>-->
+
+
+
+
+
+<!--    </RelativeLayout>-->
+<!--</ScrollView>-->
+<!--</androidx.cardview.widget.CardView>-->

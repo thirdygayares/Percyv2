@@ -14,4 +14,34 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="PrecyCatering_Description">Precy’s Catering is a small company of Fulgencio Company. bla bala ba;a na nasahs asja hsja hsjahsjh asjh asashjashajshah sgahsgahsgah sgahsg ahg sahgsa hgshagshagsh agshagshagsh asasasasasa sas</string>
+
+    <string name="food_name">Chicken Cordon Bleu</string>
+    <string name="course_name">Main Course</string>
+
+
+
+    <string-array name="food_name_list">
+        <item>Chicken Cordon Bleu</item>
+        <item>Chicken Lollipop</item>
+        <item>Fish Fillet</item>
+        <item>Kaldereta</item>
+        <item>Lechon</item>
+        <item>Buttered Vegetables</item>
+        <item>Leche Flan</item>
+        <item>Buko Salad</item>
+        <item>Fruit Salad</item>
+    </string-array>
+
+    <string-array name="course_name_list">
+        <item>Main Course</item>
+        <item>Main Course</item>
+        <item>Main Course</item>
+        <item>Main Course</item>
+        <item>Main Course</item>
+        <item>Veggies</item>
+        <item>Dessert</item>
+        <item>Dessert</item>
+        <item>Dessert</item>
+    </string-array>
+
 </resources>

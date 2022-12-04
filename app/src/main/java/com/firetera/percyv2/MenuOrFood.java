@@ -1,14 +1,26 @@
 package com.firetera.percyv2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.firetera.percyv2.Adapter.MenuOrFoodAdapter;
+import com.firetera.percyv2.Model.MenuOrFoodModel;
+
+import java.util.ArrayList;
+
 public class MenuOrFood extends AppCompatActivity {
 
     Button menuorfood_backarrow;
+    ArrayList<MenuOrFoodModel> menuOrFoodModels = new ArrayList<>();
+
+    int[] foodImages = {R.drawable.chickencordonbleu, R.drawable.chickenlollipop, R.drawable.fishfillet, R.drawable.kaldereta,
+            R.drawable.lechon, R.drawable.butteredveg, R.drawable.lecheflan, R.drawable.bukosalad, R.drawable.fruitsalad};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,5 +35,30 @@ public class MenuOrFood extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+        RecyclerView recyclerView = findViewById(R.id.myRecyclerView);
+
+        setUpMenuOrFoodModels();
+
+        MenuOrFoodAdapter menuOrFoodAdapter = new MenuOrFoodAdapter(this, menuOrFoodModels);
+        recyclerView.setAdapter(menuOrFoodAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    private void setUpMenuOrFoodModels() {
+
+        String[] foodNameList = getResources().getStringArray(R.array.food_name_list);
+        String[] courseNameList = getResources().getStringArray(R.array.course_name_list);
+
+
+        for (int i = 0; i < foodNameList.length; i++) {
+
+
+            menuOrFoodModels.add(new MenuOrFoodModel(foodNameList[i],
+                    courseNameList[i],
+                    foodImages[i]));
+
+        }
+
     }
 }

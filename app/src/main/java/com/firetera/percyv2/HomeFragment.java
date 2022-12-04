@@ -28,7 +28,7 @@ public class HomeFragment extends Fragment {
 
     CardView foodbutton, schedulebutton, eventthemebutton;
     TextView username, password, clientName;
-    Button signinbtn, googlesigninbtn, logoutbtn, cateringinfobtn, menuorfood_btn;
+    Button signinbtn, googlesigninbtn, logoutbtn, cateringinfo_btn, menuorfood_btn;
     CheckBox showpassword;
     FirebaseFirestore firestore;
     FirebaseAuth firebaseAuth;
@@ -47,7 +47,7 @@ public class HomeFragment extends Fragment {
         showpassword = view.findViewById(R.id.showpw);
         clientName = view.findViewById(R.id.clientName);
         logoutbtn = view.findViewById(R.id.logoutbtn);
-        cateringinfobtn = view.findViewById(R.id.cateringinfobtn);
+        cateringinfo_btn = view.findViewById(R.id.cateringinfobtn);
         menuorfood_btn = view.findViewById(R.id.menuorfood_btn);
 
 
@@ -56,7 +56,7 @@ public class HomeFragment extends Fragment {
         firestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 
-        cateringinfobtn.setOnClickListener(new View.OnClickListener() {
+        cateringinfo_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(), CateringInfo.class));
