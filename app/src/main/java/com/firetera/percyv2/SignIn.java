@@ -72,54 +72,56 @@ public class SignIn extends AppCompatActivity {
                 signinbtn.setVisibility(View.GONE);
                 signin_progressbar.setVisibility(View.VISIBLE);
 
-                final String youremail = email.getText().toString();
-                final String yourpassword = password.getText().toString();
+             if (email.getText().toString().length()==0){
+                 email.setError("Enter email");
+                 signinbtn.setVisibility(View.VISIBLE);
+                 signin_progressbar.setVisibility(View.GONE);
+             }
+             else if (password.getText().toString().length()==0){
+                 password.setError("Enter password");
+                 signinbtn.setVisibility(View.VISIBLE);
+                 signin_progressbar.setVisibility(View.GONE);
+             } else {
 
+                 firebaseAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
+                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                             @Override
+                             public void onComplete(@NonNull Task<AuthResult> task) {
+                                 if (task.isSuccessful()) {
+                                     Toast.makeText(SignIn.this, "SUCCESFULLY SIGNED IN", Toast.LENGTH_SHORT).show();
+                                     signinbtn.setVisibility(View.GONE);
+                                     signin_progressbar.setVisibility(View.VISIBLE);
+                                     startActivity(new Intent(getApplicationContext(), MainActivity2.class));
 
-                if (youremail.isEmpty() || yourpassword.isEmpty()){
-
-                    Toast.makeText(SignIn.this, "Enter your email and password", Toast.LENGTH_SHORT);
-
-                }
-
-
-
-
-
-                firebaseAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(SignIn.this, "SUCCESFULLY SIGNED IN", Toast.LENGTH_SHORT).show();
-                                    signinbtn.setVisibility(View.GONE);
-                                    signin_progressbar.setVisibility(View.VISIBLE);
-                                    startActivity(new Intent(getApplicationContext(), MainActivity2.class));
-
-                                } else {
-                                    Toast.makeText(SignIn.this, "SIGN IN FAILED", Toast.LENGTH_SHORT).show();
-                                    signinbtn.setVisibility(View.VISIBLE);
-                                    signin_progressbar.setVisibility(View.GONE);
-                                }
-                            }
-                        });
+                                 } else {
+                                     Toast.makeText(SignIn.this, "SIGN IN FAILED", Toast.LENGTH_SHORT).show();
+                                     signinbtn.setVisibility(View.VISIBLE);
+                                     signin_progressbar.setVisibility(View.GONE);
+                                 }
+                             }
+                         });
 
 
 
-                firebaseAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
-                        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                            @Override
-                            public void onSuccess(AuthResult authResult) {
-                                Intent intent = new Intent(SignIn.this, MainActivity2.class);
-                                startActivity(intent);
+                 firebaseAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
+                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                             @Override
+                             public void onSuccess(AuthResult authResult) {
+                                 Intent intent = new Intent(SignIn.this, MainActivity2.class);
+                                 startActivity(intent);
 
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.d("TAG", e.toString());
-                            }
-                        });
+                             }
+                         }).addOnFailureListener(new OnFailureListener() {
+                             @Override
+                             public void onFailure(@NonNull Exception e) {
+                                 Log.d("TAG", e.toString());
+                             }
+                         });
+             }
+
+
+
+
             }
 
 

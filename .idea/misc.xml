@@ -8,25 +8,40 @@
         <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/drawable/ic_arrowicon.xml" value="0.2265" />
         <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.2265" />
         <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/drawable/ic_baseline_arrow_circle_right_24.xml" value="0.2265" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_24.xml" value="0.2265" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/drawable/ic_baseline_keyboard_arrow_up_24.xml" value="0.2265" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/drawable/ic_baseline_keyboard_double_arrow_right_24.xml" value="0.148" />
         <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.121" />
         <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/drawable/ic_menu_camera.xml" value="0.121" />
         <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.121" />
         <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.121" />
         <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/drawable/round_btn.xml" value="0.2265" />
         <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_catering_info.xml" value="0.4" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_confirmation_of_reservation.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_contact_number.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_detail_fragment.xml" value="0.4" />
-        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_home_fragment.xml" value="0.4" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_detail_fragment.xml" value="0.264" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_home_fragment.xml" value="0.264" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_main2.xml" value="0.2" />
-        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_menu_or_food.xml" value="0.4" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_main_home.xml" value="0.2" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_menu_or_food.xml" value="0.264" />
         <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_our_location.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_precy_home_page.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_register.xml" value="0.16" />
-        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_reservation_fragment.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_reservation_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_reservation_fragment.xml" value="0.264" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_reservation_process.xml" value="0.2222222222222222" />
         <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_sched_option.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_schedule_option.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_sign_in.xml" value="0.4" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_sign_in_or_sign_up.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/activity_view_reservation.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/best_dishes_list.xml" value="0.6" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/event_list.xml" value="0.4" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/events_list_item.xml" value="0.18984375" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/recycler_dish_layout.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/recycler_view_row.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/layout/reservation_history_list.xml" value="0.253125" />
         <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/menu/bottom_nav_menu.xml" value="0.128" />
         <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/menu/menu.xml" value="0.253125" />
         <entry key="..\:/Users/Aiko/AndroidStudioProjects/Percyv2/app/src/main/res/menu/menu_drawer.xml" value="0.25416666666666665" />

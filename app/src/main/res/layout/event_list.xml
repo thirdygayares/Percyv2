@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="185dp"
+    android:layout_height="140dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <ImageView
+           android:id="@+id/event_Image"
+           android:layout_width="match_parent"
+           android:layout_height="110dp"
+           android:src="@drawable/bdaypic"/>
+
+       <ImageView
+           android:id="@+id/numpeople_Iamge"
+           android:layout_width="16dp"
+           android:layout_height="19dp"
+           android:src="@drawable/numpeople"
+           android:layout_below="@+id/event_Image"
+           android:layout_marginTop="5dp"
+           android:layout_marginLeft="10dp"/>
+
+       <androidx.cardview.widget.CardView
+           android:layout_width="95dp"
+           android:layout_height="25dp"
+           app:cardCornerRadius="10dp"
+           app:cardBackgroundColor="@color/eventTxtColor"
+           android:alpha=".65"
+           android:layout_alignParentRight="true"
+           android:layout_marginRight="10dp"
+           android:layout_marginTop="10dp">
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+
+               <TextView
+                   android:id="@+id/eventName_txtView"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_centerInParent="true"
+                   android:fontFamily="@font/scadaregular"
+                   android:text="@string/birthday"
+                   android:textColor="@color/black"
+                   android:textSize="16sp" />
+           </RelativeLayout>
+       </androidx.cardview.widget.CardView>
+
+
+       <TextView
+           android:id="@+id/numOfPeople"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/event_Image"
+           android:layout_marginLeft="5dp"
+           android:layout_marginTop="5dp"
+           android:layout_toRightOf="@id/numpeople_Iamge"
+           android:fontFamily="@font/titilliumwebregular"
+           android:text="10+"
+           android:textColor="@color/black"
+           android:textSize="12sp" />
+
+       <TextView
+           android:id="@+id/pricePerPeople"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/event_Image"
+           android:layout_alignParentRight="true"
+           android:layout_marginTop="5dp"
+           android:layout_marginRight="10dp"
+           android:fontFamily="@font/titilliumwebregular"
+           android:text="₱500 / Per Person"
+           android:textColor="@color/black"
+           android:textSize="12sp" />
+
+   </RelativeLayout>
+
+</RelativeLayout>

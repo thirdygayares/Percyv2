@@ -1,6 +1,7 @@
 package com.firetera.percyv2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +18,7 @@ public class MenuOrFood extends AppCompatActivity {
 
     Button menuorfood_backarrow;
     ArrayList<MenuOrFoodModel> menuOrFoodModels = new ArrayList<>();
+    RecyclerView recyclerView;
 
     int[] foodImages = {R.drawable.chickencordonbleu, R.drawable.chickenlollipop, R.drawable.fishfillet, R.drawable.kaldereta,
             R.drawable.lechon, R.drawable.butteredveg, R.drawable.lecheflan, R.drawable.bukosalad, R.drawable.fruitsalad};
@@ -36,13 +38,24 @@ public class MenuOrFood extends AppCompatActivity {
             }
         });
 
-        RecyclerView recyclerView = findViewById(R.id.myRecyclerView);
+        recyclerView = findViewById(R.id.myRecyclerView);
 
         setUpMenuOrFoodModels();
+        setUPLinearLayout();
 
         MenuOrFoodAdapter menuOrFoodAdapter = new MenuOrFoodAdapter(this, menuOrFoodModels);
         recyclerView.setAdapter(menuOrFoodAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    private void setUPLinearLayout() {
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(
+                MenuOrFood.this, LinearLayoutManager.HORIZONTAL, false
+        );
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
     }
 
     private void setUpMenuOrFoodModels() {

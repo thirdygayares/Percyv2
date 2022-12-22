@@ -162,7 +162,7 @@
                     android:textColor="@color/black"
                     android:textColorHint="@color/black" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/registerbtn"
                     android:layout_width="250dp"
                     android:layout_height="55dp"
@@ -184,15 +184,31 @@
                     android:layout_centerHorizontal="true"
                     android:visibility="gone"></ProgressBar>
 
-                <TextView
-                    android:id="@+id/haveaccount"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/phonenumber"
-                    android:layout_marginTop="70dp"
-                    android:text="Already have account? Log in here"
-                    android:textColor="@color/black" />
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/phonenumber">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="65dp"
+                        android:layout_marginTop="70dp"
+                        android:fontFamily="@font/catamaranbold"
+                        android:text="Already have account?"
+                        />
+
+                    <TextView
+                        android:id="@+id/haveaccount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="@font/catamaranbold"
+                        android:layout_marginTop="70dp"
+                        android:text=" Log in here"
+                        android:textColor="@color/semibrown" />
+                </LinearLayout>
 
             </RelativeLayout>
 

@@ -51,7 +51,7 @@
                     android:drawableLeft="@drawable/ic_baseline_person_24"
                     android:drawablePadding="20dp"
                     android:fontFamily="@font/catamaranbold"
-                    android:hint="Username"
+                    android:hint="Email"
                     android:paddingBottom="20dp"
                     android:singleLine="true"
 
@@ -90,27 +90,27 @@
 
                     ></CheckBox>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/signinbtn"
                     android:layout_width="275dp"
-                    android:layout_height="65dp"
+                    android:layout_height="58dp"
                     android:layout_below="@+id/showpw"
                     android:layout_marginLeft="38dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/round_btn"
                     android:fontFamily="@font/catamaranbold"
                     android:text="Sign in"
                     android:textSize="20dp"
                     android:textStyle="bold"
 
-                    ></Button>
+                    ></androidx.appcompat.widget.AppCompatButton>
 
                 <ProgressBar
                     android:id="@+id/sign_progressbar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/showpw"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginLeft="150dp"
                     android:layout_centerHorizontal="true"
                     android:indeterminateTint="@color/semibrown"
@@ -124,17 +124,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="400dp"
+                    android:layout_below="@+id/showpw"
+                    android:layout_marginTop="80dp"
                     android:fontFamily="@font/catamaranbold"
                     android:text="or sign in with"
                     android:textSize="15dp"
 
                     ></TextView>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/googlesigninbtn"
                     android:layout_width="275dp"
-                    android:layout_height="50dp"
+                    android:layout_height="45dp"
                     android:layout_below="@+id/signinwith"
                     android:layout_marginLeft="37dp"
                     android:layout_marginTop="10dp"
@@ -142,21 +143,39 @@
                     android:drawableLeft="@drawable/googleicon"
                     android:fontFamily="@font/catamaranbold"
                     android:paddingLeft="10dp"
-                    android:paddingRight="20dp"
+                    android:paddingRight="35dp"
                     android:text="Google"
                     android:textSize="20dp"
 
-                    ></Button>
+                    ></androidx.appcompat.widget.AppCompatButton>
 
-                <TextView
-                    android:id="@+id/noaccountyetTxtvw"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/googlesigninbtn"
-                    android:layout_centerHorizontal="true"
                     android:layout_marginTop="5dp"
-                    android:fontFamily="@font/catamaranbold"
-                    android:text="No account yet? Register here"></TextView>
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/googlesigninbtn">
+
+                    <TextView
+                        android:id="@+id/txtview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/googlesigninbtn"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/catamaranbold"
+                        android:text="No account yet?"></TextView>
+
+                    <TextView
+                        android:id="@+id/noaccountyetTxtvw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/semibrown"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/catamaranbold"
+                        android:text="Register here"></TextView>
+                </LinearLayout>
             </RelativeLayout>
 
 

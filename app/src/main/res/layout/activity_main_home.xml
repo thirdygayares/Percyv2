@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainHome">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/home_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:background="@color/white"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/calibribold"
+                android:text="@string/home_txt"
+                android:textColor="@color/black"
+                android:textSize="26sp"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/home_cardview">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/Homewelcome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/secularoneregular"
+                    android:text="@string/welcome"
+                    android:textColor="@color/black"
+                    android:textSize="30sp"/>
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/Homewelcome"
+                    android:layout_marginLeft="36dp"
+                    android:fontFamily="@font/scopeoneregular"
+                    android:text="@string/client_s_name"
+                    android:textColor="@color/gray"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/homeImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/homeimage"
+                    android:layout_below="@+id/name"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="-10dp"/>
+
+                <TextView
+                    android:id="@+id/eventIntro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/eventIntro"
+                    android:layout_below="@id/homeImage"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/titilliumwebsemibold"
+                    android:layout_marginLeft="25dp"/>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/eventList_CL"
+                    android:layout_below="@+id/eventIntro"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/eventRecyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Button
+                    android:id="@+id/reservenow_Btn"
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/eventList_CL"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="-15dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawableEnd="@drawable/ic_baseline_keyboard_double_arrow_right_24"
+                    android:text="@string/reserve_now"
+                    android:textColor="@color/semibrown" />
+
+                <TextView
+                    android:id="@+id/topDishes_txtView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/best_dishes"
+                    android:layout_below="@id/reservenow_Btn"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/titilliumwebsemibold"
+                    android:layout_marginLeft="25dp"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/bestDishesList_CL"
+                    android:layout_below="@+id/topDishes_txtView"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/bestDishesRecyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Button
+                    android:id="@+id/reservenow_Btn1"
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/bestDishesList_CL"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="-2dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawableEnd="@drawable/ic_baseline_keyboard_double_arrow_right_24"
+                    android:text="@string/reserve_now"
+                    android:textColor="@color/semibrown" />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+
+</RelativeLayout>

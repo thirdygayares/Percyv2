@@ -89,29 +89,27 @@ public class Register extends AppCompatActivity {
                 regbtn.setVisibility(View.GONE);
                 regprogress_bar.setVisibility(View.VISIBLE);
 
-                firebaseAuth.createUserWithEmailAndPassword(email, confirmpassword)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(Register.this, "Account Succesfully Created", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(Register.this, SignIn.class);
-                                    startActivity(intent);
-
-                                } else {
-                                    Toast.makeText(Register.this, "Register Failed" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                    regbtn.setVisibility(View.VISIBLE);
-                                    regprogress_bar.setVisibility(View.VISIBLE);
-                                }
-                            }
-                        });
+//                firebaseAuth.createUserWithEmailAndPassword(email, confirmpassword)
+//                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//                            @Override
+//                            public void onComplete(@NonNull Task<AuthResult> task) {
+//                                if (task.isSuccessful()) {
+//                                    Toast.makeText(Register.this, "Account Succesfully Created", Toast.LENGTH_SHORT).show();
+//                                    Intent intent = new Intent(Register.this, SignIn.class);
+//                                    startActivity(intent);
+//
+//                                } else {
+//                                    Toast.makeText(Register.this, "Register Failed" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+//                                    regbtn.setVisibility(View.VISIBLE);
+//                                    regprogress_bar.setVisibility(View.VISIBLE);
+//                                }
+//                            }
+//                        });
 
                 firebaseAuth.createUserWithEmailAndPassword(regemail.getText().toString(), regconfirmpassword.getText().toString())
                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
                             public void onSuccess(AuthResult authResult) {
-
-
 
                                 Log.d("TAG", "SUCCESS");
 
@@ -130,11 +128,15 @@ public class Register extends AppCompatActivity {
                                             @Override
                                             public void onSuccess(Void unused) {
                                                 Log.d("TAG", "SUCCESS DATA UPLOAD");
+
+                                                startActivity(new Intent(getApplicationContext(), MainActivity2.class));
                                             }
                                         }).addOnFailureListener(new OnFailureListener() {
                                             @Override
                                             public void onFailure(@NonNull Exception e) {
                                                 Log.d("TAG", "data sending" + e);
+                                                regbtn.setVisibility(View.VISIBLE);
+                                                regprogress_bar.setVisibility(View.VISIBLE);
                                             }
                                         });
 
@@ -173,45 +175,5 @@ public class Register extends AppCompatActivity {
 
 
 
-//                String confirmpassword = regconfirmpassword.getText().toString().trim();
-//                final String email =regemail.getText().toString().trim();
-//                String password = regpassword.getText().toString().trim();
-//                final String fullname = regfullname.getText().toString();
-//                final  String phonenumber = regphonenumber.getText().toString();
-
-//
-//                if(TextUtils.isEmpty(fullname)){
-//                    regfullname.setError("Full name is required");
-//                    return;
-//                }
-//
-//                if (TextUtils.isEmpty(password)) {
-//                    regpassword.setError("Password is Required");
-//                    return;
-//
-//                }
-
-
-
-
-//    private void signinmethod(String email, String password){
-//
-//        firebaseAuth.createUserWithEmailAndPassword(email, password)
-//                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if (task.isSuccessful()) {
-//
-//                            Toast.makeText(Register.this, "Account Created Succesfully", Toast.LENGTH_SHORT).show();
-//                            Intent intent = new Intent(Register.this, SignIn.class);
-//                            startActivity(intent);
-//                        }
-//
-//                        else {
-//                            Toast.makeText(Register.this, "Register Failed " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-//                            regbtn.setVisibility(View.VISIBLE);
-//                        }
-//                    }
-//                });
 
 

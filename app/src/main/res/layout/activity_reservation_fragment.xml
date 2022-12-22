@@ -3,12 +3,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ReservationFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.cardview.widget.CardView
+        android:id="@+id/history_cardview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="pota" />
+        android:layout_height="76dp"
+        android:background="@color/white"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/calibribold"
+                android:text="History"
+                android:textColor="@color/black"
+                android:textSize="26sp"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reservationHistory_RecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/history_cardview"
+        android:layout_marginTop="20dp"
+        android:layout_margin="15dp"/>
+
+
+
+
 
 </RelativeLayout>

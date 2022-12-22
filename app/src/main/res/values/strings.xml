@@ -19,6 +19,23 @@
     <string name="course_name">Main Course</string>
     <string name="menu">Menu</string>
     <string name="string_autofill">string/autofill</string>
+    <string name="reservation_date">Reservation Date</string>
+    <string name="select_date">Select Date</string>
+    <string name="reservation_details">Reservation Details</string>
+    <string name="select_event">Select Event</string>
+    <string name="cpno">Mobile Number</string>
+    <string name="peopleno">Number of People</string>
+    <string name="res_details">Reservation Details</string>
+    <string name="reservation_id">Reservation ID</string>
+    <string name="change_details">Change Details</string>
+    <string name="birthday">Birthday</string>
+    <string name="home_txt">Home</string>
+    <string name="client_s_name">Client\'s name</string>
+    <string name="welcome">Welcome,</string>
+    <string name="eventIntro">Getting ready for fabolous event</string>
+    <string name="reserve_now">Reserve now</string>
+    <string name="best_dishes">Best Dishes</string>
+    <string name="chicken_cordon_bleu">Chicken Cordon Bleu</string>
 
 
     <string-array name="food_name_list">
@@ -43,6 +60,31 @@
         <item>Dessert</item>
         <item>Dessert</item>
         <item>Dessert</item>
+    </string-array>
+
+    <string-array name="price_perpeople_list">
+
+        <item>₱500 / Per Person</item>
+        <item>₱600 / Per Person</item>
+        <item>₱500 / Per Person</item>
+        <item>₱700 / Per Person</item>
+        <item>₱1000 / Per Person</item>
+    </string-array>
+
+    <string-array name="num_of_people_list">
+        <item>10+</item>
+        <item>20+</item>
+        <item>20+</item>
+        <item>30+</item>
+        <item>45+</item>
+    </string-array>
+
+    <string-array name="event_name_list">
+        <item>Birthday</item>
+        <item>Wedding</item>
+        <item>Corporate</item>
+        <item>Business</item>
+        <item>Events</item>
     </string-array>
 
 </resources>

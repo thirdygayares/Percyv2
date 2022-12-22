@@ -1,0 +1,103 @@
+package com.firetera.percyv2.Adapter;
+
+import android.content.Context;
+import android.graphics.Color;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
+
+
+import com.firetera.percyv2.Model.ReservationHistoryModel;
+import com.firetera.percyv2.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class ReservationHistoryAdapter extends RecyclerView.Adapter<ReservationHistoryAdapter.MyViewHolder> {
+
+    Context context;
+    ArrayList<ReservationHistoryModel> list;
+
+    public ReservationHistoryAdapter(Context context, ArrayList<ReservationHistoryModel> list) {
+        this.context = context;
+        this.list = list;
+    }
+
+    @NonNull
+    @Override
+    public ReservationHistoryAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater layoutInflater = LayoutInflater.from(context);
+        View view = layoutInflater.inflate(R.layout.reservation_history_list, parent, false);
+
+//        View v = LayoutInflater.from(context).inflate(R.layout.item, parent, false);
+        return  new ReservationHistoryAdapter.MyViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ReservationHistoryAdapter.MyViewHolder holder, int position) {
+
+        ReservationHistoryModel reservationHistoryModel = list.get(position);
+        holder.reservationDate.setText(reservationHistoryModel.getReservationDate());
+        holder.name.setText(reservationHistoryModel.getName());
+        holder.mobileno.setText(reservationHistoryModel.getMobilenum());
+        holder.reservationID.setText(reservationHistoryModel.getReservationID());
+        holder.event.setText(reservationHistoryModel.getEvent());
+        holder.numofPeople.setText(reservationHistoryModel.getNumofPeople());
+
+        if(reservationHistoryModel.getStatus().equals(true)){
+            holder.statusCardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.approvedbg));
+            holder.statusTxtView.setTextColor(ContextCompat.getColor(context, R.color.fontcolorapproved));
+            holder.statusTxtView.setText("Approved");
+        }
+
+
+
+
+
+
+
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return list.size();
+    }
+
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
+
+
+        TextView reservationID, name, mobileno, reservationDate, event, numofPeople, statusTxtView;
+        CardView statusCardView;
+
+
+
+
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            reservationID = itemView.findViewById(R.id.reservationID);
+            name = itemView.findViewById(R.id.name);
+            mobileno = itemView.findViewById(R.id.mobileNumber);
+            reservationDate = itemView.findViewById(R.id.reservationDate);
+            event = itemView.findViewById(R.id.event);
+            numofPeople = itemView.findViewById(R.id.numofPeople);
+            statusCardView = itemView.findViewById(R.id.pending_cardView);
+            statusTxtView = itemView.findViewById(R.id.status);
+
+
+
+
+
+        }
+    }
+}

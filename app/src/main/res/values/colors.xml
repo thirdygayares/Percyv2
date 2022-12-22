@@ -9,7 +9,15 @@
     <color name="white">#FFFFFFFF</color>
     <color name="primary">#FF914D</color>
     <color name="semibrown">#BC6600</color>
-    <color name="bgcolor">#F7F0F0</color>
+    <color name="lightbrown">#FFA438</color>
+    <color name="bgcolor">#FFFCFC</color>
     <color name="gray">#6A6A6A</color>
     <color name="transparent">#000000</color>
+    <color name="eventTxtColor">#FF8A00</color>
+    <color name="pendingbg">#FFE6B7</color>
+    <color name="approvedbg">#B6FFB9</color>
+    <color name="fontcolorpending">#FFA500</color>
+    <color name="fontcolorapproved">#00FF0A</color>
+
+
 </resources>

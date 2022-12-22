@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgcolor"
+    tools:context=".ConfirmationOfReservation">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/thankyou_cardView"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        app:cardBackgroundColor="@color/lightbrown">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/Hi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="180dp"
+                android:fontFamily="@font/calibri"
+                android:text="Hi"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/cname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+
+                android:layout_below="@+id/Hi"
+                android:fontFamily="@font/calibri"
+                android:text=" Name"
+                android:textColor="@color/white"
+                android:textSize="28sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/calibribold"
+                android:text="Thank you for
+                choosing us"
+                android:layout_below="@+id/cname"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
+                android:textColor="@color/white"
+                android:textSize="35sp"/>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:cardBackgroundColor="@color/semibrown"
+        app:cardCornerRadius="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="-200dp"
+        android:layout_marginLeft="260dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:src="@drawable/logoprecy"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/thankyou_cardView"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="We received your reservation"
+
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Will contact you immediately once reservation is approved"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="180dp"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/okay_Btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/white"
+            android:text="Okay"
+            android:textColor="@color/black"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/myReservation_Btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/semibrown"
+            android:text="Check my reservation"
+            android:textColor="@color/white"/>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
