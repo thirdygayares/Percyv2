@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgcolor"
+    tools:context=".RegistrationJavaClass.RegisterUsingMobileNum">
+
+    <ImageView
+        android:id="@+id/regphoneImage"
+        android:layout_width="230dp"
+        android:layout_height="280dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/otpsent" />
+
+    <TextView
+        android:id="@+id/registration_TxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/regphoneImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/calibribold"
+        android:text="Registration"
+        android:textColor="@color/semibrown"
+        android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/enterMobileNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/registration_TxtView"
+        android:textAlignment="center"
+        android:text="@string/enter_your_mobile_number"
+        android:layout_centerHorizontal="true"/>
+
+   <LinearLayout
+       android:id="@+id/mobilenul_LL"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/enterMobileNum"
+       android:orientation="horizontal"
+       android:gravity="center"
+       android:layout_marginStart="120dp"
+       android:layout_marginEnd="60dp"
+       android:layout_marginTop="30dp">
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="+63 - "
+           android:textColor="@color/black"
+           android:textSize="20sp"
+           android:gravity="center"/>
+
+       <EditText
+           android:id="@+id/mobileNum_EditTxt"
+           android:layout_width="wrap_content"
+           android:layout_height="40dp"
+           android:hint=" 9257486369"
+           android:background="@null"
+           android:imeOptions="actionDone"
+           android:textSize="20sp"
+           android:importantForAutofill="no"/>
+
+   </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@id/mobilenul_LL"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="60dp"
+        android:background="@color/gray" />
+
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/OTPsend_Btn"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_btn"
+                android:fontFamily="@font/catamaranbold"
+                android:text="@string/OTP"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/sentOTP_ProgBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="150dp"
+                android:layout_centerHorizontal="true"
+                android:indeterminateTint="@color/semibrown"
+
+                ></ProgressBar>
+        </RelativeLayout>
+    </FrameLayout>
+
+
+
+
+
+
+
+</RelativeLayout>

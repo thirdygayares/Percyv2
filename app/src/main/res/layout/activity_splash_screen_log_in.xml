@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Splashscreen.SplashScreenLogIn">
+
+    <androidx.cardview.widget.CardView
+    android:id="@+id/welcome_CardView"
+    android:layout_width="match_parent"
+    android:layout_height="350dp"
+    app:cardBackgroundColor="@color/lightbrown">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="200dp"
+            android:fontFamily="@font/calibri"
+            android:text="@string/welcomeTo"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/precy"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:fontFamily="@font/calibribold"
+            android:layout_marginStart="25dp"/>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:cardBackgroundColor="@color/semibrown"
+        app:cardCornerRadius="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="-200dp"
+        android:layout_marginLeft="260dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:src="@drawable/logoprecy"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="10dp"
+        android:layout_centerHorizontal="true"
+        android:indeterminateTint="@color/semibrown"
+        android:visibility="visible" />
+
+</RelativeLayout>

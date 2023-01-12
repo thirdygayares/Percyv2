@@ -16,13 +16,50 @@
         android:theme="@style/Theme.Percyv2"
         tools:targetApi="31">
         <activity
-            android:name=".SplashScreen"
+            android:name=".EditInfo"
             android:exported="false" />
         <activity
-            android:name=".ConfirmationOfReservation"
+            android:name=".Splashscreen.SplashScreenRegister"
             android:exported="false" />
         <activity
-            android:name=".ReservationDetails"
+            android:name=".LogIn.AskingForFullNameLogIn"
+            android:exported="false" />
+        <activity
+            android:name=".LogIn.AskingForEmailLogIn"
+            android:exported="false" />
+        <activity
+            android:name=".Splashscreen.SplashScreenLogIn"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrationJavaClass.RegistrationMethod"
+            android:exported="false" />
+        <activity
+            android:name=".LogIn.LogInOTPVerification"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrationJavaClass.RegisterUsingMobileNum"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrationJavaClass.AskingForEmail"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrationJavaClass.AskingForFullname"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrationJavaClass.OTPVerification"
+            android:exported="false" />
+        <activity
+            android:name=".SignIn"
+            android:exported="false" />
+        <activity
+            android:name=".LogIn.LogInExampleUI"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".reservationProcess.ConfirmationOfReservation"
+            android:exported="false" />
+        <activity
+            android:name=".reservationProcess.ReservationDetails"
             android:exported="false" />
         <activity
             android:name=".CateringInfo"
@@ -37,16 +74,16 @@
             android:name=".ViewReservation"
             android:exported="false" />
         <activity
-            android:name=".ReservationProcess"
+            android:name=".reservationProcess.ReservationProcess"
             android:exported="false"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:windowSoftInputMode="stateUnchanged" />
         <activity
             android:name=".HomeFragment"
             android:exported="false"
             tools:ignore="Instantiatable" />
         <activity
-            android:name=".SignIn"
+            android:name=".Splashscreen.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -64,7 +101,7 @@
             android:name=".SignInOrSignUp"
             android:exported="false" />
         <activity
-            android:name=".Register"
+            android:name=".RegistrationJavaClass.Register"
             android:exported="false" />
         <activity
             android:name=".MenuOrFood"

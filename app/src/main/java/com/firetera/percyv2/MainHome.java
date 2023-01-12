@@ -23,12 +23,15 @@ public class MainHome extends AppCompatActivity {
 
 
     ArrayList<EventThemeModel> eventThemeModels = new ArrayList<>();
-    int[] eventImages = {R.drawable.bdaypic, R.drawable.weddingpic, R.drawable.corporatepic, R.drawable.businesspic,
-            R.drawable.eventspic};
+    int[] eventImages = {R.drawable.bdaypic, R.drawable.weddingpic,
+                        R.drawable.corporatepic, R.drawable.businesspic,
+                        R.drawable.eventspic};
 
     ArrayList<BestDishesListModel> bestDishesListModels = new ArrayList<>();
-    int[] bestDishesImages = {R.drawable.chickencordonbleu1, R.drawable.chickenlollipop2, R.drawable.fishfillet3, R.drawable.kaldereta4,
-            R.drawable.lechon5,  R.drawable.butteredveggie6,  R.drawable.lecheflan7,  R.drawable.bukosalad8,  R.drawable.fruitsalad9};
+    int[] bestDishesImages = {R.drawable.chickencordonbleu1, R.drawable.chickenlollipop2,
+                            R.drawable.fishfillet3, R.drawable.kaldereta4,
+                            R.drawable.lechon5,  R.drawable.butteredveggie6,
+                            R.drawable.lecheflan7,  R.drawable.bukosalad8,  R.drawable.fruitsalad9};
 
 
     @Override

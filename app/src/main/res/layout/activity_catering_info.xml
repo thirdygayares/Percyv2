@@ -25,7 +25,7 @@
                 android:fontFamily="@font/calibribold"
                 android:text="Catering Info "
                 android:textColor="@color/black"
-                android:textSize="26dp"></TextView>
+                android:textSize="26dp"/>
 
 
             <Button
@@ -36,7 +36,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="10dp"
                 android:background="?android:attr/selectableItemBackground"
-                android:drawableLeft="@drawable/ic_baseline_arrow_back_24"></Button>
+                android:drawableLeft="@drawable/ic_baseline_arrow_back_24" />
 
 
 
@@ -74,7 +74,7 @@
                 android:layout_marginTop="20dp"
                 android:text="@string/PrecyCatering_Description"
                 android:textAlignment="inherit"
-                android:textColor="@color/black"></TextView>
+                android:textColor="@color/black"/>
 
             <com.denzcoskun.imageslider.ImageSlider
                 android:id="@+id/precyimage"
@@ -84,7 +84,7 @@
                 android:layout_marginTop="60dp"
                 app:iss_auto_cycle="true"
                 app:iss_corner_radius="10"
-                app:iss_period="1000"></com.denzcoskun.imageslider.ImageSlider>
+                app:iss_period="1000"/>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/schedulecardview"
@@ -110,7 +110,7 @@
                         android:fontFamily="@font/titilliumwebsemibold"
                         android:text="Our Location"
                         android:textColor="@color/black"
-                        android:textSize="22dp"></TextView>
+                        android:textSize="22dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -119,14 +119,14 @@
                         android:layout_marginLeft="73dp"
                         android:fontFamily="@font/titilliumwebregular"
                         android:text="Quick info on our location"
-                        android:textSize="12dp"></TextView>
+                        android:textSize="12dp"/>
 
                     <ImageView
                         android:layout_width="47dp"
                         android:layout_height="43dp"
                         android:layout_marginLeft="13dp"
                         android:layout_marginTop="11dp"
-                        android:src="@drawable/locationicon"></ImageView>
+                        android:src="@drawable/locationicon"/>
 
                     <Button
                         android:id="@+id/ourlocation_btn"
@@ -135,7 +135,7 @@
                         android:layout_centerHorizontal="true"
                         android:background="?android:attr/selectableItemBackground"
                         android:drawableRight="@drawable/ic_baseline_arrow_circle_right_24"
-                        android:drawableTint="@color/gray"></Button>
+                        android:drawableTint="@color/gray"/>
 
 
 

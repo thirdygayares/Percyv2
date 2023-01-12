@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".LogIn.LogInExampleUI">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/logoBG_RL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/logobg_cardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="70dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/logobg" />
+
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="-25dp">
+
+                    <ImageView
+                        android:layout_width="300dp"
+                        android:layout_height="220dp"
+                        android:src="@drawable/logoprecy" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/signin_TxtView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/logo"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/catamaranbold"
+                    android:text="@string/log_in"
+                    android:textColor="@color/black"
+                    android:textSize="30sp" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/signin_TxtView"
+                    android:layout_marginTop="5dp"
+                    app:tabSelectedTextColor="@color/semibrown"
+                    app:tabIndicatorColor="@color/semibrown"
+                    >
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/email_Fragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Email"/>
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/mobile_Fragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile" />
+
+                </com.google.android.material.tabs.TabLayout>
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/tab_Layout"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/viewPager2"
+                    android:layout_marginBottom="30dp">
+
+                    <TextView
+                        android:id="@+id/txtview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/catamaranbold"
+                        android:text="No account yet?"/>
+
+                    <TextView
+                        android:id="@+id/noaccountyetTxtvw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/semibrown"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/catamaranbold"
+                        android:text="Register here"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

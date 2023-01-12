@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firetera.percyv2.LogIn.LogInExampleUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,7 +27,7 @@ public class DetailFragment extends Fragment {
 
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firestore;
-    Button logoutbtn, food_btn, contactnum_btn, location_btn;
+    Button logoutbtn, editInfo_Btn, contactnum_btn, location_btn;
     TextView menu_fullname, client_email;
 
     @Override
@@ -38,11 +39,11 @@ public class DetailFragment extends Fragment {
         firebaseAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
         logoutbtn = view.findViewById(R.id.logoutbtn);
-        food_btn = view.findViewById(R.id.foodmenu_btn);
         contactnum_btn =view.findViewById(R.id.contactnumber_btn);
         location_btn = view.findViewById(R.id.location_btn);
         menu_fullname = view.findViewById(R.id.menu_fullname);
         client_email = view.findViewById(R.id.client_email);
+        editInfo_Btn = view.findViewById(R.id.editInfo_Btn);
 
 
 
@@ -80,22 +81,15 @@ public class DetailFragment extends Fragment {
 
 
 
-        food_btn.setOnClickListener(new View.OnClickListener() {
+        editInfo_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(getContext(), MenuOrFood.class));
+                startActivity(new Intent(getContext(), EditInfo.class));
             }
         });
 
 
-        contactnum_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                startActivity(new Intent(getContext(), ContactNumber.class));
-            }
-        });
 
 
         location_btn.setOnClickListener(new View.OnClickListener() {
@@ -113,7 +107,7 @@ public class DetailFragment extends Fragment {
 
                 Toast.makeText(getContext(), "Successfully Logged Out", Toast.LENGTH_SHORT ).show();
 
-                Intent intent = new Intent(getContext(), SignIn.class);
+                Intent intent = new Intent(getContext(), LogInExampleUI.class);
                 startActivity(intent);
 
             }

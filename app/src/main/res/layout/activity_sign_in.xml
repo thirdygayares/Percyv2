@@ -54,8 +54,6 @@
                     android:hint="Email"
                     android:paddingBottom="20dp"
                     android:singleLine="true"
-
-
                     ></EditText>
 
 
@@ -115,20 +113,18 @@
                     android:layout_centerHorizontal="true"
                     android:indeterminateTint="@color/semibrown"
 
-
-
                     ></ProgressBar>
 
                 <TextView
                     android:id="@+id/signinwith"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_below="@+id/showpw"
+                    android:layout_centerHorizontal="true"
                     android:layout_marginTop="80dp"
                     android:fontFamily="@font/catamaranbold"
                     android:text="or sign in with"
-                    android:textSize="15dp"
+                    android:textSize="15sp"
 
                     ></TextView>
 

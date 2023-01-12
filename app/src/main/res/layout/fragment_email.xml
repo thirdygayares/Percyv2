@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".LogIn.LogInFragment.EmailFragment">
+
+    <EditText
+        android:id="@id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="@color/black"
+        android:backgroundTintMode="screen"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="20dp"
+        android:fontFamily="@font/catamaranbold"
+        android:hint="@string/email"
+        android:paddingBottom="20dp"
+        android:singleLine="true"/>
+
+    <EditText
+        android:id="@id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="@color/black"
+        android:backgroundTintMode="screen"
+        android:drawableStart="@drawable/ic_baseline_vpn_key_24"
+        android:drawablePadding="20dp"
+        android:fontFamily="@font/catamaranbold"
+        android:hint="@string/password"
+        android:paddingBottom="20dp"
+        android:singleLine="true" />
+
+
+    <CheckBox
+        android:id="@+id/showPWEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="5dp"
+        android:buttonTint="@color/semibrown"
+        android:fontFamily="@font/catamaranregular"
+        android:text="@string/show_password"
+        />
+
+   <FrameLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/showPWEmail"
+       android:layout_marginTop="10dp">
+
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
+
+         <androidx.appcompat.widget.AppCompatButton
+             android:id="@+id/signInEmail_Btn"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_centerInParent="true"
+             android:layout_marginStart="50dp"
+             android:layout_marginTop="10dp"
+             android:layout_marginEnd="30dp"
+             android:background="@drawable/round_btn"
+             android:fontFamily="@font/catamaranbold"
+             android:text="@string/sign_in"
+             android:textAllCaps="false"
+             android:textColor="@color/white"
+             android:textSize="20sp"
+             android:textStyle="bold" />
+
+         <ProgressBar
+             android:id="@+id/sign_progressbar"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerInParent="true"
+             android:indeterminateTint="@color/semibrown"
+             />
+     </RelativeLayout>
+   </FrameLayout>
+
+
+</RelativeLayout>

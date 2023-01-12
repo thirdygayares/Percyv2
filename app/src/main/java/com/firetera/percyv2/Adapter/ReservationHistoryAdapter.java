@@ -52,20 +52,15 @@ public class ReservationHistoryAdapter extends RecyclerView.Adapter<ReservationH
         holder.reservationID.setText(reservationHistoryModel.getReservationID());
         holder.event.setText(reservationHistoryModel.getEvent());
         holder.numofPeople.setText(reservationHistoryModel.getNumofPeople());
+        holder.companyName.setText(reservationHistoryModel.getCompanyName());
+        holder.venue.setText(reservationHistoryModel.getVenue());
+
 
         if(reservationHistoryModel.getStatus().equals(true)){
             holder.statusCardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.approvedbg));
             holder.statusTxtView.setTextColor(ContextCompat.getColor(context, R.color.fontcolorapproved));
             holder.statusTxtView.setText("Approved");
         }
-
-
-
-
-
-
-
-
     }
 
     @Override
@@ -75,12 +70,8 @@ public class ReservationHistoryAdapter extends RecyclerView.Adapter<ReservationH
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-
-        TextView reservationID, name, mobileno, reservationDate, event, numofPeople, statusTxtView;
+        TextView reservationID, name, mobileno, reservationDate, event, numofPeople, statusTxtView, venue, companyName;
         CardView statusCardView;
-
-
-
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -93,11 +84,8 @@ public class ReservationHistoryAdapter extends RecyclerView.Adapter<ReservationH
             numofPeople = itemView.findViewById(R.id.numofPeople);
             statusCardView = itemView.findViewById(R.id.pending_cardView);
             statusTxtView = itemView.findViewById(R.id.status);
-
-
-
-
-
+            venue = itemView.findViewById(R.id.venue);
+            companyName = itemView.findViewById(R.id.companyName);
         }
     }
 }

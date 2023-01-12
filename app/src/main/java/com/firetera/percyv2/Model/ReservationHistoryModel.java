@@ -8,18 +8,13 @@ public class ReservationHistoryModel {
     String event;
     String reservationDate;
     String numofPeople;
+    String companyName;
+    String venue;
     Boolean status;
 
-    public ReservationHistoryModel(String reservationID, String name, String mobilenum, String event, String reservationDate, String numofPeople) {
-        this.reservationID = reservationID;
-        this.name = name;
-        this.mobilenum = mobilenum;
-        this.event = event;
-        this.reservationDate = reservationDate;
-        this.numofPeople = numofPeople;
-    }
 
-    public ReservationHistoryModel(String reservationID, String name, String mobilenum, String event, String reservationDate, String numofPeople, Boolean status) {
+
+    public ReservationHistoryModel(String reservationID, String name, String mobilenum, String event, String reservationDate, String numofPeople, Boolean status, String companyName, String venue) {
         this.reservationID = reservationID;
         this.name = name;
         this.mobilenum = mobilenum;
@@ -27,6 +22,8 @@ public class ReservationHistoryModel {
         this.reservationDate = reservationDate;
         this.numofPeople = numofPeople;
         this.status = status;
+        this.companyName = companyName;
+        this.venue = venue;
     }
 
 
@@ -61,5 +58,13 @@ public class ReservationHistoryModel {
 
     public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public String getVenue() {
+        return venue;
     }
 }

@@ -1,5 +1,6 @@
 package com.firetera.percyv2;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -26,6 +27,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class ReservationFragment extends Fragment {
@@ -35,6 +37,7 @@ public class ReservationFragment extends Fragment {
     RecyclerView recyclerView;
     ReservationHistoryAdapter myAdapter;
     ArrayList<ReservationHistoryModel> list;
+    String ID;
 
 
 
@@ -48,11 +51,27 @@ public class ReservationFragment extends Fragment {
         firebaseAuth = FirebaseAuth.getInstance();
 
         firestore.collection("Users")
-                .document(firebaseAuth.getUid())
+                .document(Objects.requireNonNull(firebaseAuth.getUid()))
                 .collection("My Reservation")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+
+                if(error != null){
+                    Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                }
+                else{
+                    list.clear();
+
+                    for (QueryDocumentSnapshot document :value) {
+                        if (document.exists()) {
+                            list.add(new ReservationHistoryModel(document.get("Reservation ID").toString(), document.get("Name").toString(), document.get("Phone Number").toString(), document.get("Event").toString() , document.get("ReservationDate").toString(), document.get("Number of People").toString(), Boolean.parseBoolean(document.get("Status").toString()), document.get("CompanyName").toString(), document.get("Venue").toString()));
+                            myAdapter.notifyDataSetChanged();
+
+                        }
+                    }
+                }
 
             }
         });
@@ -68,26 +87,26 @@ public class ReservationFragment extends Fragment {
         recyclerView.setAdapter(myAdapter);
 
 
-        firestore.collection("ClientReservationDetails").whereEqualTo(" User ID", firebaseAuth.getUid())
-                .get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot s) {
-                        if(!s.isEmpty()){
-                            Toast.makeText(getContext(), "empty", Toast.LENGTH_SHORT).show();
-
-                            for(DocumentSnapshot value: s){
-                                list.add(new ReservationHistoryModel(value.get("Reservation ID").toString(), value.get("Name").toString(), value.get("Phone Number").toString(), value.get("Event").toString() , value.get("ReservationDate").toString(), value.get("Number of People").toString(), Boolean.parseBoolean(value.get("Status").toString())));
-                                myAdapter.notifyDataSetChanged();
-                            }
-                        }
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+//        firestore.collection("ClientReservationDetails").whereEqualTo(" User ID", firebaseAuth.getUid())
+//                .get()
+//                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onSuccess(QuerySnapshot s) {
+//                        if(!s.isEmpty()){
+//                            Toast.makeText(getContext(), "empty", Toast.LENGTH_SHORT).show();
+//
+//                            for(DocumentSnapshot value: s){
+//                                list.add(new ReservationHistoryModel(value.get("Reservation ID").toString(), value.get("Name").toString(), value.get("Phone Number").toString(), value.get("Event").toString() , value.get("ReservationDate").toString(), value.get("Number of People").toString(), Boolean.parseBoolean(value.get("Status").toString())));
+//                                myAdapter.notifyDataSetChanged();
+//                            }
+//                        }
+//                    }
+//                }).addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+//                    }
+//                });
 
 
         return view;

@@ -18,6 +18,8 @@
     <color name="approvedbg">#B6FFB9</color>
     <color name="fontcolorpending">#FFA500</color>
     <color name="fontcolorapproved">#00FF0A</color>
+    <color name="bg">#F7F0F0</color>
+    <color name="darker_gray">#5A5A5A</color>
 
 
 </resources>

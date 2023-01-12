@@ -6,7 +6,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="420dp"
+        android:layout_height="wrap_content"
         android:layout_margin="15dp"
         app:cardCornerRadius="10dp"
         app:cardBackgroundColor="@color/white"
@@ -118,6 +118,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
+                android:text="Company Name"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:id="@+id/companyName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Company Name"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:text="Mobile Number"
                 android:layout_marginTop="10dp"
                 android:textSize="15sp"
@@ -148,6 +167,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="January 07, 2001"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Venue"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:id="@+id/venue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="my Venue"
                 android:textSize="20sp"
                 android:textColor="@color/black"
                 android:layout_marginLeft="20dp"/>
@@ -188,7 +226,8 @@
                 android:text="20"
                 android:textSize="20sp"
                 android:textColor="@color/black"
-                android:layout_marginLeft="20dp"/>
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"/>
 
 
         </LinearLayout>

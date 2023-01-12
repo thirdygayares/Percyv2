@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditInfo">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/editInfo_CardView"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:background="@color/white"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/calibribold"
+                android:text="@string/edit_info"
+                android:textColor="@color/black"
+                android:textSize="26sp"/>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/editInfo_CardView">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="40dp"
+           >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/fullName_TxtView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/full_name"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:id="@+id/fullName_EditTxt_LL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/fullNameHint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/full_name"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="10dp"
+                        android:visibility="invisible"/>
+
+                    <EditText
+                        android:id="@+id/fullName_EditTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:singleLine="true"
+                        android:padding="15dp"
+                        android:background="@drawable/custom_input"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/email_TxtView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/email"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="40dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/phoneNumber_TxtView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/phone_number"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/phoneNumberHint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/phone_number"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="10dp"
+                        android:visibility="invisible"/>
+
+                    <EditText
+                        android:id="@+id/phoneNumber_EditTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:singleLine="true"
+                        android:padding="15dp"
+                        android:background="@drawable/custom_input"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>

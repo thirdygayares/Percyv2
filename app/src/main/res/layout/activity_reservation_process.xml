@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bgcolor"
-    tools:context=".ReservationProcess">
+    tools:context=".reservationProcess.ReservationProcess">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -36,6 +36,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <Button
+                android:id="@+id/reservation_backArrow"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="10dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableTop="@drawable/ic_baseline_arrow_back_24" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -43,14 +53,14 @@
                 android:fontFamily="@font/calibribold"
                 android:text="Reservation"
                 android:textColor="@color/black"
-                android:textSize="26dp"></TextView>
+                android:textSize="26sp"/>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/reservationDate_cardView"
         android:layout_width="380dp"
-        android:layout_height="180dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/reservation_cardview"
         app:cardBackgroundColor="@color/white"
         android:layout_centerHorizontal="true"
@@ -65,7 +75,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/poppinsbold"
                 android:text="@string/reservation_date"
@@ -76,48 +86,110 @@
                 android:id="@+id/selectDate_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:drawableRight="@drawable/arrow_down_black"
+                android:layout_marginEnd="20dp"
                 android:fontFamily="@font/titilliumwebregular"
                 android:text="@string/select_date"
                 android:textColor="@color/black"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableEndCompat="@drawable/arrow_down_black"
+                tools:ignore="RelativeOverlap" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="330dp"
                 android:layout_height="80dp"
-                app:cardBackgroundColor="@color/semibrown"
-                app:cardElevation="10dp"
-                app:cardCornerRadius="10dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="70dp">
+                android:layout_marginTop="70dp"
+                android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="@color/semibrown"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
 
-               <RelativeLayout
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                   <TextView
-                       android:id="@+id/date"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_centerInParent="true"
-                       android:fontFamily="@font/poppinssemibold"
-                       android:text="Date"
-                       android:textColor="@color/white"
-                       android:textSize="20sp" />
-               </RelativeLayout>
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:text="@string/date"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/reservationVenue_cardView"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reservationDate_cardView"
+            app:cardBackgroundColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/where_TxtView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/poppinsbold"
+                    android:text="@string/wheree"
+                    android:textColor="@color/semibrown"
+                    android:textSize="20sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/where_EditText"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/where_TxtView"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:hint="@string/where"
+                    app:boxStrokeColor="@color/semibrown"
+                    app:hintTextColor="@color/semibrown"
+                    app:errorEnabled="true"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/where_RD"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textColorLink="@color/semibrown" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
     <androidx.cardview.widget.CardView
         android:layout_width="380dp"
-        android:layout_height="600dp"
-        android:layout_below="@+id/reservationDate_cardView"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reservationVenue_cardView"
         app:cardBackgroundColor="@color/white"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
@@ -133,43 +205,81 @@
                 android:id="@+id/reservationDetails_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
                 android:fontFamily="@font/poppinsbold"
                 android:text="@string/reservation_details"
                 android:textColor="@color/semibrown"
                 android:textSize="20sp" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/editText_event"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_below="@+id/reservationDetails_tv"
-                android:hint="@string/select_event"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                app:boxStrokeColor="@color/semibrown"
-                app:hintTextColor="@color/semibrown">
+           <FrameLayout
+               android:id="@+id/frameLayout"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/reservationDetails_tv"
+               >
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   >
+                   <com.google.android.material.textfield.TextInputLayout
+                       android:id="@+id/editText_event"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="15dp"
+                       android:layout_marginStart="16dp"
+                       android:layout_marginEnd="16dp"
+                       android:visibility="visible"
+                       android:hint="@string/select_event"
+                       style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                       app:boxStrokeColor="@color/semibrown"
+                       app:hintTextColor="@color/semibrown">
 
-                <AutoCompleteTextView
-                    android:id="@+id/auto_complete_txt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                       <AutoCompleteTextView
+                           android:id="@+id/auto_complete_txt"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:inputType="none"/>
+                   </com.google.android.material.textfield.TextInputLayout>
+
+                   <com.google.android.material.textfield.TextInputLayout
+                       android:id="@+id/other_EditText"
+                       style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="5dp"
+                       android:layout_marginStart="16dp"
+                       android:layout_marginEnd="16dp"
+                       android:visibility="gone"
+                       android:hint="@string/other"
+                       app:boxStrokeColor="@color/semibrown"
+                       app:hintTextColor="@color/semibrown"
+                       app:errorEnabled="true"
+                       >
+
+                       <com.google.android.material.textfield.TextInputEditText
+                           android:id="@+id/other_RD"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:singleLine="true"
+                           android:textColorLink="@color/semibrown" />
+
+                   </com.google.android.material.textfield.TextInputLayout>
+
+               </RelativeLayout>
+           </FrameLayout>
+
 
 
             <TextView
                 android:id="@+id/name_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/editText_event"
-                android:layout_marginLeft="20dp"
+                android:layout_below="@id/frameLayout"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppinssemibold"
-                android:text="Name"
+                android:text="@string/name"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
@@ -182,25 +292,62 @@
                android:layout_marginTop="5dp"
                android:layout_marginStart="16dp"
                android:layout_marginEnd="16dp"
-               android:hint="Name"
+               android:hint="@string/name"
                app:boxStrokeColor="@color/semibrown"
                app:hintTextColor="@color/semibrown"
-               app:errorEnabled="true">
+               app:errorEnabled="true"
+               >
 
                <com.google.android.material.textfield.TextInputEditText
                    android:id="@+id/clientName_RD"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
+                   android:singleLine="true"
                    android:textColorLink="@color/semibrown" />
 
            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
-                android:id="@+id/phonenumber_tv"
+                android:id="@+id/companyName_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/name_EditText"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="@string/company_name"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/companyName_EditText"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/companyName_tv"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/company_name"
+                app:boxStrokeColor="@color/semibrown"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/semibrown">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/clientCompanyName_RD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColorLink="@color/semibrown" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/phonenumber_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/companyName_EditText"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="9dp"
                 android:fontFamily="@font/poppinssemibold"
                 android:text="@string/cpno"
@@ -216,7 +363,9 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:hint="09XXXXXXXXXX"
+                android:hint="@string/phonenumHint"
+                app:prefixText="+63"
+                app:prefixTextColor="@color/semibrown"
                 app:boxStrokeColor="@color/semibrown"
                 app:hintTextColor="@color/semibrown"
                 app:errorEnabled="true">
@@ -225,6 +374,7 @@
                     android:id="@+id/clientPhoneNumber_RD"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:singleLine="true"
                     android:textColorLink="@color/semibrown" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -234,7 +384,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/phonenumber_EditText"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="9dp"
                 android:fontFamily="@font/poppinssemibold"
                 android:text="@string/peopleno"
@@ -246,9 +396,9 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/NumberofPeople_tv"
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="16dp"
+                android:layout_below="@id/NumberofPeople_tv"
                 app:boxStrokeColor="@color/semibrown"
                 app:hintTextColor="@color/semibrown"
                 app:errorEnabled="true">
@@ -257,33 +407,16 @@
                     android:id="@+id/numofPeople_RD"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:singleLine="true"
                     android:textColorLink="@color/semibrown" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/increment_btn"
-                android:layout_width="30dp"
-                android:layout_height="20dp"
-                android:layout_below="@id/NumberofPeople_tv"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="9dp"
-                android:layout_toRightOf="@+id/numofPeople_EditText"
-                android:background="@color/semibrown"
-                android:drawableStart="@drawable/ic_baseline_keyboard_arrow_up_24"
-                android:padding="3dp" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/decrement_btn"
-                android:layout_width="30dp"
-                android:layout_height="20dp"
-                android:layout_below="@id/increment_btn"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
-                android:layout_toRightOf="@+id/numofPeople_EditText"
-                android:background="@color/semibrown"
-                android:drawableStart="@drawable/ic_baseline_keyboard_arrow_down_24"
-                android:padding="3dp" />
+
+
+
+
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/next_btn"
@@ -293,7 +426,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="1dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/round_btn"
                 android:text="Next" />
 

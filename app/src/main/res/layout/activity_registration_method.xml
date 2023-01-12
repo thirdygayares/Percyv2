@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistrationJavaClass.RegistrationMethod">
+
+    <TextView
+        android:id="@+id/registerwith_TxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        android:fontFamily="@font/catamaranbold"
+        android:text="Register with"
+        android:textColor="@color/black"
+        android:textSize="30sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/email_Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/registerwith_TxtView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/roundbtn_white"
+        android:drawableLeft="@drawable/ic_baseline_email_24"
+        android:fontFamily="@font/catamaranbold"
+        android:paddingLeft="10dp"
+        android:paddingRight="35dp"
+        android:text="Email"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+
+        ></androidx.appcompat.widget.AppCompatButton>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/mobile_Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email_Btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/roundbtn_white"
+        android:drawableLeft="@drawable/ic_baseline_phone_android_24"
+        android:fontFamily="@font/catamaranbold"
+        android:paddingLeft="10dp"
+        android:paddingRight="35dp"
+        android:text="Mobile Number"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+
+        ></androidx.appcompat.widget.AppCompatButton>
+
+
+</RelativeLayout>

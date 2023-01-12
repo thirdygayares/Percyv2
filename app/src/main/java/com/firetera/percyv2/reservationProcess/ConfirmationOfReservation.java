@@ -1,7 +1,9 @@
-package com.firetera.percyv2;
+package com.firetera.percyv2.reservationProcess;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.firetera.percyv2.MainActivity2;
+import com.firetera.percyv2.R;
+import com.firetera.percyv2.ReservationFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -46,6 +51,16 @@ public class ConfirmationOfReservation extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), MainActivity2.class));
+            }
+        });
+
+        myReservation_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Fragment fragment = new ReservationFragment();
+//                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//                fragmentTransaction.replace(R.id.CORClass, fragment).commit();
+
             }
         });
 

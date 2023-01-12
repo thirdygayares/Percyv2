@@ -1,9 +1,10 @@
-package com.firetera.percyv2;
+package com.firetera.percyv2.reservationProcess;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,30 +19,39 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firetera.percyv2.DatePickerFragment;
+import com.firetera.percyv2.HomeFragment;
+import com.firetera.percyv2.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Random;
+import java.util.Locale;
 
 public class ReservationProcess extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
 
-    String[] items = {"Birthday Event", "Wedding Event", "Corporate Event", "Event"};
+    String[] items = {"Birthday Event", "Wedding Event", "Corporate Event", "Party Event", "Other"};
     ArrayAdapter<String> adapterItems;
     AutoCompleteTextView autoCompleteTextView;
-    Button nextBtn, incrementBtn, decrementBtn;
+    Button nextBtn, incrementBtn, decrementBtn, backArrow;
     TextView date, selectDate;
-    EditText numofPeopleET, name, phoneNumber;
+    TextInputLayout eventTxtInputLayout, otherTxtInputLayout;
+    EditText numofPeopleET, name, phoneNumber,companyName, other, where;
     FirebaseFirestore firestore;
     FirebaseAuth firebaseAuth;
     String reservationID = HomeFragment.reservationID;
     static String chosenEvent;
+
+
+
 
 
 
@@ -53,17 +63,30 @@ public class ReservationProcess extends AppCompatActivity implements DatePickerD
 
         selectDate = findViewById(R.id.selectDate_tv);
         autoCompleteTextView = findViewById(R.id.auto_complete_txt);
+        eventTxtInputLayout = findViewById(R.id.editText_event);
+        otherTxtInputLayout = findViewById(R.id.other_EditText);
         date = findViewById(R.id.date);
+
         numofPeopleET = findViewById(R.id.numofPeople_RD);
         name = findViewById(R.id.clientName_RD);
         phoneNumber = findViewById(R.id.clientPhoneNumber_RD);
+        where = findViewById(R.id.where_RD);
+        other = findViewById(R.id.other_RD);
+        companyName = findViewById(R.id.clientCompanyName_RD);
         nextBtn = findViewById(R.id.next_btn);
-        incrementBtn = findViewById(R.id.increment_btn);
-        decrementBtn = findViewById(R.id.decrement_btn);
+
         firestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
+        backArrow = findViewById(R.id.reservation_backArrow);
 
+        date.setText(currentDate());
 
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         adapterItems = new ArrayAdapter<String>(this, R.layout.events_list_item, items);
 
         autoCompleteTextView.setAdapter(adapterItems);
@@ -74,19 +97,27 @@ public class ReservationProcess extends AppCompatActivity implements DatePickerD
                 String item = parent.getItemAtPosition(position).toString();
                 Toast.makeText(getApplicationContext(), "Item: " + item, Toast.LENGTH_SHORT).show();
 
-                if (autoCompleteTextView.getText().toString().equals("Birthday Event")) {
-                    numofPeopleET.setText("10");
+                if (autoCompleteTextView.getText().toString().equals("Birthday Event") ||
+                        autoCompleteTextView.getText().toString().equals("Wedding Event") ||
+                        autoCompleteTextView.getText().toString().equals("Corporate Event") ||
+                        autoCompleteTextView.getText().toString().equals("Party Event")) {
+                    numofPeopleET.setText("50");
+                    other.setVisibility(View.GONE);
+                    otherTxtInputLayout.setVisibility(View.GONE);
 
-                    int x;
-                    x = Integer.parseInt(numofPeopleET.getText().toString());
-                    if (x < 10) {
 
-                        numofPeopleET.setError("");
-                    }
 
                 }
+                else if (autoCompleteTextView.getText().toString().equals("Other")){
 
+                    autoCompleteTextView.setVisibility(View.GONE);
+                    eventTxtInputLayout.setVisibility(View.GONE);
+                    otherTxtInputLayout.setVisibility(View.VISIBLE);
+                    other.setVisibility(View.VISIBLE);
 
+                    numofPeopleET.setText("50");
+
+                }
             }
         });
 
@@ -98,37 +129,68 @@ public class ReservationProcess extends AppCompatActivity implements DatePickerD
             }
         });
 
-
         nextBtn.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
 
-               if (name.getText().toString().length()==0){
-                   name.setError("Enter name");
+
+                String phoneNum = phoneNumber.getText().toString();
+
+                if (where.getText().toString().length() == 0){
+                    where.setError("Enter venue address");
+                }
+                else if (autoCompleteTextView.getText().toString().length()==0){
+                    Toast.makeText(getApplicationContext(), "Event is unfilled, please select event", Toast.LENGTH_LONG).show();
+                }
+                else if (other.getVisibility() == View.VISIBLE || otherTxtInputLayout.getVisibility() == View.VISIBLE){
+                    if (other.getText().toString().length() == 0){
+                        other.setError("Enter event");
+                    }
+                    else {
+                        autoCompleteTextView.setVisibility(View.VISIBLE);
+                        eventTxtInputLayout.setVisibility(View.VISIBLE);
+                        otherTxtInputLayout.setVisibility(View.GONE);
+                        other.setVisibility(View.GONE);
+                        autoCompleteTextView.setText(other.getText().toString());
+
+                    }
+                }
+
+                else if (name.getText().toString().length()==0){
+                    name.setError("Enter name");
+                }
+
+                else if (companyName.getText().toString().length() == 0){
+                    companyName.setText("Without Company");
+                }
+               else if(phoneNumber.length() != 10){
+                   phoneNumber.setError("Invalid phone number");
                }
-               else if (autoCompleteTextView.getText().toString().length()==0){
-                   autoCompleteTextView.setError("Select Event");
-               }
-               else if (phoneNumber.getText().toString().length()==0){
-                   phoneNumber.setError("Enter phone number");
-               }
+
+               else if(phoneNum.charAt(0) != '9'){
+                    phoneNumber.setError("Invalid phone number");
+                }
+
                else if (numofPeopleET.getText().toString().length()==0){
                    numofPeopleET.setError("This field is required to answer");
                }
+
                else {
-
-
-
 
                    HashMap<String, Object> ReservationDetails = new HashMap<>();
                    ReservationDetails.put("Reservation ID", reservationID);
                    ReservationDetails.put("Name", name.getText().toString());
+                    ReservationDetails.put("CompanyName", companyName.getText().toString());
                    ReservationDetails.put("Phone Number", phoneNumber.getText().toString());
                    ReservationDetails.put("ReservationDate", date.getText().toString());
+                    ReservationDetails.put("Venue", where.getText().toString());
                    ReservationDetails.put("Event", autoCompleteTextView.getText().toString());
                    ReservationDetails.put("Number of People", numofPeopleET.getText().toString());
                    ReservationDetails.put("User ID", firebaseAuth.getUid());
                    ReservationDetails.put("Status", false);
+                   ReservationDetails.put("Time of Reservation", currentTime());
+                   ReservationDetails.put("Date of Reservation",currentDate());
 
                    firestore.collection("ClientReservationDetails").document(reservationID)
                            .set(ReservationDetails)
@@ -144,12 +206,9 @@ public class ReservationProcess extends AppCompatActivity implements DatePickerD
                                }
                            });
 
-                   firestore.collection("Users").document(firebaseAuth.getUid())
-                           .collection("My Reservation")
-                           .document(reservationID)
-                           .set(ReservationDetails);
-                   startActivity(new Intent(getApplicationContext(), com.firetera.percyv2.ReservationDetails.class));
+                    startActivity(new Intent(getApplicationContext(), com.firetera.percyv2.reservationProcess.ReservationDetails.class));
                }
+
 
 
             }
@@ -178,9 +237,13 @@ public class ReservationProcess extends AppCompatActivity implements DatePickerD
 
     }
 
+    public static String currentDate(){
+        return new SimpleDateFormat("EEE, d MMM yyyy", Locale.getDefault()).format(new Date());
+    }
 
-
-
+    public static String currentTime(){
+        return  new SimpleDateFormat("hh:mm a", Locale.getDefault()).format(new Date());
+    }
 
 
 

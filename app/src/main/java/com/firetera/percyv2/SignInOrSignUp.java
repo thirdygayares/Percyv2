@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.firetera.percyv2.LogIn.LogInExampleUI;
+import com.firetera.percyv2.RegistrationJavaClass.Register;
+import com.firetera.percyv2.RegistrationJavaClass.RegistrationMethod;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SignInOrSignUp extends AppCompatActivity {
@@ -28,7 +31,7 @@ public class SignInOrSignUp extends AppCompatActivity {
         signinbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), SignIn.class));
+                startActivity(new Intent(getApplicationContext(), LogInExampleUI.class));
 
             }
         });
@@ -36,7 +39,7 @@ public class SignInOrSignUp extends AppCompatActivity {
         signupbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Register.class));
+                startActivity(new Intent(getApplicationContext(), RegistrationMethod.class));
             }
         });
 
