@@ -13,16 +13,16 @@
            android:id="@+id/event_Image"
            android:layout_width="match_parent"
            android:layout_height="110dp"
-           android:src="@drawable/bdaypic"/>
+           android:src="@drawable/bdaypic" />
 
        <ImageView
            android:id="@+id/numpeople_Iamge"
            android:layout_width="16dp"
            android:layout_height="19dp"
-           android:src="@drawable/numpeople"
            android:layout_below="@+id/event_Image"
+           android:layout_marginLeft="10dp"
            android:layout_marginTop="5dp"
-           android:layout_marginLeft="10dp"/>
+           android:src="@drawable/numpeople" />
 
        <androidx.cardview.widget.CardView
            android:layout_width="95dp"

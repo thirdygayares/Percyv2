@@ -61,6 +61,12 @@ public class ReservationHistoryAdapter extends RecyclerView.Adapter<ReservationH
             holder.statusTxtView.setTextColor(ContextCompat.getColor(context, R.color.fontcolorapproved));
             holder.statusTxtView.setText("Approved");
         }
+        else if (reservationHistoryModel.getStatus().equals(false)){
+            holder.statusCardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.pendingbg));
+            holder.statusTxtView.setTextColor(ContextCompat.getColor(context, R.color.fontcolorpending));
+            holder.statusTxtView.setText("Pending");
+
+        }
     }
 
     @Override

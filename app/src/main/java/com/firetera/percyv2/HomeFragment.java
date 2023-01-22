@@ -22,9 +22,11 @@ import android.widget.TextView;
 
 import com.firetera.percyv2.Adapter.BestDishesListAdapter;
 import com.firetera.percyv2.Adapter.EventThemeAdapter;
+import com.firetera.percyv2.Adapter.VenueAdapter;
 import com.firetera.percyv2.Model.BestDishesListModel;
 import com.firetera.percyv2.Model.EventThemeModel;
-import com.firetera.percyv2.reservationProcess.ReservationProcess;
+import com.firetera.percyv2.Model.VenueModel;
+import com.firetera.percyv2.ReservationProcessPackage.ReservationProcessPersonalInfo;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -55,7 +57,7 @@ public class HomeFragment extends Fragment {
 
 
 
-    RecyclerView eventRecyclerView, bestDishesRecyclerView;
+    RecyclerView eventRecyclerView, bestDishesRecyclerView, venueRecyclerView;
 
 
     ArrayList<EventThemeModel> eventThemeModels = new ArrayList<>();
@@ -63,6 +65,11 @@ public class HomeFragment extends Fragment {
     int[] eventImages = {R.drawable.bdaypic, R.drawable.weddingpic,
             R.drawable.corporatepic, R.drawable.businesspic,
             R.drawable.eventspic};
+
+    ArrayList<VenueModel> venueModels = new ArrayList<>();
+    int [] venueImages = {R.drawable.palaciodemanilarecyclerimage, R.drawable.warehouseeightrecyclerimage,
+            R.drawable.villacapcorecyclerimage, R.drawable.eventscenterrecyclerimage,
+            R.drawable.eventvenuemakatirecyclerimage, R.drawable.metsplacerecyclerimage};
 
     ArrayList<BestDishesListModel> bestDishesListModels = new ArrayList<>();
     int[] bestDishesImages = {R.drawable.chickencordonbleu1, R.drawable.chickenlollipop2,
@@ -92,8 +99,10 @@ public class HomeFragment extends Fragment {
 
         eventRecyclerView = view.findViewById(R.id.eventRecyclerview1);
         bestDishesRecyclerView = view.findViewById(R.id.bestDishesRecyclerview1);
+        venueRecyclerView = view.findViewById(R.id.venue_RecyclerView);
 
         setUpBestDishesRecyclerView();
+        setUpVenueRecyclerView();
         setUpEventRecyclerView();
 
 
@@ -131,7 +140,7 @@ public class HomeFragment extends Fragment {
 
               reservationID = randNumStr + "-" + randLettStr;
 
-                startActivity( new Intent(getContext(), ReservationProcess.class));
+                startActivity( new Intent(getContext(), ReservationProcessPersonalInfo.class));
             }
         });
 
@@ -164,7 +173,7 @@ public class HomeFragment extends Fragment {
                 }
 
                reservationID = randNumStr + "-" + randLettStr;
-                startActivity( new Intent(getContext(), ReservationProcess.class));
+                startActivity( new Intent(getContext(), ReservationProcessPersonalInfo.class));
             }
         });
 
@@ -202,6 +211,33 @@ public class HomeFragment extends Fragment {
 
 
         return view;
+    }
+
+    private void setUpVenueRecyclerView() {
+
+        VenueAdapter VenueAdapter = new VenueAdapter(getContext(), venueModels);
+        venueRecyclerView.setAdapter(VenueAdapter);
+        venueRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(
+                getContext(), LinearLayoutManager.HORIZONTAL, false
+        );
+        venueRecyclerView.setLayoutManager(linearLayoutManager);
+        venueRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        String[] venueName = getResources().getStringArray(R.array.venue_name_list);
+        String[] venueAddress = getResources().getStringArray(R.array.venue_address_list);
+
+
+
+        for (int i = 0; i < venueName.length; i++) {
+
+
+            venueModels.add(new VenueModel(venueName[i],
+                    venueAddress[i],
+                    venueImages[i]));
+
+        }
     }
 
     private void setUpEventRecyclerView() {

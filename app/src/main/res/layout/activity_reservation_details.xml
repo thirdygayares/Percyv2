@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".reservationProcess.ReservationDetails"
+    tools:context=".ReservationProcessPackage.ReservationDetails"
     android:background="@color/bgcolor">
 
     <androidx.cardview.widget.CardView
@@ -163,6 +163,26 @@
                           android:layout_height="wrap_content"
                           android:layout_marginLeft="30dp"
                           android:layout_marginTop="20dp"
+                          android:text="@string/email"
+                          android:textColor="@color/black"
+                          android:textSize="18sp"
+                          android:textStyle="bold" />
+
+                      <TextView
+                          android:id="@+id/RD_email"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_marginLeft="30dp"
+                          android:layout_marginTop="5dp"
+                          android:text="@string/email"
+                          android:textColor="@color/black"
+                          android:textSize="20sp" />
+
+                      <TextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_marginLeft="30dp"
+                          android:layout_marginTop="20dp"
                           android:text="Reservation Date"
                           android:textColor="@color/black"
                           android:textSize="18sp"
@@ -238,6 +258,26 @@
                           android:textColor="@color/black"
                           android:textSize="20sp" />
 
+                      <TextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_marginLeft="30dp"
+                          android:layout_marginTop="20dp"
+                          android:text="Package"
+                          android:textColor="@color/black"
+                          android:textSize="18sp"
+                          android:textStyle="bold" />
+
+                      <TextView
+                          android:id="@+id/RD_foodPackage"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_marginLeft="30dp"
+                          android:layout_marginTop="5dp"
+                          android:text="Package A"
+                          android:textColor="@color/black"
+                          android:textSize="20sp" />
+
                       <androidx.appcompat.widget.AppCompatButton
                           android:id="@+id/changeDetails_Btn"
                           android:layout_width="match_parent"
@@ -258,7 +298,7 @@
                           android:layout_marginEnd="20dp"
                           android:layout_marginBottom="20dp"
                           android:background="@color/semibrown"
-                          android:text="Reserve now"
+                          android:text="@string/next"
                           android:textColor="@color/white" />
                   </LinearLayout>
               </androidx.cardview.widget.CardView>

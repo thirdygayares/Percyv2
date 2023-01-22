@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/foodPackage_cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/packageName_cardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/semibrown"
+
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/packageName_TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="Package A"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/price_LinearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentEnd="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/titilliumwebsemibold"
+                    android:text="P"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/price_TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/titilliumwebsemibold"
+                    android:text="400"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/foodNo1_TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/packageName_cardView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/titilliumwebsemibold"
+                android:text="Food No.1"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/foodNo2_TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food No. 2"
+                android:fontFamily="@font/titilliumwebsemibold"
+                android:textColor="@color/black"
+                android:layout_below="@id/foodNo1_TextView"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/foodNo3_TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food No.3"
+                android:fontFamily="@font/titilliumwebsemibold"
+                android:textColor="@color/black"
+                android:layout_below="@id/foodNo2_TextView"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/foodNo4_TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food No. 4"
+                android:layout_below="@id/foodNo3_TextView"
+                android:fontFamily="@font/titilliumwebsemibold"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

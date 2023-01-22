@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="185dp"
+    android:layout_height="150dp"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:id="@+id/venueImage_ImgView"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:src="@drawable/palaciodemanilarecyclerimage" />
+
+    <TextView
+        android:id="@+id/venueName_TxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/venueImage_ImgView"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/titilliumwebsemibold"
+        android:text="@string/palaci_de_maynila"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/venueAddress_TxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/venueName_TxtView"
+        android:layout_toRightOf="@id/AddressIcon"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/titilliumwebregular"
+        android:text="@string/malate_manila"
+        android:textColor="@color/black"
+        android:textSize="11sp" />
+
+    <ImageView
+        android:id="@+id/AddressIcon"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/addressicon" />
+
+
+
+
+</RelativeLayout>

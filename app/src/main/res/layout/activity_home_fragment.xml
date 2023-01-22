@@ -54,7 +54,7 @@
                     android:fontFamily="@font/secularoneregular"
                     android:text="@string/welcome"
                     android:textColor="@color/black"
-                    android:textSize="30sp"/>
+                    android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/name"
@@ -81,12 +81,14 @@
                     android:id="@+id/eventIntro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/eventIntro"
                     android:layout_below="@id/homeImage"
-                    android:textSize="20sp"
-                    android:textColor="@color/black"
+                    android:layout_marginStart="25dp"
                     android:fontFamily="@font/titilliumwebsemibold"
-                    android:layout_marginStart="25dp"/>
+                    android:text="@string/eventIntro"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -121,15 +123,46 @@
                     android:textColor="@color/semibrown" />
 
                 <TextView
-                    android:id="@+id/topDishes_txtView"
+                    android:id="@+id/offerVenue_TxtView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/reservenow_Btn"
                     android:layout_marginStart="25dp"
                     android:fontFamily="@font/titilliumwebsemibold"
+                    android:text="@string/offer_best_venue"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/venue_RecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/offerVenue_TxtView"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="none" />
+
+                <TextView
+                    android:id="@+id/topDishes_txtView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/venue_RecyclerView"
+                    android:layout_marginStart="25dp"
+                    android:fontFamily="@font/titilliumwebsemibold"
                     android:text="@string/best_dishes"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/dishesSeeAll_TxtView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/venue_RecyclerView"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/see_all"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/seeAll_TxtView"
@@ -141,7 +174,7 @@
                     android:layout_marginEnd="20dp"
                     android:text="@string/see_all"
                     android:textColor="@color/black"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/bestDishesList_CL"

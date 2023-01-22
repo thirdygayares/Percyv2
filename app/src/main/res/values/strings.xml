@@ -24,7 +24,7 @@
     <string name="reservation_details">Reservation Details</string>
     <string name="select_event">Select Event</string>
     <string name="cpno">Mobile Number</string>
-    <string name="peopleno">Number of People</string>
+    <string name="peopleno">No. of Pax</string>
     <string name="res_details">Reservation Details</string>
     <string name="reservation_id">Reservation ID</string>
     <string name="change_details">Change Details</string>
@@ -65,10 +65,34 @@
     <string name="name">Name</string>
     <string name="phonenumHint">+639XXXXXXXXX</string>
     <string name="company_name">Company Name</string>
-    <string name="where">Enter complete address details</string>
+    <string name="where">Enter complete address details of venue</string>
     <string name="wheree">Where</string>
     <string name="other">Other</string>
     <string name="numOfPeopleWarning">If your number of people is below 50, Please contact us later</string>
+    <string name="offer_best_venue">We offer you a best Venue</string>
+    <string name="palaci_de_maynila">Palacio De Maynila</string>
+    <string name="malate_manila">Malate Manila</string>
+    <string name="loading">Loading...</string>
+    <string name="create_reservation">Create reservation</string>
+    <string name="create_your_reservation">Create your reservation</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="address">Address</string>
+    <string name="next">Next</string>
+    <string name="occasion">Occasion</string>
+    <string name="select_occasion">Select Occasion</string>
+    <string name="motif">Motif</string>
+    <string name="enter_motif">Enter Motif</string>
+    <string name="payment_details">Payment Details</string>
+    <string name="package_details">Package Details</string>
+    <string name="package_name">Package name</string>
+    <string name="price">Price</string>
+    <string name="food_no_1">Food No. 1</string>
+    <string name="total_price">100 x 700.00 = P70,000.00</string>
+    <string name="mode_of_payment">Select Mode of Payment</string>
+    <string name="mode_of_payments">Mode of Payment</string>
+    <string name="my_number">09072275671</string>
+    <string name="or">or</string>
 
 
     <string-array name="food_name_list">
@@ -118,6 +142,26 @@
         <item>Corporate</item>
         <item>Business</item>
         <item>Events</item>
+    </string-array>
+
+    <string-array name="venue_name_list">
+        <item>Palacio De Maynila</item>
+        <item>Warehouse Eight </item>
+        <item>Villa Capco </item>
+        <item>Events Center </item>
+        <item>Event Venue  Makati </item>
+        <item>Mets Place</item>
+    </string-array>
+
+    <string-array name="venue_address_list">
+
+        <item>Manila, Metro Manila</item>
+        <item>Makati, Metro Manila </item>
+        <item>Pasig, Metro Manila</item>
+        <item>Makati, Metro Manila </item>
+        <item>Makati, Metro Manila </item>
+        <item>Makati, Metro Manila</item>
+
     </string-array>
 
 </resources>

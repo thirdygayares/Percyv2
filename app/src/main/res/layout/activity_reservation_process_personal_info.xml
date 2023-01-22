@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:background="@color/bgcolor"
+    tools:context=".ReservationProcessPackage.ReservationProcessPersonalInfo">
+
+ <ScrollView
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="vertical">
+
+         <RelativeLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+             <androidx.cardview.widget.CardView
+                 android:id="@+id/createReservation_cardView"
+                 android:layout_width="match_parent"
+                 android:layout_height="76dp"
+                 android:background="@color/white"
+                 app:cardElevation="10dp"
+                 android:layout_marginBottom="20dp">
+
+                 <RelativeLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent">
+
+                     <Button
+                         android:id="@+id/reservation_backArrow"
+                         android:layout_width="40dp"
+                         android:layout_height="40dp"
+                         android:layout_centerVertical="true"
+                         android:layout_marginStart="20dp"
+                         android:layout_marginLeft="10dp"
+                         android:background="?android:attr/selectableItemBackground"
+                         android:drawableTop="@drawable/ic_baseline_arrow_back_24" />
+
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_centerInParent="true"
+                         android:fontFamily="@font/calibribold"
+                         android:text="@string/create_reservation"
+                         android:textColor="@color/black"
+                         android:textSize="26sp" />
+                 </RelativeLayout>
+             </androidx.cardview.widget.CardView>
+
+             <androidx.cardview.widget.CardView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginStart="15dp"
+                 android:layout_marginEnd="15dp"
+                 android:layout_below="@id/createReservation_cardView"
+                 android:layout_marginTop="10dp"
+                 android:layout_marginBottom="20dp"
+                 app:cardElevation="5dp">
+
+                 <RelativeLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent">
+
+                     <TextView
+                         android:id="@+id/createYourReservation_TxtView"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="20dp"
+                         android:layout_marginTop="20dp"
+                         android:fontFamily="@font/poppinsbold"
+                         android:text="@string/create_your_reservation"
+                         android:textColor="@color/semibrown"
+                         android:textSize="20sp" />
+
+                     <TextView
+                         android:id="@+id/firstName_TextView"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@id/createYourReservation_TxtView"
+                         android:layout_marginStart="20dp"
+                         android:layout_marginTop="5dp"
+                         android:fontFamily="@font/poppinssemibold"
+                         android:text="@string/first_name"
+                         android:textColor="@color/black"
+                         android:textSize="16sp" />
+
+                     <com.google.android.material.textfield.TextInputLayout
+                         android:id="@+id/firstName_EditText"
+                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@id/firstName_TextView"
+                         android:layout_marginTop="5dp"
+                         android:layout_marginStart="16dp"
+                         android:layout_marginEnd="16dp"
+                         android:hint="@string/first_name"
+                         app:boxStrokeColor="@color/semibrown"
+                         app:hintTextColor="@color/semibrown"
+                         app:errorEnabled="true"
+                         >
+
+                         <com.google.android.material.textfield.TextInputEditText
+                             android:id="@+id/clientFirstName"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:singleLine="true"
+                             android:textColorLink="@color/semibrown" />
+
+                     </com.google.android.material.textfield.TextInputLayout>
+
+                     <TextView
+                         android:id="@+id/lastName_TextView"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@id/firstName_EditText"
+                         android:layout_marginStart="20dp"
+                         android:fontFamily="@font/poppinssemibold"
+                         android:text="@string/last_name"
+                         android:textColor="@color/black"
+                         android:textSize="16sp" />
+
+                     <com.google.android.material.textfield.TextInputLayout
+                         android:id="@+id/lastName_EditText"
+                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@id/lastName_TextView"
+                         android:layout_marginTop="5dp"
+                         android:layout_marginStart="16dp"
+                         android:layout_marginEnd="16dp"
+                         android:hint="@string/last_name"
+                         app:boxStrokeColor="@color/semibrown"
+                         app:hintTextColor="@color/semibrown"
+                         app:errorEnabled="true"
+                         >
+
+                         <com.google.android.material.textfield.TextInputEditText
+                             android:id="@+id/clientLastName"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:singleLine="true"
+                             android:textColorLink="@color/semibrown" />
+
+                     </com.google.android.material.textfield.TextInputLayout>
+
+                     <TextView
+                         android:id="@+id/companyName_TextView"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@id/lastName_EditText"
+                         android:layout_marginStart="20dp"
+                         android:fontFamily="@font/poppinssemibold"
+                         android:text="@string/company_name"
+                         android:textColor="@color/black"
+                         android:textSize="16sp" />
+
+
+                     <com.google.android.material.textfield.TextInputLayout
+                         android:id="@+id/companyName_EditText"
+                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@id/companyName_TextView"
+                         android:layout_marginTop="5dp"
+                         android:layout_marginStart="16dp"
+                         android:layout_marginEnd="16dp"
+                         android:hint="@string/company_name"
+                         app:boxStrokeColor="@color/semibrown"
+                         app:hintTextColor="@color/semibrown"
+                         app:errorEnabled="true"
+                         >
+
+                         <com.google.android.material.textfield.TextInputEditText
+                             android:id="@+id/clientCompanyName"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:singleLine="true"
+                             android:textColorLink="@color/semibrown" />
+
+                     </com.google.android.material.textfield.TextInputLayout>
+
+
+                     <TextView
+                         android:id="@+id/address_TextView"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@id/companyName_EditText"
+                         android:layout_marginStart="20dp"
+                         android:fontFamily="@font/poppinssemibold"
+                         android:text="@string/address"
+                         android:textColor="@color/black"
+                         android:textSize="16sp" />
+
+                     <com.google.android.material.textfield.TextInputLayout
+                         android:id="@+id/Address_EditText"
+                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@id/address_TextView"
+                         android:layout_marginTop="5dp"
+                         android:layout_marginStart="16dp"
+                         android:layout_marginEnd="16dp"
+                         android:hint="@string/address"
+                         app:boxStrokeColor="@color/semibrown"
+                         app:hintTextColor="@color/semibrown"
+                         app:errorEnabled="true"
+                         >
+
+                         <com.google.android.material.textfield.TextInputEditText
+                             android:id="@+id/clientAddress"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:singleLine="true"
+                             android:textColorLink="@color/semibrown" />
+
+                     </com.google.android.material.textfield.TextInputLayout>
+
+                     <TextView
+                         android:id="@+id/email_TextView"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@id/Address_EditText"
+                         android:layout_marginStart="20dp"
+                         android:layout_marginTop="5dp"
+                         android:fontFamily="@font/poppinssemibold"
+                         android:text="@string/email"
+                         android:textColor="@color/black"
+                         android:textSize="16sp" />
+
+                     <com.google.android.material.textfield.TextInputLayout
+                         android:id="@+id/email_EditText"
+                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@id/email_TextView"
+                         android:layout_marginTop="5dp"
+                         android:layout_marginStart="16dp"
+                         android:layout_marginEnd="16dp"
+                         android:hint="@string/email"
+                         app:boxStrokeColor="@color/semibrown"
+                         app:hintTextColor="@color/semibrown"
+                         app:errorEnabled="true"
+                         >
+
+                         <com.google.android.material.textfield.TextInputEditText
+                             android:id="@+id/clientEmail"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:singleLine="true"
+                             android:textColorLink="@color/semibrown" />
+
+                     </com.google.android.material.textfield.TextInputLayout>
+
+
+                     <TextView
+                         android:id="@+id/mobileNumber_TextView"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@id/email_EditText"
+                         android:layout_marginStart="20dp"
+                         android:layout_marginTop="9dp"
+                         android:fontFamily="@font/poppinssemibold"
+                         android:text="@string/cpno"
+                         android:textColor="@color/black"
+                         android:textSize="16sp" />
+
+                     <com.google.android.material.textfield.TextInputLayout
+                         android:id="@+id/mobileNumber_EditText"
+                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@+id/mobileNumber_TextView"
+                         android:layout_marginTop="5dp"
+                         android:layout_marginStart="16dp"
+                         android:layout_marginEnd="16dp"
+                         android:hint="@string/phonenumHint"
+                         app:prefixText="+63"
+                         app:prefixTextColor="@color/semibrown"
+                         app:boxStrokeColor="@color/semibrown"
+                         app:hintTextColor="@color/semibrown"
+                         app:errorEnabled="true">
+
+                         <com.google.android.material.textfield.TextInputEditText
+                             android:id="@+id/clientMobileNumber"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:singleLine="true"
+                             android:textColorLink="@color/semibrown" />
+
+                     </com.google.android.material.textfield.TextInputLayout>
+
+                     <FrameLayout
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@+id/mobileNumber_EditText"
+                         android:layout_centerInParent="true"
+                         android:layout_marginBottom="15dp">
+                         <RelativeLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="match_parent">
+
+                             <androidx.appcompat.widget.AppCompatButton
+                                 android:id="@+id/next_btn"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginStart="16dp"
+                                 android:layout_marginTop="20dp"
+                                 android:layout_marginEnd="16dp"
+                                 android:layout_marginBottom="10dp"
+                                 android:background="@drawable/round_btn"
+                                 android:fontFamily="@font/calibribold"
+                                 android:text="@string/next"
+                                 android:textAllCaps="false"
+                                 android:textColor="@color/white"
+                                 android:textSize="19sp" />
+
+                             <ProgressBar
+                                 android:id="@+id/nextBtn_ProgBar"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginTop="23dp"
+                                 android:visibility="gone"
+                                 android:layout_centerInParent="true"
+                                 android:indeterminateTint="@color/semibrown"
+
+                                 />
+                         </RelativeLayout>
+                     </FrameLayout>
+                 </RelativeLayout>
+
+
+             </androidx.cardview.widget.CardView>
+         </RelativeLayout>
+     </LinearLayout>
+ </ScrollView>
+
+</RelativeLayout>
