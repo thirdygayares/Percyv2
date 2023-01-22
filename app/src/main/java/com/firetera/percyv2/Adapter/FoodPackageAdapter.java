@@ -1,7 +1,10 @@
 package com.firetera.percyv2.Adapter;
 
+
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firetera.percyv2.Model.FoodPackageModel;
 import com.firetera.percyv2.R;
+import com.google.firebase.database.collection.LLRBNode;
 
 import java.util.ArrayList;
 
@@ -35,7 +39,7 @@ public class FoodPackageAdapter extends RecyclerView.Adapter<FoodPackageAdapter.
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.foodpackage_list, parent, false);
 
-        return  new FoodPackageAdapter.MyViewHolder(view);
+        return  new FoodPackageAdapter.MyViewHolder(view, listiner);
     }
 
     @Override
@@ -49,14 +53,12 @@ public class FoodPackageAdapter extends RecyclerView.Adapter<FoodPackageAdapter.
         holder.foodNo3.setText(foodPackageModel.getFoodNo3());
         holder.foodNo4.setText(foodPackageModel.getFoodNo4());
 
+                if(foodPackageModel.getStatus().equals(true)){
+                    holder.cardView.setCardBackgroundColor(Color.BLACK);
+                }else if(foodPackageModel.getStatus().equals(false)){
+                    holder.cardView.setCardBackgroundColor(Color.BLUE);
+                }
 
-
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listiner.onItemClicked(list.get(position));
-            }
-        });
     }
 
     @Override
@@ -70,9 +72,8 @@ public class FoodPackageAdapter extends RecyclerView.Adapter<FoodPackageAdapter.
         CardView cardView;
 
 
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView, SelectListiner selectListiner ) {
             super(itemView);
-
 
             packageName = itemView.findViewById(R.id.packageName_TextView);
             price = itemView.findViewById(R.id.price_TextView);
@@ -81,6 +82,20 @@ public class FoodPackageAdapter extends RecyclerView.Adapter<FoodPackageAdapter.
             foodNo3 = itemView.findViewById(R.id.foodNo3_TextView);
             foodNo4 = itemView.findViewById(R.id.foodNo4_TextView);
             cardView = itemView.findViewById(R.id.foodPackage_cardView);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(selectListiner != null ){
+                        int pos = getAdapterPosition();
+                        if(pos!= RecyclerView.NO_POSITION){
+                            selectListiner.onItemClick(pos);
+                        }
+
+                    }
+                }
+            });
+
 
         }
     }

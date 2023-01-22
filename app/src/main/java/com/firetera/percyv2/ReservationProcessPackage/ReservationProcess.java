@@ -77,8 +77,6 @@ public class ReservationProcess extends AppCompatActivity implements DatePickerD
 
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -304,8 +302,8 @@ public class ReservationProcess extends AppCompatActivity implements DatePickerD
                                     document.get("FoodNo1").toString(),
                                     document.get("FoodNo2").toString() ,
                                     document.get("FoodNo3").toString(),
-                                    document.get("FoodNo4").toString(),
-                                    (Boolean) document.get("Status")));
+                                    document.get("FoodNo4").toString()
+                                    ));
 
                             foodPackageAdapter.notifyDataSetChanged();
                         }
@@ -329,16 +327,24 @@ public class ReservationProcess extends AppCompatActivity implements DatePickerD
     }
 
     @Override
-    public void onItemClicked(FoodPackageModel foodPackageModel) {
+    public void onItemClick(int pos) {
+        price = list.get(pos).getPrice();
+        packageName = list.get(pos).getPackageName();
+        foodNo1 = list.get(pos).getFoodNo1();
+        foodNo2 = list.get(pos).getFoodNo2();
+        foodNo3 = list.get(pos).getFoodNo3();
+        foodNo4 = list.get(pos).getFoodNo4();
 
-        price = foodPackageModel.getPrice();
-        packageName = foodPackageModel.getPackageName();
-        foodNo1 = foodPackageModel.getFoodNo1();
-        foodNo2 = foodPackageModel.getFoodNo2();
-        foodNo3 = foodPackageModel.getFoodNo3();
-        foodNo4 = foodPackageModel.getFoodNo4();
+        if(list.get(pos).getStatus().equals(false)){
+            for(int i=0; i<list.size(); i++){
+                list.get(i).setStatus(false);
+            }
+            list.get(pos).setStatus(true);
 
-        Toast.makeText(getApplicationContext(), "You selected" + foodPackageModel.getPackageName(), Toast.LENGTH_LONG).show();
+            foodPackageAdapter.notifyDataSetChanged();
+        }
+
+        //Toast.makeText(getApplicationContext(), "You selected" + list.get(pos).getPackageName(), Toast.LENGTH_LONG).show();
 
     }
 }
