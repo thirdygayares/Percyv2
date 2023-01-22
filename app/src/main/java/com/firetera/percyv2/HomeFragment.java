@@ -85,13 +85,13 @@ public class HomeFragment extends Fragment {
          View view = inflater.inflate(R.layout.activity_home_fragment, container, false);
 
         //XML
-        username = view.findViewById(R.id.username);
-        password = view.findViewById(R.id.password);
-        fullname = view.findViewById(R.id.fullname);
-        signinbtn = view.findViewById(R.id.signinbtn);
-        showpassword = view.findViewById(R.id.showpw);
+       // username = view.findViewById(R.id.username);
+        //password = view.findViewById(R.id.password);
+        //fullname = view.findViewById(R.id.fullname);
+        //signinbtn = view.findViewById(R.id.signinbtn);
+        //showpassword = view.findViewById(R.id.showpw);
         clientName = view.findViewById(R.id.name);
-        logoutbtn = view.findViewById(R.id.logoutbtn);
+        //logoutbtn = view.findViewById(R.id.logoutbtn);
         cateringinfo_btn = view.findViewById(R.id.homeImage);
         seeAllDishes = view.findViewById(R.id.seeAll_TxtView);
         reservationBtn = view.findViewById(R.id.reservenow_Btn);

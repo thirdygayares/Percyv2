@@ -1,14 +1,18 @@
 package com.firetera.percyv2.ReservationProcessPackage;
 
+import static com.firetera.percyv2.RegistrationJavaClass.Register.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -28,15 +32,22 @@ import com.firetera.percyv2.HomeFragment;
 import com.firetera.percyv2.LoadingDialog;
 import com.firetera.percyv2.Model.FoodPackageModel;
 import com.firetera.percyv2.R;
+import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.text.DecimalFormat;
 import java.util.HashMap;
@@ -45,14 +56,26 @@ public class PaymentMethod extends AppCompatActivity {
 
     TextView packageName, foodNo1, foodNo2, foodNo3, foodNo4, totalPrice, precyMobileNum;
     ImageView copy;
-    Button reserve_Btn;
+    Button reserve_Btn, chooseFile_Btn;
+    ImageView receipt_ImageView;
+    TextInputEditText clientGCashNumber;
     ProgressBar progressBar;
     AutoCompleteTextView autoCompleteTextView;
     FrameLayout frameLayout;
 
+    //storing the link of image
+    static String imageproof = "";
+    Uri uri;
+
+    //I upload the image to the firebase call them
+    FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
+    StorageReference storageReference = firebaseStorage.getReference();
+
+
+
     public String reservationID, date, event, name, phoneNumber, numOfPeople,
             venue, companyName, foodPackageName, email;
-
+    StorageReference imageGcash;
     public String numOfPendingReservation;
 
 
@@ -86,11 +109,21 @@ public class PaymentMethod extends AppCompatActivity {
         frameLayout = findViewById(R.id.gCash_frameLayout);
         reserve_Btn = findViewById(R.id.reserve_Btn);
         progressBar = findViewById(R.id.reserveBtn_ProgBar);
+        //add input layout for Gcash
+        clientGCashNumber = findViewById(R.id.clientGCashNumber);
+        //choose file button
+        chooseFile_Btn = findViewById(R.id.chooseFile_Btn);
+        //image preview for payment
+        receipt_ImageView = findViewById(R.id.receipt_ImageView);
+
 
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 
+        //TODO uncomment this
         reservationID = HomeFragment.reservationID;
+
+        imageGcash = storageReference.child("proof/" + reservationID);
 
         priceOfFoodPackageInt = Integer.parseInt(priceOfFoodPackage);
         numOfPaxInt = Integer.parseInt(numOfPax);
@@ -139,9 +172,82 @@ public class PaymentMethod extends AppCompatActivity {
             }
         });
 
+        //method for uploading Imagve
+        imagepickerMethod();
 
 
     }
+
+    // upload image
+    private void uploadImageMethod() {
+
+        imageGcash.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                Snackbar.make(findViewById(android.R.id.content), "Proof Uploaded", Snackbar.LENGTH_LONG).show();
+
+                imageGcash.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        //show the Firebase Storage Link
+                        Log.d(TAG,String.valueOf(uri));
+                        imageproof = String.valueOf(uri);
+                        finish();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d("TAG", "FDAILUERE CAUSE " + e);
+                    }
+                });
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                progressBar.setVisibility(View.GONE);
+            }
+        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+                progressBar.setVisibility(View.VISIBLE);
+            }
+        });
+
+
+    }
+
+    //method for picking image
+    private void imagepickerMethod() {
+        chooseFile_Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImagePicker.with(PaymentMethod.this)
+                        .galleryOnly()
+                        .crop(9f, 16f)//Crop image(Optional), Check Customization for more option
+                        .compress(1024)			//Final image size will be less than 1 MB(Optional)
+                        .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
+                        .start();
+            }
+        });
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == Activity.RESULT_OK) {
+            //Image Uri will not be null for RESULT_OK
+            uri = data.getData();
+            receipt_ImageView.setVisibility(View.VISIBLE);
+            receipt_ImageView.setImageURI(uri);
+        } else if (resultCode == ImagePicker.RESULT_ERROR) {
+            Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Task Cancelled", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
 
     private void setUpReserveButton() {
 
@@ -149,40 +255,55 @@ public class PaymentMethod extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                //upload image to firebase storage
+                uploadImageMethod();
+
                 reserve_Btn.setVisibility(View.GONE);
                 progressBar.setVisibility(View.VISIBLE);
-                int  intNumOfPendingReservation = Integer.parseInt(numOfPendingReservation);
-                intNumOfPendingReservation += 1;
-
-                HashMap<String, Object> ReservationDetails = new HashMap<>();
-                ReservationDetails.put("Reservation ID", reservationID);
-                ReservationDetails.put("Name", name);
-                ReservationDetails.put("CompanyName", companyName);
-                ReservationDetails.put("Phone Number", phoneNumber);
-                ReservationDetails.put("ReservationDate", date);
-                ReservationDetails.put("Venue", venue);
-                ReservationDetails.put("Event", event);
-                ReservationDetails.put("Number of People", numOfPeople);
-                ReservationDetails.put("User ID", firebaseAuth.getUid());
-                ReservationDetails.put("Status", false);
-                ReservationDetails.put("Time of Reservation", ReservationProcess.currentTime());
-                ReservationDetails.put("Date of Reservation", ReservationProcess.currentDate());
-
-                firebaseFirestore.collection("PendingReservation").document(reservationID)
-                        .set(ReservationDetails)
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void unused) {
-                                Log.d("TAG", "SUCCESS DATA UPLOAD");
 
 
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.d("TAG", "data sending" + e);
-                            }
-                        });
+
+                imageGcash.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Uri> task) {
+                        if(task.isSuccessful()){
+
+                            imageproof = task.getResult().toString();
+                            Log.d("TAG", "kukunin ko" + imageproof);
+
+                            int  intNumOfPendingReservation = Integer.parseInt(numOfPendingReservation);
+                            intNumOfPendingReservation += 1;
+
+                            HashMap<String, Object> ReservationDetails = new HashMap<>();
+                            ReservationDetails.put("Reservation ID", reservationID);
+                            ReservationDetails.put("Name", name);
+                            ReservationDetails.put("CompanyName", companyName);
+                            ReservationDetails.put("Phone Number", phoneNumber);
+                            ReservationDetails.put("ImageProof", imageproof); //getting image link
+                            ReservationDetails.put("Gcash", clientGCashNumber.getText().toString()); //getting gcash number
+                            ReservationDetails.put("ReservationDate", date);
+                            ReservationDetails.put("Venue", venue);
+                            ReservationDetails.put("Event", event);
+                            ReservationDetails.put("Number of People", numOfPeople);
+                            ReservationDetails.put("User ID", firebaseAuth.getUid());
+                            ReservationDetails.put("Status", false);
+                            ReservationDetails.put("Time of Reservation", ReservationProcess.currentTime());
+                            ReservationDetails.put("Date of Reservation", ReservationProcess.currentDate());
+
+                            firebaseFirestore.collection("PendingReservation").document(reservationID)
+                                    .set(ReservationDetails)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void unused) {
+                                            Log.d("TAG", "SUCCESS DATA UPLOAD");
+
+                                        }
+                                    }).addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.d("TAG", "data sending" + e);
+                                        }
+                                    });
 
 
                 numOfPendingReservation = Integer.toString(intNumOfPendingReservation);
@@ -209,6 +330,7 @@ public class PaymentMethod extends AppCompatActivity {
                         .collection("My Reservation")
                         .document(reservationID)
                         .set(ReservationDetails);
+
                 final LoadingDialog loadingDialog = new LoadingDialog(PaymentMethod.this);
 
                 loadingDialog.startLoadingDialog();
@@ -221,6 +343,10 @@ public class PaymentMethod extends AppCompatActivity {
                         startActivity(new Intent(PaymentMethod.this, ConfirmationOfReservation.class));
                     }
                 },3000);
+
+                        }
+                    }
+                });
 
             }
         });

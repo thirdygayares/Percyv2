@@ -314,7 +314,10 @@
                        <ImageView
                            android:id="@+id/receipt_ImageView"
                            android:layout_width="match_parent"
-                           android:layout_height="match_parent"
+                           android:layout_height="100dp"
+                           android:layout_marginTop="20dp"
+                           android:visibility="gone"
+                           android:src="@drawable/addressicon"
                            android:layout_below="@id/chooseFile_Btn" />
 
                        <TextView
@@ -329,6 +332,7 @@
                            android:drawablePadding="10dp"
                            android:fontFamily="@font/poppinssemibold"
                            android:text="@string/upload_receipt"
+                           android:visibility="gone"
                            android:textColor="@color/black"
                            android:textSize="16sp" />
 
