@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.firetera.percyv2.ReservationProcessPackage.ConfirmationOfReservation;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -16,6 +17,7 @@ public class MainActivity2 extends AppCompatActivity {
     HomeFragment homeFragment = new HomeFragment();
     ReservationFragment yourReservationFragment = new ReservationFragment();
     DetailFragment detailsFragment = new DetailFragment();
+    public static String myValue ="Home" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +27,17 @@ public class MainActivity2 extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         bottomNavigationView.setOnItemSelectedListener(navListener);
+        Fragment selectedFragment = null;
 
-        Fragment selectedFragment = new HomeFragment();
+        if (myValue.equalsIgnoreCase("Home")){
+            selectedFragment = new HomeFragment();
+        }
+        else if (myValue.equalsIgnoreCase("MyReservation")){
+            selectedFragment = new ReservationFragment();
+
+        }
+
+
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, selectedFragment).commit();
 

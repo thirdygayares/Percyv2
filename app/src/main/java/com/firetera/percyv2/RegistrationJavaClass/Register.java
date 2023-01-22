@@ -124,7 +124,7 @@ public class Register extends AppCompatActivity {
                     regprogress_bar.setVisibility(View.GONE);
                 }
 
-                else if(phoneNumber.length() != 10){
+                else if(phoneNumber.length() != 11){
                     regphonenumber.setError("Invalid phone number");
                 }
 

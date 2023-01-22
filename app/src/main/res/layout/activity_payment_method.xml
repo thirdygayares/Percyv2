@@ -191,9 +191,9 @@
                            android:id="@+id/copy_ImageView"
                            android:layout_width="wrap_content"
                            android:layout_height="wrap_content"
+                           android:layout_marginStart="50dp"
                            android:layout_marginTop="5dp"
-                           android:src="@drawable/ic_baseline_content_copy_24"
-                           android:layout_marginStart="50dp"/>
+                           android:src="@drawable/ic_baseline_content_copy_24" />
 
 
                    </LinearLayout>
@@ -201,21 +201,21 @@
                    <RelativeLayout
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
-                       android:layout_marginTop="20dp"
-                       >
+                       android:layout_marginTop="20dp">
 
 
                        <androidx.cardview.widget.CardView
+                           android:id="@+id/gCash_CardView"
                            android:layout_width="match_parent"
                            android:layout_height="wrap_content">
 
                            <androidx.cardview.widget.CardView
                                android:layout_width="match_parent"
                                android:layout_height="700dp"
-                               app:cardBackgroundColor="@color/lightbrown"
-                               android:layout_marginTop="30dp"
                                android:layout_marginStart="5dp"
+                               android:layout_marginTop="30dp"
                                android:layout_marginEnd="5dp"
+                               app:cardBackgroundColor="@color/lightbrown"
                                app:cardCornerRadius="10dp"
                                app:cardElevation="5dp">
 
@@ -230,45 +230,113 @@
                                        android:layout_marginEnd="20dp"
                                        android:src="@drawable/gcash" />
 
+                                   <RelativeLayout
+                                       android:layout_width="match_parent"
+                                       android:layout_height="match_parent">
+
+                                       <androidx.cardview.widget.CardView
+
+                                           android:layout_width="wrap_content"
+                                           android:layout_height="wrap_content"
+                                           android:layout_centerHorizontal="true"
+                                           android:layout_marginTop="-20dp"
+                                           android:layout_marginBottom="5dp"
+                                           app:cardBackgroundColor="@color/bgcolor"
+                                           app:cardCornerRadius="50dp">
+
+                                           <TextView
+                                               android:layout_width="wrap_content"
+                                               android:layout_height="wrap_content"
+                                               android:layout_marginStart="10dp"
+                                               android:layout_marginTop="5dp"
+                                               android:layout_marginEnd="10dp"
+                                               android:layout_marginBottom="5dp"
+                                               android:text="@string/or"
+                                               android:textSize="25sp" />
+                                       </androidx.cardview.widget.CardView>
+
+
+                                   </RelativeLayout>
+
                                </RelativeLayout>
                            </androidx.cardview.widget.CardView>
+
+
                        </androidx.cardview.widget.CardView>
 
-                       <RelativeLayout
+                       <TextView
+                           android:id="@+id/clientGCashNum_TextView"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_below="@id/gCash_CardView"
+                           android:layout_marginStart="20dp"
+                           android:layout_marginTop="30dp"
+                           android:fontFamily="@font/poppinssemibold"
+                           android:text="@string/your_gcash_number"
+                           android:textColor="@color/black"
+                           android:textSize="16sp" />
+
+                       <com.google.android.material.textfield.TextInputLayout
+                           android:id="@+id/clientGCashNum_EditText"
+                           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                            android:layout_width="match_parent"
                            android:layout_height="wrap_content"
-                           android:layout_marginTop="40dp">
+                           android:layout_below="@id/clientGCashNum_TextView"
+                           android:layout_marginStart="16dp"
+                           android:layout_marginTop="9dp"
+                           android:layout_marginEnd="16dp"
+                           android:hint="@string/enter_your_gcash_number"
+                           app:boxStrokeColor="@color/semibrown"
+                           app:errorEnabled="true"
+                           app:hintTextColor="@color/semibrown">
+
+                           <com.google.android.material.textfield.TextInputEditText
+                               android:id="@+id/clientGCashNumber"
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:singleLine="true"
+                               android:textColorLink="@color/semibrown" />
+
+                       </com.google.android.material.textfield.TextInputLayout>
 
 
-                       </RelativeLayout>
+                       <androidx.appcompat.widget.AppCompatButton
+                           android:id="@+id/chooseFile_Btn"
+                           android:layout_width="150dp"
+                           android:layout_height="50dp"
+                           android:layout_below="@+id/clientGCashNum_EditText"
+                           android:layout_marginStart="20dp"
+                           android:background="@color/semibrown"
+                           android:text="Choose file"
+                           android:textAllCaps="false"
+                           android:textSize="18sp" />
+
+                       <ImageView
+                           android:id="@+id/receipt_ImageView"
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:layout_below="@id/chooseFile_Btn" />
+
+                       <TextView
+                           android:id="@+id/uploadReceipt_TextView"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_below="@id/receipt_ImageView"
+                           android:layout_marginStart="20dp"
+                           android:layout_marginTop="9dp"
+                           android:layout_marginBottom="20dp"
+                           android:drawableEnd="@drawable/ic_baseline_file_upload_24"
+                           android:drawablePadding="10dp"
+                           android:fontFamily="@font/poppinssemibold"
+                           android:text="@string/upload_receipt"
+                           android:textColor="@color/black"
+                           android:textSize="16sp" />
+
+
 
                    </RelativeLayout>
                </LinearLayout>
 
-               <RelativeLayout
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent">
-
-                   <androidx.cardview.widget.CardView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       app:cardBackgroundColor="@color/bgcolor"
-                       android:layout_marginTop="100dp"
-                       app:cardCornerRadius="50dp"
-                       android:layout_marginBottom="5dp"
-                       android:layout_centerHorizontal="true">
-
-                       <TextView
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:text="@string/or"
-                           android:textSize="25sp"
-                           android:layout_marginTop="5dp"
-                           android:layout_marginBottom="5dp"
-                           android:layout_marginStart="10dp"
-                           android:layout_marginEnd="10dp"/>
-                   </androidx.cardview.widget.CardView>
-               </RelativeLayout>
            </FrameLayout>
 
            <FrameLayout

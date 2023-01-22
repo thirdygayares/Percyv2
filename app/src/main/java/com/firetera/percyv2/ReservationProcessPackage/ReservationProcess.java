@@ -57,7 +57,7 @@ public class ReservationProcess extends AppCompatActivity implements DatePickerD
     Button nextBtn, backArrow;
     TextView date, selectDate;
     TextInputLayout eventTxtInputLayout, otherTxtInputLayout;
-    EditText numOfPax, other, where;
+    EditText numOfPax, other, where, motif;
     FirebaseFirestore firestore;
     FirebaseAuth firebaseAuth;
     String reservationID = HomeFragment.reservationID;
@@ -73,6 +73,7 @@ public class ReservationProcess extends AppCompatActivity implements DatePickerD
 
     public static String price, packageName;
     public static String numOfPeople;
+    public Boolean foodPackageStatus;
 
 
 
@@ -100,6 +101,7 @@ public class ReservationProcess extends AppCompatActivity implements DatePickerD
         numOfPax = findViewById(R.id.numOfPax_RD);
         where = findViewById(R.id.where_RD);
         other = findViewById(R.id.other_RD);
+        motif = findViewById(R.id.motif_RD);
 
         nextBtn = findViewById(R.id.next_btn);
 
@@ -169,12 +171,14 @@ public class ReservationProcess extends AppCompatActivity implements DatePickerD
             }
         });
 
+        nextBtn.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.GONE);
+
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-                nextBtn.setVisibility(View.GONE);
-                progressBar.setVisibility(View.VISIBLE);
+               
 
 
                 if (where.getText().toString().length() == 0){
@@ -204,6 +208,12 @@ public class ReservationProcess extends AppCompatActivity implements DatePickerD
                     }
                 }
 
+                else if (motif.getText().toString().isEmpty()){
+                    motif.setError("Enter motif");
+                    nextBtn.setVisibility(View.VISIBLE);
+                    progressBar.setVisibility(View.GONE);
+                }
+
 
 
                else if (numOfPax.getText().toString().length()==0){
@@ -213,8 +223,7 @@ public class ReservationProcess extends AppCompatActivity implements DatePickerD
                }
 
                else {
-                    nextBtn.setVisibility(View.GONE);
-                    progressBar.setVisibility(View.VISIBLE);
+
 
                     numOfPeople = numOfPax.getText().toString();
                    HashMap<String, Object> ReservationDetails = new HashMap<>();
@@ -248,15 +257,7 @@ public class ReservationProcess extends AppCompatActivity implements DatePickerD
                                }
                            });
 
-                    Handler handler = new Handler();
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            nextBtn.setVisibility(View.GONE);
-                            progressBar.setVisibility(View.VISIBLE);
-                            startActivity(new Intent(getApplicationContext(), ReservationDetails.class));
-                        }
-                    }, 5000);
+                    startActivity(new Intent(getApplicationContext(), ReservationDetails.class));
                }
 
 

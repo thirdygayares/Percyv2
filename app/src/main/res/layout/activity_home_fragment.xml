@@ -141,11 +141,22 @@
                     android:layout_marginTop="10dp"
                     android:scrollbars="none" />
 
+                <Button
+                    android:id="@+id/reservenow_Btn2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/venue_RecyclerView"
+                    android:layout_alignParentEnd="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawableEnd="@drawable/ic_baseline_keyboard_double_arrow_right_24"
+                    android:text="@string/reserve_now"
+                    android:textColor="@color/semibrown" />
+
                 <TextView
                     android:id="@+id/topDishes_txtView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/venue_RecyclerView"
+                    android:layout_below="@id/reservenow_Btn2"
                     android:layout_marginStart="25dp"
                     android:fontFamily="@font/titilliumwebsemibold"
                     android:text="@string/best_dishes"
@@ -156,7 +167,7 @@
                     android:id="@+id/dishesSeeAll_TxtView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/venue_RecyclerView"
+                    android:layout_below="@id/reservenow_Btn2"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="20dp"
@@ -205,6 +216,7 @@
                     android:background="?attr/selectableItemBackground"
                     android:drawableEnd="@drawable/ic_baseline_keyboard_double_arrow_right_24"
                     android:text="@string/reserve_now"
+                    android:layout_marginBottom="20dp"
                     android:textColor="@color/semibrown" />
 
 

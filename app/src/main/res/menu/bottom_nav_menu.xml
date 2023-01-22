@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/navhome"
-        android:title="Home"
-        android:icon="@drawable/ic_baseline_home_24"></item>
+        android:title="@string/home"
+        android:icon="@drawable/ic_baseline_home_24"/>
 
     <item android:id="@+id/navyourreservation"
-        android:title="Your Reservation"
-        android:icon="@drawable/yourreservationicon"></item>
+        android:title="@string/my_reservation"
+        android:icon="@drawable/yourreservationicon"/>
 
     <item android:id="@+id/navdetails"
-        android:title="Menu"
-        android:icon="@drawable/ic_baseline_menu_24"></item>
+        android:title="@string/menu"
+        android:icon="@drawable/ic_baseline_menu_24"/>
 </menu>

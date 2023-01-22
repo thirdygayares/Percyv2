@@ -54,9 +54,9 @@ public class FoodPackageAdapter extends RecyclerView.Adapter<FoodPackageAdapter.
         holder.foodNo4.setText(foodPackageModel.getFoodNo4());
 
                 if(foodPackageModel.getStatus().equals(true)){
-                    holder.cardView.setCardBackgroundColor(Color.BLACK);
+                    holder.cardView.setCardBackgroundColor(Color.DKGRAY);
                 }else if(foodPackageModel.getStatus().equals(false)){
-                    holder.cardView.setCardBackgroundColor(Color.BLUE);
+                    holder.cardView.setCardBackgroundColor(Color.WHITE);
                 }
 
     }

@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment {
 
     EditText fullname;
     TextView username, password, clientName, seeAllDishes;
-    Button signinbtn, googlesigninbtn, logoutbtn,reservationBtn, reservationBtn1;
+    Button signinbtn, googlesigninbtn, logoutbtn,reservationBtn, reservationBtn1, reservationBtn2;
     ImageView cateringinfo_btn;
     CheckBox showpassword;
     FirebaseFirestore firestore;
@@ -96,6 +96,7 @@ public class HomeFragment extends Fragment {
         seeAllDishes = view.findViewById(R.id.seeAll_TxtView);
         reservationBtn = view.findViewById(R.id.reservenow_Btn);
         reservationBtn1 = view.findViewById(R.id.reservenow_Btn1);
+        reservationBtn2 = view.findViewById(R.id.reservenow_Btn2);
 
         eventRecyclerView = view.findViewById(R.id.eventRecyclerview1);
         bestDishesRecyclerView = view.findViewById(R.id.bestDishesRecyclerview1);
@@ -111,71 +112,7 @@ public class HomeFragment extends Fragment {
         firestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 
-        reservationBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                randNumStr = "";
-                randLettStr = "";
-                Random random = new Random();
-
-                String reservationIDLett = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                String reservationIDNum = "1234567890";
-
-                int lenNum = 4;
-                int lenLett = 8;
-                for (int j = 0; j < lenNum; j++) {
-
-                    randNumStr +=
-                            reservationIDNum.charAt(random.nextInt(reservationIDNum.length()));
-
-
-                }
-
-                for (int i = 0; i < lenLett; i++) {
-
-                    randLettStr +=
-                            reservationIDLett.charAt(random.nextInt(reservationIDLett.length()));
-
-                }
-
-              reservationID = randNumStr + "-" + randLettStr;
-
-                startActivity( new Intent(getContext(), ReservationProcessPersonalInfo.class));
-            }
-        });
-
-        reservationBtn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                randNumStr = "";
-                randLettStr = "";
-                Random random = new Random();
-
-                String reservationIDLett = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                String reservationIDNum = "1234567890";
-
-                int lenNum = 4;
-                int lenLett = 8;
-                for (int j = 0; j < lenNum; j++) {
-
-                    randNumStr +=
-                            reservationIDNum.charAt(random.nextInt(reservationIDNum.length()));
-
-
-                }
-
-                for (int i = 0; i < lenLett; i++) {
-
-                    randLettStr +=
-                            reservationIDLett.charAt(random.nextInt(reservationIDLett.length()));
-
-                }
-
-               reservationID = randNumStr + "-" + randLettStr;
-                startActivity( new Intent(getContext(), ReservationProcessPersonalInfo.class));
-            }
-        });
+      setUpReserveButton();
 
         cateringinfo_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -211,6 +148,108 @@ public class HomeFragment extends Fragment {
 
 
         return view;
+    }
+
+    private void setUpReserveButton() {
+        reservationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                randNumStr = "";
+                randLettStr = "";
+                Random random = new Random();
+
+                String reservationIDLett = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                String reservationIDNum = "1234567890";
+
+                int lenNum = 4;
+                int lenLett = 8;
+                for (int j = 0; j < lenNum; j++) {
+
+                    randNumStr +=
+                            reservationIDNum.charAt(random.nextInt(reservationIDNum.length()));
+
+
+                }
+
+                for (int i = 0; i < lenLett; i++) {
+
+                    randLettStr +=
+                            reservationIDLett.charAt(random.nextInt(reservationIDLett.length()));
+
+                }
+
+                reservationID = randNumStr + "-" + randLettStr;
+
+                startActivity( new Intent(getContext(), ReservationProcessPersonalInfo.class));
+            }
+        });
+
+        reservationBtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                randNumStr = "";
+                randLettStr = "";
+                Random random = new Random();
+
+                String reservationIDLett = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                String reservationIDNum = "1234567890";
+
+                int lenNum = 4;
+                int lenLett = 8;
+                for (int j = 0; j < lenNum; j++) {
+
+                    randNumStr +=
+                            reservationIDNum.charAt(random.nextInt(reservationIDNum.length()));
+
+
+                }
+
+                for (int i = 0; i < lenLett; i++) {
+
+                    randLettStr +=
+                            reservationIDLett.charAt(random.nextInt(reservationIDLett.length()));
+
+                }
+
+                reservationID = randNumStr + "-" + randLettStr;
+                startActivity( new Intent(getContext(), ReservationProcessPersonalInfo.class));
+            }
+        });
+
+        reservationBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                randNumStr = "";
+                randLettStr = "";
+                Random random = new Random();
+
+                String reservationIDLett = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                String reservationIDNum = "1234567890";
+
+                int lenNum = 4;
+                int lenLett = 8;
+                for (int j = 0; j < lenNum; j++) {
+
+                    randNumStr +=
+                            reservationIDNum.charAt(random.nextInt(reservationIDNum.length()));
+
+
+                }
+
+                for (int i = 0; i < lenLett; i++) {
+
+                    randLettStr +=
+                            reservationIDLett.charAt(random.nextInt(reservationIDLett.length()));
+
+                }
+
+                reservationID = randNumStr + "-" + randLettStr;
+
+                startActivity( new Intent(getContext(), ReservationProcessPersonalInfo.class));
+            }
+        });
+
     }
 
     private void setUpVenueRecyclerView() {

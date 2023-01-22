@@ -57,6 +57,12 @@ public class ConfirmationOfReservation extends AppCompatActivity {
 //                Fragment fragment = new ReservationFragment();
 //                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 //                fragmentTransaction.replace(R.id.CORClass, fragment).commit();
+                MainActivity2 mainActivity2 = new MainActivity2();
+                mainActivity2.myValue = "MyReservation";
+
+                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+                startActivity(intent);
+
 
             }
         });

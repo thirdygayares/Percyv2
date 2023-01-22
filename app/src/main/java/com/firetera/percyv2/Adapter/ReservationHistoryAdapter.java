@@ -1,5 +1,6 @@
 package com.firetera.percyv2.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -15,12 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firetera.percyv2.Model.ReservationHistoryModel;
 import com.firetera.percyv2.R;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.FirebaseFirestore;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class ReservationHistoryAdapter extends RecyclerView.Adapter<ReservationHistoryAdapter.MyViewHolder> {
 
@@ -38,10 +34,10 @@ public class ReservationHistoryAdapter extends RecyclerView.Adapter<ReservationH
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.reservation_history_list, parent, false);
 
-//        View v = LayoutInflater.from(context).inflate(R.layout.item, parent, false);
         return  new ReservationHistoryAdapter.MyViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ReservationHistoryAdapter.MyViewHolder holder, int position) {
 
