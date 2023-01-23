@@ -148,9 +148,9 @@ public class PaymentMethod extends AppCompatActivity {
         });
 
         reserve_Btn.setVisibility(View.VISIBLE);
+        setUpFireBase();
         setUpReserveButton();
         setUpFoodPackageName();
-        setUpFireBase();
         setUpAutoCompleteTextView();
         totalPriceInt = numOfPaxInt * priceOfFoodPackageInt;
 
@@ -201,7 +201,90 @@ public class PaymentMethod extends AppCompatActivity {
                              //show the Firebase Storage Link
                              Log.d(TAG,String.valueOf(uri));
                              imageproof = String.valueOf(uri);
-                             finish();
+
+                             reserve_Btn.setVisibility(View.GONE);
+                             progressBar.setVisibility(View.VISIBLE);
+
+
+                             imageGcash.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                                 @Override
+                                 public void onComplete(@NonNull Task<Uri> task) {
+                                     if(task.isSuccessful()){
+                                         imageproof = task.getResult().toString();
+                                         Log.d("TAG", "kukunin ko" + imageproof);
+
+                                         int  intNumOfPendingReservation = Integer.parseInt(numOfPendingReservation);
+                                         intNumOfPendingReservation += 1;
+
+                                         HashMap<String, Object> ReservationDetails = new HashMap<>();
+                                         ReservationDetails.put("Reservation ID", reservationID);
+                                         ReservationDetails.put("Name", name);
+                                         ReservationDetails.put("CompanyName", companyName);
+                                         ReservationDetails.put("Phone Number", phoneNumber);
+                                         ReservationDetails.put("ImageProof", imageproof); //getting image link
+                                         ReservationDetails.put("GCash", clientGCashNumber.getText().toString()); //getting gcash number
+                                         ReservationDetails.put("ReservationDate", date);
+                                         ReservationDetails.put("Venue", venue);
+                                         ReservationDetails.put("Event", event);
+                                         ReservationDetails.put("Number of People", numOfPeople);
+                                         ReservationDetails.put("User ID", firebaseAuth.getUid());
+                                         ReservationDetails.put("Status", false);
+                                         ReservationDetails.put("Time of Reservation", ReservationProcess.currentTime());
+                                         ReservationDetails.put("Date of Reservation", ReservationProcess.currentDate());
+
+                                         firebaseFirestore.collection("PendingReservation").document(reservationID)
+                                                 .set(ReservationDetails)
+                                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                     @Override
+                                                     public void onSuccess(Void unused) {
+                                                         Log.d("TAG", "SUCCESS DATA UPLOAD");
+
+                                                     }
+                                                 }).addOnFailureListener(new OnFailureListener() {
+                                                     @Override
+                                                     public void onFailure(@NonNull Exception e) {
+                                                         Log.d("TAG", "data sending" + e);
+                                                     }
+                                                 });
+
+
+                                         numOfPendingReservation = Integer.toString(intNumOfPendingReservation);
+
+                                         HashMap<String, String> number = new HashMap<>();
+                                         number.put("NumberOfPendingReservation", numOfPendingReservation );
+
+                                         firebaseFirestore.collection("NumberOfPending").document("NumberOfPendingReservation")
+                                                 .set(number)
+                                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                     @Override
+                                                     public void onSuccess(Void unused) {
+                                                         Log.d("TAG", "SUCCESS DATA UPLOAD");
+                                                     }
+                                                 }).addOnFailureListener(new OnFailureListener() {
+                                                     @Override
+                                                     public void onFailure(@NonNull Exception e) {
+                                                         Log.d("TAG", "data sending" + e);
+                                                     }
+                                                 });
+
+
+                                         firebaseFirestore.collection("Users").document(firebaseAuth.getUid())
+                                                 .collection("My Reservation")
+                                                 .document(reservationID)
+                                                 .set(ReservationDetails);
+
+                                         startActivity(new Intent(PaymentMethod.this, ConfirmationOfReservation.class));
+
+                                     }
+                                 }
+                             }).addOnFailureListener(new OnFailureListener() {
+                                 @Override
+                                 public void onFailure(@NonNull Exception e) {
+                                     Toast.makeText(PaymentMethod.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                 }
+                             });
+
+                             //finish();
                          }
                      }).addOnFailureListener(new OnFailureListener() {
                          @Override
@@ -264,112 +347,31 @@ public class PaymentMethod extends AppCompatActivity {
 
 
     private void setUpReserveButton() {
-
-
-
         reserve_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 //upload image to firebase storage
-
                 uploadImageMethod();
-                reserve_Btn.setVisibility(View.GONE);
-                progressBar.setVisibility(View.VISIBLE);
 
 
-
-                imageGcash.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Uri> task) {
-                        if(task.isSuccessful()){
-
-                            imageproof = task.getResult().toString();
-                            Log.d("TAG", "kukunin ko" + imageproof);
-
-                            int  intNumOfPendingReservation = Integer.parseInt(numOfPendingReservation);
-                            intNumOfPendingReservation += 1;
-
-                            HashMap<String, Object> ReservationDetails = new HashMap<>();
-                            ReservationDetails.put("Reservation ID", reservationID);
-                            ReservationDetails.put("Name", name);
-                            ReservationDetails.put("CompanyName", companyName);
-                            ReservationDetails.put("Phone Number", phoneNumber);
-                            ReservationDetails.put("ImageProof", imageproof); //getting image link
-                            ReservationDetails.put("GCash", clientGCashNumber.getText().toString()); //getting gcash number
-                            ReservationDetails.put("ReservationDate", date);
-                            ReservationDetails.put("Venue", venue);
-                            ReservationDetails.put("Event", event);
-                            ReservationDetails.put("Number of People", numOfPeople);
-                            ReservationDetails.put("User ID", firebaseAuth.getUid());
-                            ReservationDetails.put("Status", false);
-                            ReservationDetails.put("Time of Reservation", ReservationProcess.currentTime());
-                            ReservationDetails.put("Date of Reservation", ReservationProcess.currentDate());
-
-                            firebaseFirestore.collection("PendingReservation").document(reservationID)
-                                    .set(ReservationDetails)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void unused) {
-                                            Log.d("TAG", "SUCCESS DATA UPLOAD");
-
-                                        }
-                                    }).addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Log.d("TAG", "data sending" + e);
-                                        }
-                                    });
-
-
-                numOfPendingReservation = Integer.toString(intNumOfPendingReservation);
-
-                HashMap<String, String> number = new HashMap<>();
-                number.put("NumberOfPendingReservation", numOfPendingReservation );
-
-                firebaseFirestore.collection("NumberOfPending").document("NumberOfPendingReservation")
-                        .set(number)
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void unused) {
-                                Log.d("TAG", "SUCCESS DATA UPLOAD");
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.d("TAG", "data sending" + e);
-                            }
-                        });
-
-
-                firebaseFirestore.collection("Users").document(firebaseAuth.getUid())
-                        .collection("My Reservation")
-                        .document(reservationID)
-                        .set(ReservationDetails);
-
-
-
-                        }
-                    }
-                });
 
                 //go to confirm reservcation
 
-                final LoadingDialog loadingDialog = new LoadingDialog(PaymentMethod.this);
+                //final LoadingDialog loadingDialog = new LoadingDialog(PaymentMethod.this);
 
-                loadingDialog.startLoadingDialog();
+                //loadingDialog.startLoadingDialog();
 
 
 
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        loadingDialog.dismissDialog();
-                        startActivity(new Intent(PaymentMethod.this, ConfirmationOfReservation.class));
-                    }
-                },3000);
-
+//                Handler handler = new Handler();
+//                handler.postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        loadingDialog.dismissDialog();
+//                        startActivity(new Intent(PaymentMethod.this, ConfirmationOfReservation.class));
+//                    }
+//                },3000);
 
             }
         });
@@ -401,7 +403,6 @@ public class PaymentMethod extends AppCompatActivity {
     }
 
     private void setUpFireBase() {
-
         firebaseFirestore.collection("ClientReservationDetails"). document(reservationID)
                 .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @SuppressLint("SetTextI18n")
