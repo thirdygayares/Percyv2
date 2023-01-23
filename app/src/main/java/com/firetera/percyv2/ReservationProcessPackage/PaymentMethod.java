@@ -99,7 +99,7 @@ public class PaymentMethod extends AppCompatActivity {
         setContentView(R.layout.activity_payment_method);
 
         receiptFrameLayout = findViewById(R.id.receipt_frameLayout);
-        uploadImage = findViewById(R.id.uploadReceipt_TextView);
+//        uploadImage = findViewById(R.id.uploadReceipt_TextView);
         packageName = findViewById(R.id.PM_packageName);
         foodNo1 = findViewById(R.id.PM_foodNo1);
         foodNo2 = findViewById(R.id.PM_foodNo2);
@@ -186,9 +186,9 @@ public class PaymentMethod extends AppCompatActivity {
     // upload image
     private void uploadImageMethod() {
 
-        uploadImage.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View v) {
+//        chooseFile_Btn.setOnClickListener(new View.OnClickListener() {
+//         @Override
+//         public void onClick(View v) {
 
              imageGcash.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                  @Override
@@ -222,8 +222,8 @@ public class PaymentMethod extends AppCompatActivity {
                  }
              });
 
-     }
- });
+//     }
+// });
 
 
     }
@@ -265,7 +265,7 @@ public class PaymentMethod extends AppCompatActivity {
 
     private void setUpReserveButton() {
 
-        uploadImageMethod();
+
 
         reserve_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -273,7 +273,7 @@ public class PaymentMethod extends AppCompatActivity {
 
                 //upload image to firebase storage
 
-
+                uploadImageMethod();
                 reserve_Btn.setVisibility(View.GONE);
                 progressBar.setVisibility(View.VISIBLE);
 
@@ -296,7 +296,7 @@ public class PaymentMethod extends AppCompatActivity {
                             ReservationDetails.put("CompanyName", companyName);
                             ReservationDetails.put("Phone Number", phoneNumber);
                             ReservationDetails.put("ImageProof", imageproof); //getting image link
-                            ReservationDetails.put("Gcash", clientGCashNumber.getText().toString()); //getting gcash number
+                            ReservationDetails.put("GCash", clientGCashNumber.getText().toString()); //getting gcash number
                             ReservationDetails.put("ReservationDate", date);
                             ReservationDetails.put("Venue", venue);
                             ReservationDetails.put("Event", event);
@@ -358,6 +358,8 @@ public class PaymentMethod extends AppCompatActivity {
                 final LoadingDialog loadingDialog = new LoadingDialog(PaymentMethod.this);
 
                 loadingDialog.startLoadingDialog();
+
+
 
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
