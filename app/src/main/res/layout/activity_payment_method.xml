@@ -157,189 +157,207 @@
                android:layout_height="wrap_content"
                android:layout_marginTop="30dp">
 
-               <LinearLayout
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:orientation="vertical">
+              <ScrollView
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
 
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_marginStart="30dp"
-                       android:layout_marginTop="20dp"
-                       android:text="GCash Number"
-                       android:textColor="@color/black"
-                       android:textSize="19sp"
-                       android:textStyle="bold" />
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
 
-                   <LinearLayout
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:orientation="horizontal">
+                      <TextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_marginStart="30dp"
+                          android:layout_marginTop="20dp"
+                          android:text="GCash Number"
+                          android:textColor="@color/black"
+                          android:textSize="19sp"
+                          android:textStyle="bold" />
 
-                       <TextView
-                           android:id="@+id/precyMobileNum_TextView"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_marginStart="30dp"
-                           android:layout_marginTop="5dp"
-                           android:text="@string/my_number"
-                           android:textColor="@color/black"
-                           android:textSize="20sp" />
+                      <LinearLayout
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal">
 
-                       <ImageView
-                           android:id="@+id/copy_ImageView"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_marginStart="50dp"
-                           android:layout_marginTop="5dp"
-                           android:src="@drawable/ic_baseline_content_copy_24" />
+                          <TextView
+                              android:id="@+id/precyMobileNum_TextView"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_marginStart="30dp"
+                              android:layout_marginTop="5dp"
+                              android:text="@string/my_number"
+                              android:textColor="@color/black"
+                              android:textSize="20sp" />
 
-
-                   </LinearLayout>
-
-                   <RelativeLayout
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content"
-                       android:layout_marginTop="20dp">
+                          <ImageView
+                              android:id="@+id/copy_ImageView"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_marginStart="50dp"
+                              android:layout_marginTop="5dp"
+                              android:src="@drawable/ic_baseline_content_copy_24" />
 
 
-                       <androidx.cardview.widget.CardView
-                           android:id="@+id/gCash_CardView"
-                           android:layout_width="match_parent"
-                           android:layout_height="wrap_content">
+                      </LinearLayout>
 
-                           <androidx.cardview.widget.CardView
-                               android:layout_width="match_parent"
-                               android:layout_height="700dp"
-                               android:layout_marginStart="5dp"
-                               android:layout_marginTop="30dp"
-                               android:layout_marginEnd="5dp"
-                               app:cardBackgroundColor="@color/lightbrown"
-                               app:cardCornerRadius="10dp"
-                               app:cardElevation="5dp">
-
-                               <RelativeLayout
-                                   android:layout_width="match_parent"
-                                   android:layout_height="wrap_content">
-
-                                   <ImageView
-                                       android:layout_width="wrap_content"
-                                       android:layout_height="wrap_content"
-                                       android:layout_marginStart="20dp"
-                                       android:layout_marginEnd="20dp"
-                                       android:src="@drawable/gcash" />
-
-                                   <RelativeLayout
-                                       android:layout_width="match_parent"
-                                       android:layout_height="match_parent">
-
-                                       <androidx.cardview.widget.CardView
-
-                                           android:layout_width="wrap_content"
-                                           android:layout_height="wrap_content"
-                                           android:layout_centerHorizontal="true"
-                                           android:layout_marginTop="-20dp"
-                                           android:layout_marginBottom="5dp"
-                                           app:cardBackgroundColor="@color/bgcolor"
-                                           app:cardCornerRadius="50dp">
-
-                                           <TextView
-                                               android:layout_width="wrap_content"
-                                               android:layout_height="wrap_content"
-                                               android:layout_marginStart="10dp"
-                                               android:layout_marginTop="5dp"
-                                               android:layout_marginEnd="10dp"
-                                               android:layout_marginBottom="5dp"
-                                               android:text="@string/or"
-                                               android:textSize="25sp" />
-                                       </androidx.cardview.widget.CardView>
+                      <RelativeLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="20dp">
 
 
-                                   </RelativeLayout>
+                          <androidx.cardview.widget.CardView
+                              android:id="@+id/gCash_CardView"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content">
 
-                               </RelativeLayout>
-                           </androidx.cardview.widget.CardView>
+                              <androidx.cardview.widget.CardView
+                                  android:layout_width="match_parent"
+                                  android:layout_height="700dp"
+                                  android:layout_marginStart="5dp"
+                                  android:layout_marginTop="30dp"
+                                  android:layout_marginEnd="5dp"
+                                  app:cardBackgroundColor="@color/lightbrown"
+                                  app:cardCornerRadius="10dp"
+                                  app:cardElevation="5dp">
 
+                                  <RelativeLayout
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content">
 
-                       </androidx.cardview.widget.CardView>
+                                      <ImageView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:layout_marginStart="20dp"
+                                          android:layout_marginEnd="20dp"
+                                          android:src="@drawable/gcash" />
 
-                       <TextView
-                           android:id="@+id/clientGCashNum_TextView"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_below="@id/gCash_CardView"
-                           android:layout_marginStart="20dp"
-                           android:layout_marginTop="30dp"
-                           android:fontFamily="@font/poppinssemibold"
-                           android:text="@string/your_gcash_number"
-                           android:textColor="@color/black"
-                           android:textSize="16sp" />
+                                      <RelativeLayout
+                                          android:layout_width="match_parent"
+                                          android:layout_height="match_parent">
 
-                       <com.google.android.material.textfield.TextInputLayout
-                           android:id="@+id/clientGCashNum_EditText"
-                           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                           android:layout_width="match_parent"
-                           android:layout_height="wrap_content"
-                           android:layout_below="@id/clientGCashNum_TextView"
-                           android:layout_marginStart="16dp"
-                           android:layout_marginTop="9dp"
-                           android:layout_marginEnd="16dp"
-                           android:hint="@string/enter_your_gcash_number"
-                           app:boxStrokeColor="@color/semibrown"
-                           app:errorEnabled="true"
-                           app:hintTextColor="@color/semibrown">
+                                          <androidx.cardview.widget.CardView
 
-                           <com.google.android.material.textfield.TextInputEditText
-                               android:id="@+id/clientGCashNumber"
-                               android:layout_width="match_parent"
-                               android:layout_height="match_parent"
-                               android:singleLine="true"
-                               android:textColorLink="@color/semibrown" />
+                                              android:layout_width="wrap_content"
+                                              android:layout_height="wrap_content"
+                                              android:layout_centerHorizontal="true"
+                                              android:layout_marginTop="-20dp"
+                                              android:layout_marginBottom="5dp"
+                                              app:cardBackgroundColor="@color/bgcolor"
+                                              app:cardCornerRadius="50dp">
 
-                       </com.google.android.material.textfield.TextInputLayout>
-
-
-                       <androidx.appcompat.widget.AppCompatButton
-                           android:id="@+id/chooseFile_Btn"
-                           android:layout_width="150dp"
-                           android:layout_height="50dp"
-                           android:layout_below="@+id/clientGCashNum_EditText"
-                           android:layout_marginStart="20dp"
-                           android:background="@color/semibrown"
-                           android:text="Choose file"
-                           android:textAllCaps="false"
-                           android:textSize="18sp" />
-
-                       <ImageView
-                           android:id="@+id/receipt_ImageView"
-                           android:layout_width="match_parent"
-                           android:layout_height="100dp"
-                           android:layout_marginTop="20dp"
-                           android:visibility="gone"
-                           android:src="@drawable/addressicon"
-                           android:layout_below="@id/chooseFile_Btn" />
-
-                       <TextView
-                           android:id="@+id/uploadReceipt_TextView"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_below="@id/receipt_ImageView"
-                           android:layout_marginStart="20dp"
-                           android:layout_marginTop="9dp"
-                           android:layout_marginBottom="20dp"
-                           android:drawableEnd="@drawable/ic_baseline_file_upload_24"
-                           android:drawablePadding="10dp"
-                           android:fontFamily="@font/poppinssemibold"
-                           android:text="@string/upload_receipt"
-                           android:visibility="gone"
-                           android:textColor="@color/black"
-                           android:textSize="16sp" />
+                                              <TextView
+                                                  android:layout_width="wrap_content"
+                                                  android:layout_height="wrap_content"
+                                                  android:layout_marginStart="10dp"
+                                                  android:layout_marginTop="5dp"
+                                                  android:layout_marginEnd="10dp"
+                                                  android:layout_marginBottom="5dp"
+                                                  android:text="@string/or"
+                                                  android:textSize="25sp" />
+                                          </androidx.cardview.widget.CardView>
 
 
+                                      </RelativeLayout>
 
-                   </RelativeLayout>
-               </LinearLayout>
+                                  </RelativeLayout>
+                              </androidx.cardview.widget.CardView>
+
+
+                          </androidx.cardview.widget.CardView>
+
+                          <TextView
+                              android:id="@+id/clientGCashNum_TextView"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_below="@id/gCash_CardView"
+                              android:layout_marginStart="20dp"
+                              android:layout_marginTop="30dp"
+                              android:fontFamily="@font/poppinssemibold"
+                              android:text="@string/your_gcash_number"
+                              android:textColor="@color/black"
+                              android:textSize="16sp" />
+
+                          <com.google.android.material.textfield.TextInputLayout
+                              android:id="@+id/clientGCashNum_EditText"
+                              style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_below="@id/clientGCashNum_TextView"
+                              android:layout_marginStart="16dp"
+                              android:layout_marginTop="9dp"
+                              android:layout_marginEnd="16dp"
+                              android:hint="@string/enter_your_gcash_number"
+                              app:boxStrokeColor="@color/semibrown"
+                              app:errorEnabled="true"
+                              app:hintTextColor="@color/semibrown">
+
+                              <com.google.android.material.textfield.TextInputEditText
+                                  android:id="@+id/clientGCashNumber"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="match_parent"
+                                  android:singleLine="true"
+                                  android:textColorLink="@color/semibrown" />
+
+                          </com.google.android.material.textfield.TextInputLayout>
+
+
+                          <androidx.appcompat.widget.AppCompatButton
+                              android:id="@+id/chooseFile_Btn"
+                              android:layout_width="150dp"
+                              android:layout_height="50dp"
+                              android:layout_below="@+id/clientGCashNum_EditText"
+                              android:layout_marginStart="20dp"
+                              android:background="@color/semibrown"
+                              android:layout_marginBottom="20dp"
+                              android:text="Choose file"
+                              android:textColor="@color/white"
+                              android:textSize="18sp" />
+
+                         <FrameLayout
+                             android:id="@+id/receipt_frameLayout"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_below="@id/chooseFile_Btn">
+
+                             <RelativeLayout
+                                 android:layout_width="match_parent"
+                                 android:layout_height="match_parent">
+
+                                 <ImageView
+                                     android:id="@+id/receipt_ImageView"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="100dp"
+                                     android:layout_marginTop="20dp"
+                                     android:visibility="gone"
+                                     android:src="@drawable/addressicon"
+                                      />
+
+                                 <TextView
+                                     android:id="@+id/uploadReceipt_TextView"
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:layout_below="@id/receipt_ImageView"
+                                     android:layout_marginStart="20dp"
+                                     android:layout_marginTop="9dp"
+                                     android:layout_marginBottom="20dp"
+                                     android:drawableEnd="@drawable/ic_baseline_file_upload_24"
+                                     android:drawablePadding="10dp"
+                                     android:fontFamily="@font/poppinssemibold"
+                                     android:text="@string/upload_receipt"
+                                     android:textColor="@color/black"
+                                     android:textSize="16sp" />
+                             </RelativeLayout>
+                         </FrameLayout>
+
+
+
+                      </RelativeLayout>
+                  </LinearLayout>
+
+              </ScrollView>
 
            </FrameLayout>
 
@@ -359,9 +377,8 @@
                        android:layout_marginEnd="20dp"
                        android:layout_centerInParent="true"
                        android:background="@color/semibrown"
-                       android:text="Reserve now"
-
-                       android:textAllCaps="false"
+                       android:text="@string/reserve_now"
+                       android:textColor="@color/white"
                        android:textSize="15sp" />
 
                    <ProgressBar

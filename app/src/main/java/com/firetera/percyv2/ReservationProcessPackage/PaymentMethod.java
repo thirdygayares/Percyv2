@@ -33,6 +33,7 @@ import com.firetera.percyv2.LoadingDialog;
 import com.firetera.percyv2.Model.FoodPackageModel;
 import com.firetera.percyv2.R;
 import com.github.dhaval2404.imagepicker.ImagePicker;
+//import com.google.android.gms.cast.framework.media.ImagePicker;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -54,14 +55,14 @@ import java.util.HashMap;
 
 public class PaymentMethod extends AppCompatActivity {
 
-    TextView packageName, foodNo1, foodNo2, foodNo3, foodNo4, totalPrice, precyMobileNum;
+    TextView packageName, foodNo1, foodNo2, foodNo3, foodNo4, totalPrice, precyMobileNum, uploadImage;
     ImageView copy;
     Button reserve_Btn, chooseFile_Btn;
     ImageView receipt_ImageView;
     TextInputEditText clientGCashNumber;
     ProgressBar progressBar;
     AutoCompleteTextView autoCompleteTextView;
-    FrameLayout frameLayout;
+    FrameLayout frameLayout, receiptFrameLayout;
 
     //storing the link of image
     static String imageproof = "";
@@ -97,6 +98,8 @@ public class PaymentMethod extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_method);
 
+        receiptFrameLayout = findViewById(R.id.receipt_frameLayout);
+        uploadImage = findViewById(R.id.uploadReceipt_TextView);
         packageName = findViewById(R.id.PM_packageName);
         foodNo1 = findViewById(R.id.PM_foodNo1);
         foodNo2 = findViewById(R.id.PM_foodNo2);
@@ -123,7 +126,7 @@ public class PaymentMethod extends AppCompatActivity {
         //TODO uncomment this
         reservationID = HomeFragment.reservationID;
 
-        imageGcash = storageReference.child("proof/" + reservationID);
+        imageGcash = storageReference.child("GCashReceipt/" + reservationID);
 
         priceOfFoodPackageInt = Integer.parseInt(priceOfFoodPackage);
         numOfPaxInt = Integer.parseInt(numOfPax);
@@ -175,43 +178,52 @@ public class PaymentMethod extends AppCompatActivity {
         //method for uploading Imagve
         imagepickerMethod();
 
+        receiptFrameLayout.setVisibility(View.GONE);
+
 
     }
 
     // upload image
     private void uploadImageMethod() {
 
-        imageGcash.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Snackbar.make(findViewById(android.R.id.content), "Proof Uploaded", Snackbar.LENGTH_LONG).show();
+        uploadImage.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
 
-                imageGcash.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        //show the Firebase Storage Link
-                        Log.d(TAG,String.valueOf(uri));
-                        imageproof = String.valueOf(uri);
-                        finish();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.d("TAG", "FDAILUERE CAUSE " + e);
-                    }
-                });
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                progressBar.setVisibility(View.GONE);
-            }
-        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
-                progressBar.setVisibility(View.VISIBLE);
-            }
-        });
+             imageGcash.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                 @Override
+                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                     Snackbar.make(findViewById(android.R.id.content), "Proof Uploaded", Snackbar.LENGTH_LONG).show();
+
+                     imageGcash.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                         @Override
+                         public void onSuccess(Uri uri) {
+                             //show the Firebase Storage Link
+                             Log.d(TAG,String.valueOf(uri));
+                             imageproof = String.valueOf(uri);
+                             finish();
+                         }
+                     }).addOnFailureListener(new OnFailureListener() {
+                         @Override
+                         public void onFailure(@NonNull Exception e) {
+                             Log.d("TAG", "FDAILUERE CAUSE " + e);
+                         }
+                     });
+                 }
+             }).addOnFailureListener(new OnFailureListener() {
+                 @Override
+                 public void onFailure(@NonNull Exception e) {
+                     progressBar.setVisibility(View.GONE);
+                 }
+             }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                 @Override
+                 public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+                     progressBar.setVisibility(View.VISIBLE);
+                 }
+             });
+
+     }
+ });
 
 
     }
@@ -221,6 +233,8 @@ public class PaymentMethod extends AppCompatActivity {
         chooseFile_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                receiptFrameLayout.setVisibility(View.VISIBLE);
                 ImagePicker.with(PaymentMethod.this)
                         .galleryOnly()
                         .crop(9f, 16f)//Crop image(Optional), Check Customization for more option
@@ -251,12 +265,14 @@ public class PaymentMethod extends AppCompatActivity {
 
     private void setUpReserveButton() {
 
+        uploadImageMethod();
+
         reserve_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 //upload image to firebase storage
-                uploadImageMethod();
+
 
                 reserve_Btn.setVisibility(View.GONE);
                 progressBar.setVisibility(View.VISIBLE);
