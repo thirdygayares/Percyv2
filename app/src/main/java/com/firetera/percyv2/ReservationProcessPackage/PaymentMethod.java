@@ -347,6 +347,14 @@ public class PaymentMethod extends AppCompatActivity {
                         .document(reservationID)
                         .set(ReservationDetails);
 
+
+
+                        }
+                    }
+                });
+
+                //go to confirm reservcation
+
                 final LoadingDialog loadingDialog = new LoadingDialog(PaymentMethod.this);
 
                 loadingDialog.startLoadingDialog();
@@ -360,9 +368,6 @@ public class PaymentMethod extends AppCompatActivity {
                     }
                 },3000);
 
-                        }
-                    }
-                });
 
             }
         });
